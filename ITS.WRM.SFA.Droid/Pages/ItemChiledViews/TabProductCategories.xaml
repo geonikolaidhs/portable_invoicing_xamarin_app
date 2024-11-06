@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ITS.WRM.SFA.Droid.Pages.TabProductCategories">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout x:Name="lblDetailCustomer" HeightRequest="100" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Spacing="10" BackgroundColor="#474a4f">
+                <Label x:Name="lblProduct" TextColor="#FFFFFF" FontSize="28" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" />
+            </StackLayout>
+            <Grid BackgroundColor="#000000">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label YAlign="Center" Margin="20,2,2,2" x:Name="lblRoot" Text="" FontSize="Medium" Grid.Row="0" Grid.Column="0" FontAttributes="Bold" TextColor="#ffffff"/>
+                <Label YAlign="Center" Margin="2,2,2,2" x:Name="lblPath" Text="" FontSize="Medium" Grid.Row="0" Grid.Column="1" FontAttributes="Bold" TextColor="#ffffff"/>
+                <Label YAlign="Center" Margin="2,2,2,2" x:Name="lblNode" Text="" FontSize="Medium" Grid.Row="0" Grid.Column="2" FontAttributes="Bold" TextColor="#ffffff"/>
+            </Grid>
+            <ListView x:Name="CategoryPathListView"  BackgroundColor="White" RowHeight="60">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Label YAlign="Center" Margin="20,2,2,2"  FontSize="15" Text="{Binding Root}" Grid.Row="0" Grid.Column="0"/>
+                                <Label YAlign="Center" Margin="2,2,2,2"  FontSize="15" Text="{Binding  Path}" Grid.Row="0" Grid.Column="1"/>
+                                <Label YAlign="Center" Margin="2,2,2,2"  FontSize="15" Text="{Binding  node}" Grid.Row="0" Grid.Column="2"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

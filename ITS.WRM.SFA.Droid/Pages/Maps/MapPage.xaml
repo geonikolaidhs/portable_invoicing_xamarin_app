@@ -1,0 +1,600 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ITS.WRM.SFA.Droid.Pages.Maps.MapPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms">
+    <ContentPage.Content>
+
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+            <Grid
+                HeightRequest="45"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="35" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100*" />
+                    <ColumnDefinition Width="100*" />
+                </Grid.ColumnDefinitions>
+                <StackLayout
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    HeightRequest="35"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center">
+                    <controls:CheckBox
+                        x:Name="switchShowAddressPanel"
+                        Margin="0,0,0,0"
+                        Checked="True"
+                        FontSize="13"
+                        CheckedChanged="OnShowAddressPanelChanged"
+                        CheckedText="Αποεπιλέξτε για απόκρυψη του panel Διευθύνσεων"
+                        HorizontalOptions="FillAndExpand"
+                        TextColor="{Binding CheckBoxTextColor}"
+                        UncheckedText="Επιλέξτε για εμφάνιση του panel Διευθύνσεων"
+                        VerticalOptions="FillAndExpand" />
+                </StackLayout>
+
+                <StackLayout
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    HeightRequest="35"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center">
+                    <controls:CheckBox
+                        x:Name="switchShowRouteInfo"                        
+                        Margin="0,0,0,0"
+                        Checked="False"
+                        FontSize="13"
+                        CheckedChanged="OnShowRouteInfoChanged"
+                        CheckedText="Αποεπιλέξτε για απόκρυψη των πληροφοριών του χάρτη"
+                        HorizontalOptions="FillAndExpand"
+                        TextColor="{Binding CheckBoxTextColor}"
+                        UncheckedText="Επιλέξτε για εμφάνιση των πληροφοριών του χάρτη"
+                        VerticalOptions="FillAndExpand" />
+                </StackLayout>
+
+            </Grid>
+            <!--  MAIN GRID SPLIT PAGE 3 ROWS  -->
+            <Grid
+                x:Name="PageGrid"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40*" />
+                    <RowDefinition Height="60*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100*" />
+                </Grid.ColumnDefinitions>
+                <!--  ROW 1 AVAILIABLE ADDRESSES + SELECTED ADDRESSES  -->
+                <Grid
+                    x:Name="AddressPanelGrid"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50*" />
+                        <ColumnDefinition Width="2" />
+                        <ColumnDefinition Width="50*" />
+                    </Grid.ColumnDefinitions>
+                    <!--  GRID WITH AVAILIABLE ADDRESSES  -->
+                    <Grid
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40" />
+                            <RowDefinition Height="40" />
+                            <RowDefinition Height="100*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50*" />
+                        </Grid.ColumnDefinitions>
+                        <!--  AVAILIABLE ADDRESSES LISTVIEW HEADER  -->
+                        <StackLayout
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            BackgroundColor="AliceBlue"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="FillAndExpand">
+                            <controls:ExtendedLabel
+                                x:Name="lblAvailiableAddresses"
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Margin="2,2,2,2"
+                                BackgroundColor="AliceBlue"
+                                FontAttributes="Bold"
+                                FontSize="16"
+                                HorizontalOptions="FillAndExpand"
+                                HorizontalTextAlignment="Center"
+                                IsUnderline="True"
+                                Text=""
+                                TextColor="Gray"
+                                VerticalOptions="FillAndExpand"
+                                VerticalTextAlignment="Center"
+                                YAlign="Center" />
+                        </StackLayout>
+                        <SearchBar
+                            x:Name="AvailiableAddressesSearchBar"
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Focused="OnAvailiableAddressesSearchBarFocused"
+                            Placeholder="Αναζήτηση"
+                            TextChanged="AvailiableAddressesSearchBarTextChanged"
+                            Unfocused="OnAvailiableAddressesSearchBarUnFocused" />
+                        <!--  AVAILIABLE ADDRESSES LISTVIEW  -->
+                        <StackLayout
+                            Grid.Row="2"
+                            Grid.Column="0"
+                            HorizontalOptions="FillAndExpand"
+                            Orientation="Horizontal"
+                            Spacing="10"
+                            VerticalOptions="FillAndExpand">
+                            <controls:ExtendedListView
+                                x:Name="AvailiableAddressesList"
+                                RowHeight="55"
+                                SeparatorColor="#000000"
+                                SeparatorVisibility="Default">
+                                <controls:ExtendedListView.ItemTemplate HasUnevenRows="false">
+                                    <DataTemplate>
+                                        <controls:ExtendedViewCell IsEnabled="True">
+                                            <Grid
+                                                HorizontalOptions="FillAndExpand"
+                                                RowSpacing="1"
+                                                VerticalOptions="FillAndExpand">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="27" />
+                                                    <RowDefinition Height="27" />
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="80*" />
+                                                    <ColumnDefinition Width="20*" />
+                                                </Grid.ColumnDefinitions>
+                                                <Label
+                                                    Grid.Row="0"
+                                                    Grid.Column="0"
+                                                    Margin="5,0,0,0"
+                                                    FontSize="14"
+                                                    Text="{Binding AddressDescription}"
+                                                    TextColor="#2c333a"
+                                                    YAlign="Start" />
+                                                <Label
+                                                    Grid.Row="1"
+                                                    Grid.Column="0"
+                                                    Margin="5,0,0,0"
+                                                    FontAttributes="Bold"
+                                                    FontSize="13"
+                                                    Text="{Binding CustomerDescription}"
+                                                    TextColor="#2c333a"
+                                                    YAlign="End" />
+
+                                                <controls:ImageButton
+                                                    Grid.Row="0"
+                                                    Grid.RowSpan="2"
+                                                    Grid.Column="1"
+                                                    BackgroundColor="Transparent"
+                                                    BorderColor="Transparent"
+                                                    Clicked="AddToRoute"
+                                                    CommandParameter="{Binding Oid}"
+                                                    HorizontalOptions="CenterAndExpand"
+                                                    Image="checked.png"
+                                                    ImageHeightRequest="20"
+                                                    ImageWidthRequest="20"
+                                                    VerticalOptions="CenterAndExpand" />
+                                            </Grid>
+                                        </controls:ExtendedViewCell>
+                                    </DataTemplate>
+                                </controls:ExtendedListView.ItemTemplate>
+                            </controls:ExtendedListView>
+                        </StackLayout>
+                    </Grid>
+
+                    <controls:Separator
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        BackgroundColor="Gray"
+                        Orientation="Vertical"
+                        WidthRequest="2" />
+
+                    <!--  GRID WITH SELECTED ADDRESSES  -->
+                    <Grid
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40" />
+                            <RowDefinition Height="80*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50*" />
+                        </Grid.ColumnDefinitions>
+                        <!--  SELECTED ADDRESSES LISTVIEW HEADER  -->
+                        <StackLayout
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            BackgroundColor="AliceBlue"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="FillAndExpand">
+                            <controls:ExtendedLabel
+                                x:Name="lblSelectedAddresses"
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Margin="2,2,2,2"
+                                BackgroundColor="AliceBlue"
+                                FontAttributes="Bold"
+                                FontSize="16"
+                                HorizontalOptions="FillAndExpand"
+                                HorizontalTextAlignment="Center"
+                                IsUnderline="True"
+                                Text=""
+                                TextColor="Gray"
+                                VerticalOptions="FillAndExpand"
+                                VerticalTextAlignment="Center"
+                                YAlign="Center" />
+                        </StackLayout>
+                        <!--  SELECTED ADDRESSES LISTVIEW  -->
+                        <StackLayout
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            HorizontalOptions="FillAndExpand"
+                            Orientation="Horizontal"
+                            Spacing="10"
+                            VerticalOptions="FillAndExpand">
+                            <controls:ExtendedListView
+                                x:Name="SelectedAddressesList"
+                                RowHeight="55"
+                                SeparatorColor="#000000"
+                                SeparatorVisibility="Default">
+                                <controls:ExtendedListView.ItemTemplate HasUnevenRows="false">
+                                    <DataTemplate>
+                                        <controls:ExtendedViewCell IsEnabled="True">
+                                            <controls:ExtendedViewCell.ContextActions>
+                                                <MenuItem
+                                                    Clicked="FocusOnMap"
+                                                    CommandParameter="{Binding Oid}"
+                                                    Icon="address.png" />
+                                            </controls:ExtendedViewCell.ContextActions>
+                                            <Grid
+                                                HorizontalOptions="FillAndExpand"
+                                                RowSpacing="1"
+                                                VerticalOptions="FillAndExpand">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="27" />
+                                                    <RowDefinition Height="27" />
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="80*" />
+                                                    <ColumnDefinition Width="20*" />
+                                                </Grid.ColumnDefinitions>
+                                                <Label
+                                                    Grid.Row="0"
+                                                    Grid.Column="0"
+                                                    Margin="5,0,0,0"
+                                                    FontSize="14"
+                                                    Text="{Binding AddressDescription}"
+                                                    TextColor="#2c333a"
+                                                    XAlign="Start"
+                                                    YAlign="Start" />
+                                                <Label
+                                                    Grid.Row="1"
+                                                    Grid.Column="0"
+                                                    Margin="5,0,0,0"
+                                                    FontSize="13"
+                                                    Text="{Binding CustomerDescription}"
+                                                    TextColor="#2c333a"
+                                                    XAlign="Start"
+                                                    YAlign="End" />
+                                                <controls:ImageButton
+                                                    Grid.Row="0"
+                                                    Grid.RowSpan="2"
+                                                    Grid.Column="1"
+                                                    BackgroundColor="Transparent"
+                                                    BorderColor="Transparent"
+                                                    Clicked="RemoveFromRoute"
+                                                    CommandParameter="{Binding Oid}"
+                                                    HorizontalOptions="CenterAndExpand"
+                                                    Image="cancel.png"
+                                                    ImageHeightRequest="20"
+                                                    ImageWidthRequest="20"
+                                                    VerticalOptions="CenterAndExpand" />
+                                            </Grid>
+                                        </controls:ExtendedViewCell>
+                                    </DataTemplate>
+                                </controls:ExtendedListView.ItemTemplate>
+                            </controls:ExtendedListView>
+                        </StackLayout>
+                    </Grid>
+                </Grid>
+                <!--  MAP STACK  ROW 2  -->
+                <Grid
+                    x:Name="MapGrid"
+                    Grid.Row="1"
+                    Grid.Column="0"                    
+                    HorizontalOptions="FillAndExpand"
+                    RowSpacing="1"
+                    VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="60*" />
+                        <ColumnDefinition Width="40*" />
+                    </Grid.ColumnDefinitions>
+                    <StackLayout
+                        x:Name="MapStack"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Margin="5"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand" />
+
+                    <StackLayout
+                        x:Name="MapInfo"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Margin="5"
+                        HorizontalOptions="FillAndExpand"
+                        IsVisible="False"
+                        VerticalOptions="FillAndExpand">
+
+
+                        <Grid                            
+                            BackgroundColor="#eee"
+                            HorizontalOptions="FillAndExpand"                        
+                            VerticalOptions="FillAndExpand" >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="35*" />
+                                <RowDefinition Height="45*" />
+                                <RowDefinition Height="45*" />
+                                <RowDefinition Height="45*" />
+                                <RowDefinition Height="45*" />
+                                <RowDefinition Height="45*" />
+                                <RowDefinition Height="25*" />
+                                <RowDefinition Height="45*" />
+
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100*" />
+                                <ColumnDefinition Width="100*" />
+                            </Grid.ColumnDefinitions>
+
+                            <!--ROW 0-->
+                            <Label BackgroundColor="#c2dcea" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="Map Options" HorizontalOptions="CenterAndExpand" FontSize="14" FontAttributes="Bold" ></Label>
+
+                            <!--ROW 1-->
+                            <Button              
+                                HeightRequest="40"
+                                x:Name="btnStreetType"
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Padding="5"
+                                BackgroundColor="#2196F3"
+                                Clicked="HandleClicked"
+                                FontAttributes="Bold"
+                                FontSize="13"
+                                HorizontalOptions="FillAndExpand"
+                                Text="Street"
+                                TextColor="WhiteSmoke" />
+
+                            <!--ROW 1-->
+                            <Button
+                                HeightRequest="40"
+                                x:Name="btnHybridType"
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Padding="5"
+                                BackgroundColor="#2196F3"
+                                Clicked="HandleClicked"
+                                FontAttributes="Bold"
+                                FontSize="13"
+                                HorizontalOptions="FillAndExpand"
+                                Text="Hybrid"
+                                TextColor="WhiteSmoke" />
+
+
+
+                            <!--ROW 2-->
+                            <Button
+                                HeightRequest="40"
+                                x:Name="btnTerrainType"
+                                Grid.Row="2"
+                                Grid.Column="0"
+                                Padding="5"
+                                TextColor="WhiteSmoke"
+                                BackgroundColor="#2196F3"
+                                Clicked="HandleClicked"
+                                FontAttributes="Bold"
+                                FontSize="13"
+                                HorizontalOptions="FillAndExpand"
+                                Text="Terrain"/>
+
+                            <!--ROW 3-->
+                            <controls:CheckBox                                
+                                x:Name="switchShowTraffic"
+                                Grid.Row="2"
+                                Grid.Column="1"                                
+                                Margin="0,0,0,0"
+                                Checked="True"
+                                FontSize="12"
+                                CheckedChanged="ShowTrafficChanged"
+                                CheckedText="Traffic Off"
+                                HorizontalOptions="CenterAndExpand"
+                                TextColor="{Binding CheckBoxTextColor}"
+                                UncheckedText="Traffic On"
+                                VerticalOptions="Center" />
+
+                            <Button  
+                                Margin="5"
+                                HeightRequest="40"
+                                x:Name="btnCreateRoute"
+                                Grid.Row="3"
+                                Grid.ColumnSpan="2"
+                                Grid.Column="0"
+                                Padding="5"
+                                BackgroundColor="#2196F3"
+                                Clicked="CreateRoute"
+                                FontAttributes="Bold"
+                                FontSize="13"
+                                HorizontalOptions="FillAndExpand"
+                                 TextColor="WhiteSmoke" />
+
+
+
+                            <Label Grid.Row="4" Grid.Column="0" x:Name="lblRouteInfoHeader" Text=""  Grid.ColumnSpan="2" FontAttributes="Bold" FontSize="15" HorizontalOptions="CenterAndExpand"/>
+
+                            <Label  VerticalOptions="StartAndExpand" Grid.Row="5" Grid.Column="0" x:Name="lblRouteInfo" Text="" Grid.ColumnSpan="2" FontSize="14" HorizontalOptions="StartAndExpand" FontAttributes="Bold"/>
+
+
+                        </Grid>
+                    </StackLayout>
+                </Grid>
+
+
+
+                <!--  BUTTONS GRID  ROW 3  -->
+                <!--
+                <Grid
+                    x:Name="Buttons"
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Margin="5"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="35" />
+                        <RowDefinition Height="35" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200*" />
+                        <ColumnDefinition Width="200*" />
+                        <ColumnDefinition Width="200*" />
+                    </Grid.ColumnDefinitions>
+                    <Button
+                        x:Name="btnStreetType"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Padding="2"
+                        BackgroundColor="#2196F3"
+                        Clicked="HandleClicked"
+                        FontAttributes="Bold"
+                        FontSize="14"
+                        HorizontalOptions="FillAndExpand"
+                        Text="Street"
+                        TextColor="WhiteSmoke" />
+                    <Button
+                        x:Name="btnHybridType"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Padding="2"
+                        BackgroundColor="#2196F3"
+                        Clicked="HandleClicked"
+                        FontAttributes="Bold"
+                        FontSize="14"
+                        HorizontalOptions="FillAndExpand"
+                        Text="Hybrid"
+                        TextColor="WhiteSmoke" />
+                    <Button
+                        x:Name="btnTerrainType"
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        Padding="2"
+                        BackgroundColor="#2196F3"
+                        Clicked="HandleClicked"
+                        FontAttributes="Bold"
+                        FontSize="14"
+                        HorizontalOptions="FillAndExpand"
+                        Text="Terrain"
+                        TextColor="WhiteSmoke" />
+
+                    <Button
+                        x:Name="btnInsertMapAddresses"
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Padding="2"
+                        BackgroundColor="#2196F3"
+                        FontAttributes="Bold"
+                        FontSize="14"
+                        HorizontalOptions="FillAndExpand"
+                        TextColor="WhiteSmoke" />
+                    <Button
+                        x:Name="btnCreateRoute"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Padding="2"
+                        BackgroundColor="#2196F3"
+                        Clicked="CreateRoute"
+                        FontAttributes="Bold"
+                        FontSize="14"
+                        HorizontalOptions="FillAndExpand"
+                        TextColor="WhiteSmoke" />
+                    <Button
+                        x:Name="btnSaveRoute"
+                        Grid.Row="1"
+                        Grid.Column="2"
+                        Padding="2"
+                        BackgroundColor="#2196F3"
+                        Clicked="SaveRoute"
+                        FontAttributes="Bold"
+                        FontSize="14"
+                        HorizontalOptions="FillAndExpand"
+                        TextColor="WhiteSmoke" />
+                </Grid>-->
+                <!--<StackLayout Grid.Row="3" Grid.Column="0" />-->
+            </Grid>
+            <StackLayout x:Name="SaveStack">
+                <StackLayout BackgroundColor="#474a4f" HorizontalOptions="FillAndExpand">
+                    <Label
+                        x:Name="lblSaveName"
+                        Margin="10,10,10,10"
+                        FontSize="18"
+                        HorizontalOptions="Center"
+                        Text=""
+                        TextColor="WhiteSmoke"
+                        VerticalOptions="Center"
+                        WidthRequest="250"
+                        XAlign="Center"
+                        YAlign="End" />
+                </StackLayout>
+                <StackLayout HorizontalOptions="FillAndExpand">
+                    <Entry
+                        x:Name="txtRouteName"
+                        Margin="10,10,10,10"
+                        HorizontalOptions="Center"
+                        TextColor="Black"
+                        VerticalOptions="CenterAndExpand"
+                        WidthRequest="250" />
+                </StackLayout>
+                <StackLayout Padding="10">
+                    <Button
+                        x:Name="btnSaveName"
+                        BackgroundColor="#2196F3"
+                        Clicked="OnSaveName"
+                        HorizontalOptions="FillAndExpand"
+                        TextColor="#FFFFFF"
+                        WidthRequest="250" />
+                </StackLayout>
+                <StackLayout Padding="10">
+                    <Button
+                        x:Name="btnCancelName"
+                        BackgroundColor="#2196F3"
+                        Clicked="OnCancelName"
+                        HorizontalOptions="FillAndExpand"
+                        TextColor="#FFFFFF"
+                        WidthRequest="450" />
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+
+
+    </ContentPage.Content>
+</ContentPage>

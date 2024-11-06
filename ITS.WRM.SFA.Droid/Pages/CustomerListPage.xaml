@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ITS.WRM.SFA.Droid.Pages.CustomerListPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <ScrollView>
+                <StackLayout
+                    AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                    AbsoluteLayout.LayoutFlags="All"
+                    BackgroundColor="WhiteSmoke">
+                    <StackLayout
+                        AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                        AbsoluteLayout.LayoutFlags="All"
+                        BackgroundColor="WhiteSmoke">
+                        <Label
+                            x:Name="lblHeader"
+                            FontAttributes="Bold"
+                            FontSize="28"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center" />
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="70*" />
+                                <ColumnDefinition Width="30*" />
+                            </Grid.ColumnDefinitions>
+                            <SearchBar
+                                x:Name="filter"
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Focused="SearchBarFocused"
+                                SearchButtonPressed="SearchCustomerByKeyboard"
+                                Unfocused="SearchBarUnFocused" />
+                            <controls:ImageButton
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                BackgroundColor="#01abdf"
+                                Clicked="CustomerSearch"
+                                HeightRequest="50"
+                                HorizontalOptions="FillAndExpand"
+                                Image="search.png"
+                                TextColor="#ffffff"
+                                WidthRequest="200" />
+                        </Grid>
+                    </StackLayout>
+                    <StackLayout Padding="16" BackgroundColor="#474a4f">
+                        <Label x:Name="SearchHeader" TextColor="#ffffff" />
+                    </StackLayout>
+
+                    <ListView
+                        x:Name="CustomerList"
+                        RowHeight="120"
+                        SelectionMode="Single">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell x:Name="mycell">
+                                    <ViewCell.ContextActions>
+                                        <MenuItem
+                                            Clicked="OnMore"
+                                            CommandParameter="{Binding Oid}"
+                                            Icon="details.png"
+                                            Text="More" />
+                                        <MenuItem
+                                            Clicked="OnEdit"
+                                            CommandParameter="{Binding Oid}"
+                                            Icon="edit2.png"
+                                            Text="Edit" />
+                                        <MenuItem
+                                            Clicked="OnNewOrder"
+                                            CommandParameter="{Binding Oid}"
+                                            Icon="cartWhite.png"
+                                            Text="Edit" />
+                                    </ViewCell.ContextActions>
+
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="40*" />
+                                            <RowDefinition Height="40*" />
+                                            <RowDefinition Height="20*" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="60*" />
+                                            <ColumnDefinition Width="1*" />
+                                            <ColumnDefinition Width="20*" />
+                                            <ColumnDefinition Width="20*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Label
+                                            Grid.Row="0"
+                                            Grid.Column="0"
+                                            FontAttributes="Bold"
+                                            FontSize="20"
+                                            Text="{Binding CompanyName}"
+                                            VerticalTextAlignment="Center" />
+                                        <Label
+                                            Grid.Row="0"
+                                            Grid.Column="2"
+                                            FontSize="16"
+                                            Text="{Binding Code}" />
+                                        <Label
+                                            Grid.Row="0"
+                                            Grid.Column="3"
+                                            FontSize="16"
+                                            Text="{Binding TaxCode}" />
+                                        <Label
+                                            Grid.Row="1"
+                                            Grid.Column="0"
+                                            FontSize="18"
+                                            Text="{Binding Address}" />
+                                        <Label
+                                            Grid.Row="1"
+                                            Grid.Column="2"
+                                            FontSize="18"
+                                            Text="" />
+                                        <Label
+                                            Grid.Row="2"
+                                            Grid.Column="0"
+                                            FontSize="16"
+                                            Text="{Binding Profession}"
+                                            VerticalTextAlignment="Center" />
+                                        <Label
+                                            Grid.Row="1"
+                                            Grid.Column="3"
+                                            FontAttributes="Bold"
+                                            FontSize="16"
+                                            Text="{Binding Number}" />
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </ScrollView>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Activated="OnAdd"
+            Icon="addCustomer.png"
+            Order="Primary"
+            Priority="1" />
+    </ContentPage.ToolbarItems>
+</ContentPage>

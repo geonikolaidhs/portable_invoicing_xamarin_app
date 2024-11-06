@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             x:Class="ITS.WRM.SFA.Droid.Pages.SettingsChiledViews.VersioningPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout x:Name="VersionTableStack">
+                <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"   Padding="0" Spacing="0" BackgroundColor="#474a4f" HeightRequest="80">
+                    <Label YAlign="End" XAlign="Center" VerticalOptions="Center" HorizontalOptions="Center"  Text="Versioning" FontSize="24" TextColor="WhiteSmoke" HeightRequest="60" WidthRequest="120"/>
+                </StackLayout>
+                <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"   Padding="0" Spacing="0" BackgroundColor="#474a4f" HeightRequest="50">
+                    <Button  CornerRadius="3" HorizontalOptions="End"  HeightRequest="50" WidthRequest="250" x:Name="btnGetServerVersion" TextColor="WhiteSmoke" FontSize="18"  Text="Get Server Version" Clicked="OnGetServerVersion" />
+                </StackLayout>
+
+                <ListView x:Name="VersionList" RowHeight="90" SeparatorVisibility="Default" SeparatorColor="#b5afaf">
+
+                    <ListView.Header>
+                        <Grid BackgroundColor="#474a4f">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20*"></ColumnDefinition>
+                                <ColumnDefinition Width="20*"></ColumnDefinition>
+                                <ColumnDefinition Width="20*"></ColumnDefinition>
+                                <ColumnDefinition Width="20*"></ColumnDefinition>
+                                <ColumnDefinition Width="20*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Label YAlign="End" Margin="0,0,0,5" Text="Table Name" Grid.Row="0" Grid.Column="0" FontAttributes="Bold" FontSize="20" TextColor="WhiteSmoke"/>
+                            <Label YAlign="End" Text="Order" Grid.Row="0" Grid.Column="1"  FontAttributes="Bold" FontSize="20" TextColor="WhiteSmoke"/>
+                            <Label YAlign="End" Text="Last UpDate" Grid.Row="0" Grid.Column="2"  FontAttributes="Bold" FontSize="20" TextColor="WhiteSmoke"/>
+                            <Label YAlign="End" Text="Local Version" Grid.Row="0" Grid.Column="3"  FontAttributes="Bold" FontSize="20" TextColor="WhiteSmoke"/>
+                            <Label YAlign="End" Text="Server Version " Grid.Row="0" Grid.Column="4"  FontAttributes="Bold" FontSize="20"  TextColor="WhiteSmoke"/>
+                        </Grid>
+                    </ListView.Header>
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.ContextActions>
+                                    <MenuItem Clicked="OnEdit" Text="Edit" CommandParameter="{Binding Oid}" Icon="edit2.png" />
+                                    <MenuItem Clicked="OnSync" Text="Edit" CommandParameter="{Binding Oid}" Icon="sunc1.png" />
+                                </ViewCell.ContextActions>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="20*"></ColumnDefinition>
+                                        <ColumnDefinition Width="20*"></ColumnDefinition>
+                                        <ColumnDefinition Width="20*"></ColumnDefinition>
+                                        <ColumnDefinition Width="20*"></ColumnDefinition>
+                                        <ColumnDefinition Width="20*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Label YAlign="Center" Margin="5,5,5,5" Text="{Binding TableName}" Grid.Row="0" Grid.Column="0" FontAttributes="Bold" FontSize="20"/>
+                                    <Label YAlign="Center" Margin="5,5,5,5" Text="{Binding Order}" Grid.Row="0" Grid.Column="1" FontSize="18"/>
+                                    <Label YAlign="Center" Margin="5,5,5,5" Text="{Binding LastUpDate}" Grid.Row="0" Grid.Column="2" FontSize="18"/>
+                                    <Label YAlign="Center" Margin="5,5,5,5" Text="{Binding VersionDate}" Grid.Row="0" Grid.Column="3" FontSize="18"/>
+                                    <Label YAlign="Center" Margin="5,5,5,5" Text="{Binding ServerVersionDate}" Grid.Row="0" Grid.Column="4" FontSize="18"/>
+
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <StackLayout x:Name="EditStack" >
+                <StackLayout BackgroundColor="#474a4f"  HorizontalOptions="FillAndExpand" >
+                    <Label  Margin="10,10,10,10" x:Name="TableName"  TextColor="WhiteSmoke" YAlign="End" XAlign="Center" VerticalOptions="Center" HorizontalOptions="Center"  WidthRequest="250" Text="" FontSize="18"/>
+                </StackLayout>
+                <StackLayout HorizontalOptions="FillAndExpand">
+                    <DatePicker Margin="10,10,10,10" TextColor="Black" x:Name="Version" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" WidthRequest="250" >
+                        <DatePicker.Format>dd-MM-yyyy</DatePicker.Format>
+                    </DatePicker>
+                </StackLayout>
+                <StackLayout Padding="10">
+                    <Button x:Name="btnSave"  BackgroundColor="#2196F3" TextColor="#FFFFFF" HorizontalOptions="FillAndExpand" Clicked="OnSave" WidthRequest="250"/>
+                </StackLayout>
+                <StackLayout Padding="10">
+                    <Button x:Name="btnCancel"  BackgroundColor="#2196F3" TextColor="#FFFFFF" HorizontalOptions="FillAndExpand" Clicked="OnCancel" WidthRequest="450"/>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

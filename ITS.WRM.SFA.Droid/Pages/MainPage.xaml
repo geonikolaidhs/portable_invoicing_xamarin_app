@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ITS.WRM.SFA.Droid.Pages.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms">
+    <ContentPage.Content>
+        <ScrollView>
+
+            <StackLayout
+                BackgroundColor="#474a4f"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand">
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40*" />
+                    </Grid.RowDefinitions>
+                    <StackLayout Grid.Row="0">
+                        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="10*" />
+                                <ColumnDefinition Width="40*" />
+                                <ColumnDefinition Width="40*" />
+                                <ColumnDefinition Width="10*" />
+                            </Grid.ColumnDefinitions>
+                            <controls:ImageButton
+                                x:Name="btnNewDefaultDocument"
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                BackgroundColor="#01abdf"
+                                Clicked="OnNewDefaultDocumentClick"
+                                Image="cartWhite.png"
+                                TextColor="#ffffff" />
+                            <controls:ImageButton
+                                x:Name="btnDocuments"
+                                Grid.Row="0"
+                                Grid.Column="2"
+                                BackgroundColor="#01abdf"
+                                Clicked="OnDocumentsClick"
+                                HeightRequest="120"
+                                Image="orderList.png"
+                                ImageHeightRequest="50"
+                                ImageWidthRequest="50"
+                                Orientation="ImageOnTop"
+                                TextColor="#ffffff"
+                                WidthRequest="175" />
+                            <controls:ImageButton
+                                x:Name="btnCustomer"
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                BackgroundColor="#01abdf"
+                                Clicked="OnCustomerClick"
+                                HeightRequest="120"
+                                Image="customer1.png"
+                                ImageHeightRequest="50"
+                                ImageWidthRequest="50"
+                                Orientation="ImageOnTop"
+                                TextColor="#ffffff"
+                                WidthRequest="175" />
+                            <controls:ImageButton
+                                x:Name="btnProducts"
+                                Grid.Row="1"
+                                Grid.Column="2"
+                                BackgroundColor="#01abdf"
+                                Clicked="OnProductsClick"
+                                FontSize="20"
+                                HeightRequest="120"
+                                Image="products.png"
+                                ImageHeightRequest="90"
+                                ImageWidthRequest="100"
+                                Orientation="ImageOnTop"
+                                TextColor="#ffffff"
+                                WidthRequest="175" />
+                            <controls:ImageButton
+                                x:Name="btnSync"
+                                Grid.Row="2"
+                                Grid.Column="1"
+                                BackgroundColor="#01abdf"
+                                Clicked="OnSyncClick"
+                                FontSize="20"
+                                HeightRequest="120"
+                                Image="sunc1.png"
+                                ImageHeightRequest="90"
+                                ImageWidthRequest="100"
+                                Orientation="ImageOnTop"
+                                TextColor="#ffffff"
+                                WidthRequest="175" />
+                            <controls:ImageButton
+                                x:Name="btnSend"
+                                Grid.Row="2"
+                                Grid.Column="2"
+                                BackgroundColor="#01abdf"
+                                Clicked="OnUploadClick"
+                                FontSize="20"
+                                HeightRequest="120"
+                                Image="upload1.png"
+                                ImageHeightRequest="90"
+                                ImageWidthRequest="100"
+                                Orientation="ImageOnTop"
+                                TextColor="#ffffff"
+                                WidthRequest="175" />
+                            <controls:ImageButton
+                                x:Name="btnPortable"
+                                Grid.Row="3"
+                                Grid.Column="1"
+                                BackgroundColor="#01abdf"
+                                Clicked="OnPortableClick"
+                                FontSize="20"
+                                HeightRequest="120"
+                                Image="warehouse.png"
+                                ImageHeightRequest="90"
+                                ImageWidthRequest="100"
+                                Orientation="ImageOnTop"
+                                TextColor="#ffffff"
+                                WidthRequest="175" />
+                            <controls:ImageButton
+                                x:Name="btnMaps"
+                                Grid.Row="3"
+                                Grid.Column="2"
+                                BackgroundColor="#01abdf"
+                                Clicked="OnMapsClicked"
+                                FontSize="20"
+                                HeightRequest="120"
+                                Image="road.png"
+                                ImageHeightRequest="90"
+                                ImageWidthRequest="100"
+                                Orientation="ImageOnTop"
+                                TextColor="#ffffff"
+                                WidthRequest="175" />
+                            <controls:ImageButton
+                                x:Name="btnSettings"
+                                Grid.Row="4"
+                                Grid.Column="1"
+                                BackgroundColor="#01abdf"
+                                Clicked="OnSettingsClick"
+                                FontSize="20"
+                                HeightRequest="120"
+                                Image="settings1.png"
+                                ImageHeightRequest="90"
+                                ImageWidthRequest="100"
+                                Orientation="ImageOnTop"
+                                TextColor="#ffffff"
+                                WidthRequest="175" />
+                            <controls:ImageButton
+                                x:Name="btnLogout"
+                                Grid.Row="4"
+                                Grid.Column="2"
+                                BackgroundColor="#01abdf"
+                                Clicked="OnLogOutClick"
+                                FontSize="20"
+                                HeightRequest="120"
+                                Image="logout1.png"
+                                ImageHeightRequest="90"
+                                ImageWidthRequest="100"
+                                Orientation="ImageOnTop"
+                                TextColor="#ffffff"
+                                WidthRequest="175" />
+                        </Grid>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

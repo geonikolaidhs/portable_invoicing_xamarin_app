@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ITS.WRM.SFA.Droid.Pages.AddCustomerPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout
+                BackgroundColor="#474a4f"
+                HeightRequest="60"
+                HorizontalOptions="FillAndExpand"
+                Spacing="10"
+                VerticalOptions="Start">
+                <Label
+                    x:Name="lblAddNewCustomer"
+                    FontAttributes="Bold"
+                    FontSize="26"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    TextColor="#FFFFFF"
+                    VerticalOptions="Center"
+                    VerticalTextAlignment="Center" />
+            </StackLayout>
+            <!--  TAX OFFICE STACK  -->
+            <StackLayout x:Name="TaxOfficeStack">
+                <StackLayout.Padding>
+                    <OnPlatform Android="13" iOS="15" />
+                </StackLayout.Padding>
+
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <SearchBar
+                        x:Name="searchOffice"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Focused="searchOfficeFocused"
+                        HorizontalOptions="FillAndExpand"
+                        Placeholder=""
+                        SearchButtonPressed="SearchByKeyboard"
+                        Unfocused="searchOfficeUnFocused" />
+                    <controls:ImageButton
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        BackgroundColor="#01abdf"
+                        Clicked="btnSearch"
+                        HeightRequest="50"
+                        HorizontalOptions="FillAndExpand"
+                        Image="search.png"
+                        TextColor="#ffffff"
+                        WidthRequest="200" />
+                </Grid>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label
+                        x:Name="lblArea"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        FontAttributes="Bold" />
+                    <Label
+                        x:Name="lblTaxOffice"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        FontAttributes="Bold" />
+                </Grid>
+                <ListView x:Name="TaxOfficeList">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.ContextActions>
+                                    <MenuItem
+                                        Clicked="AddTaxOfficeToCustomer"
+                                        CommandParameter="{Binding Oid}"
+                                        Icon="order.png" />
+                                </ViewCell.ContextActions>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label
+                                        Grid.Row="0"
+                                        Grid.Column="0"
+                                        Text="{Binding Municipality}" />
+                                    <Label
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        FontAttributes="Bold"
+                                        Text="{Binding Description}" />
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <StackLayout Padding="10">
+                    <Button
+                        x:Name="btnCancelTaxOfficeToCustomer"
+                        BackgroundColor="#2196F3"
+                        Clicked="HideTaxOfficeForm"
+                        HorizontalOptions="FillAndExpand"
+                        TextColor="#FFFFFF" />
+                </StackLayout>
+            </StackLayout>
+
+            <!--  CUSTOMER STACK  -->
+            <ScrollView>
+                <StackLayout Padding="0" Spacing="0">
+                    <StackLayout x:Name="Stack">
+
+                        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20*" />
+                                <ColumnDefinition Width="80*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label
+                                x:Name="lblTaxCode"
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Margin="10,0,0,0"
+                                FontAttributes="Bold"
+                                FontSize="17"
+                                Text="" />
+                            <Entry
+                                x:Name="txtTaxCode"
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Focused="TaxCodeFocused"
+                                FontSize="17"
+                                Unfocused="TaxCodeUnFocused" />
+
+                            <Label
+                                x:Name="lblCompanyName"
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Margin="10,0,0,0"
+                                FontAttributes="Bold"
+                                FontSize="17"
+                                Text="" />
+                            <Entry
+                                x:Name="txtCompanyName"
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Focused="CompanyNameFocused"
+                                FontSize="17"
+                                Unfocused="CompanyNameUnFocused" />
+
+                            <Label
+                                x:Name="lblCode"
+                                Grid.Row="2"
+                                Grid.Column="0"
+                                Margin="10,0,0,0"
+                                FontAttributes="Bold"
+                                FontSize="17"
+                                Text="" />
+                            <Entry
+                                x:Name="txtCode"
+                                Grid.Row="2"
+                                Grid.Column="1"
+                                Focused="CodeFocused"
+                                FontSize="17"
+                                Unfocused="CodeUnFocused" />
+
+                            <Label
+                                x:Name="lblProffesion"
+                                Grid.Row="3"
+                                Grid.Column="0"
+                                Margin="10,0,0,0"
+                                FontAttributes="Bold"
+                                FontSize="17"
+                                Text="" />
+                            <Entry
+                                x:Name="Proffesion"
+                                Grid.Row="3"
+                                Grid.Column="1"
+                                Focused="ProffesionFocused"
+                                FontSize="17"
+                                Unfocused="ProffesionUnFocused" />
+
+                            <Label
+                                x:Name="lblCurrentTaxOffice"
+                                Grid.Row="4"
+                                Grid.Column="0"
+                                Margin="10,0,0,0"
+                                FontAttributes="Bold"
+                                FontSize="17"
+                                Text="" />
+                            <Label
+                                x:Name="CurrentTaxOffice"
+                                Grid.Row="4"
+                                Grid.Column="1"
+                                FontAttributes="Bold"
+                                FontSize="17"
+                                Text="" />
+
+                            <Label
+                                x:Name="lblCurrentAddress"
+                                Grid.Row="5"
+                                Grid.Column="0"
+                                Margin="10,0,0,0"
+                                FontAttributes="Bold"
+                                FontSize="17"
+                                Text="" />
+                            <Label
+                                x:Name="CurrentAddress"
+                                Grid.Row="5"
+                                Grid.Column="1"
+                                FontAttributes="Bold"
+                                FontSize="17"
+                                Text="" />
+
+                        </Grid>
+
+                        <StackLayout Padding="2">
+                            <Button
+                                x:Name="btnCheck"
+                                BackgroundColor="#2196F3"
+                                Clicked="CheckCustomerOnServer"
+                                HorizontalOptions="FillAndExpand"
+                                TextColor="#FFFFFF" />
+                        </StackLayout>
+                        <StackLayout Padding="2">
+                            <Button
+                                x:Name="btnSaveCustomer"
+                                BackgroundColor="#2196F3"
+                                Clicked="SaveCustomer"
+                                HorizontalOptions="FillAndExpand"
+                                TextColor="#FFFFFF" />
+                        </StackLayout>
+                        <StackLayout Padding="2">
+                            <Button
+                                x:Name="btnShowAddressForm"
+                                BackgroundColor="#2196F3"
+                                Clicked="ShowAddressForm"
+                                HorizontalOptions="FillAndExpand"
+                                TextColor="#FFFFFF" />
+                        </StackLayout>
+                        <StackLayout Padding="2">
+                            <Button
+                                x:Name="btnShowTaxOfficeList"
+                                BackgroundColor="#2196F3"
+                                Clicked="ShowTaxOfficeList"
+                                HorizontalOptions="FillAndExpand"
+                                TextColor="#FFFFFF" />
+                        </StackLayout>
+                        <StackLayout Padding="2">
+                            <Button
+                                x:Name="btnCancel"
+                                BackgroundColor="#2196F3"
+                                Clicked="OnCancel"
+                                HorizontalOptions="FillAndExpand"
+                                TextColor="#FFFFFF" />
+                        </StackLayout>
+
+                    </StackLayout>
+
+
+
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+
+
+    </ContentPage.Content>
+</ContentPage>

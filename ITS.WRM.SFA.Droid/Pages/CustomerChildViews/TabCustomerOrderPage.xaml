@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             x:Class="ITS.WRM.SFA.Droid.Pages.TabCustomerOrderPage">
+    <ContentPage.Content>
+        <StackLayout Spacing="0" Padding="0" BackgroundColor="WhiteSmoke">
+            <StackLayout x:Name="Detail">
+                <StackLayout x:Name="lblDetailCustomer" HeightRequest="60" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Spacing="10" BackgroundColor="#474a4f">
+                    <Label  x:Name="lblDetail" TextColor="WhiteSmoke" FontSize="24" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" />
+                </StackLayout>
+                <StackLayout Padding="20" BackgroundColor="#474a4f">
+                    <Label x:Name="OrderListItems" HorizontalOptions="Center" VerticalOptions="Center" TextColor="WhiteSmoke" FontSize="20"/>
+                </StackLayout>
+                <ListView x:Name="OrderList" RowHeight="60" SeparatorVisibility="Default" SeparatorColor="#008dda">
+                    <ListView.Header>
+                        <Grid BackgroundColor="#474a4f">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20*"></ColumnDefinition>
+                                <ColumnDefinition Width="9*"></ColumnDefinition>
+                                <ColumnDefinition Width="9*"></ColumnDefinition>
+                                <ColumnDefinition Width="9*"></ColumnDefinition>
+                                <ColumnDefinition Width="9*"></ColumnDefinition>
+                                <ColumnDefinition Width="9*"></ColumnDefinition>
+                                <ColumnDefinition Width="9*"></ColumnDefinition>
+                                <ColumnDefinition Width="9*"></ColumnDefinition>
+                                <ColumnDefinition Width="9*"></ColumnDefinition>
+                                <ColumnDefinition Width="9*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50" />
+                            </Grid.RowDefinitions>
+                            <Label YAlign="End" Margin="0,0,0,5" x:Name="CompanyName" Text=""  Grid.Row="0" Grid.Column="0" FontAttributes="Bold" FontSize="17" TextColor="WhiteSmoke"/>
+                            <Label YAlign="End" Margin="0,0,0,5" x:Name="CustomerCode" Text="" Grid.Row="0" Grid.Column="1"  FontAttributes="Bold" FontSize="17" TextColor="WhiteSmoke"/>
+                            <Label YAlign="End" Margin="0,0,0,5" x:Name="CreatedDate" Text="" Grid.Row="0" Grid.Column="2"  FontAttributes="Bold" FontSize="17" TextColor="WhiteSmoke"/>
+                            <Label YAlign="End" Margin="0,0,0,5" x:Name="FinalizedDate" Text="" Grid.Row="0" Grid.Column="3"  FontAttributes="Bold" FontSize="17" TextColor="WhiteSmoke"/>
+                            <Label YAlign="End" Margin="0,0,0,5" x:Name="Status" Text="" Grid.Row="0" Grid.Column="4"  FontAttributes="Bold" FontSize="17" TextColor="WhiteSmoke"/>
+                            <Label YAlign="End" Margin="0,0,0,5" x:Name="IsSynchronized" Text="" Grid.Row="0" Grid.Column="5"  FontAttributes="Bold" FontSize="17" TextColor="WhiteSmoke"/>
+                            <Label YAlign="End" Margin="0,0,0,5" x:Name="Type" Text="" Grid.Row="0" Grid.Column="6"  FontAttributes="Bold" FontSize="17" TextColor="WhiteSmoke"/>
+                            <Label YAlign="End" Margin="0,0,0,5" x:Name="NetTotal" Text="" Grid.Row="0" Grid.Column="7"  FontAttributes="Bold" FontSize="17" TextColor="WhiteSmoke"/>
+                            <Label YAlign="End" Margin="0,0,0,5" x:Name="GrossTotal" Text="" Grid.Row="0" Grid.Column="8"  FontAttributes="Bold" FontSize="17" TextColor="WhiteSmoke"/>
+                            <Label YAlign="End" Margin="0,0,0,5" x:Name="Discount" Text="" Grid.Row="0" Grid.Column="9"  FontAttributes="Bold" FontSize="17" TextColor="WhiteSmoke"/>
+                        </Grid>
+                    </ListView.Header>
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.ContextActions>
+                                    <MenuItem Clicked="DeleteDocumentHeader" Text="delete." CommandParameter="{Binding Oid}" Icon ="delete.png"/>
+                                    <MenuItem Clicked="EditDocumentHeader" Text="Λεπτ." CommandParameter="{Binding Oid}" Icon ="edit2.png"/>
+                                </ViewCell.ContextActions>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="20*"></ColumnDefinition>
+                                        <ColumnDefinition Width="9*"></ColumnDefinition>
+                                        <ColumnDefinition Width="9*"></ColumnDefinition>
+                                        <ColumnDefinition Width="9*"></ColumnDefinition>
+                                        <ColumnDefinition Width="9*"></ColumnDefinition>
+                                        <ColumnDefinition Width="9*"></ColumnDefinition>
+                                        <ColumnDefinition Width="9*"></ColumnDefinition>
+                                        <ColumnDefinition Width="9*"></ColumnDefinition>
+                                        <ColumnDefinition Width="9*"></ColumnDefinition>
+                                        <ColumnDefinition Width="9*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="{Binding CompanyName}" Grid.Row="0" Grid.Column="0" FontAttributes="Bold" FontSize="16"/>
+                                    <Label Text="{Binding CustomerCode}" Grid.Row="0" Grid.Column="1" FontSize="15"/>
+                                    <Label Text="{Binding CreatedDate}" Grid.Row="0" Grid.Column="2" FontSize="15"/>
+                                    <Label Text="{Binding FinalizedDateString}" Grid.Row="0" Grid.Column="3" FontSize="15"/>
+                                    <Label Text="{Binding Status}" Grid.Row="0" Grid.Column="4" FontSize="15"/>
+                                    <Label Text="{Binding IsSynchronizedString}" Grid.Row="0" Grid.Column="5" FontSize="15"/>
+                                    <Label Text="{Binding Type}" Grid.Row="0" Grid.Column="6" FontSize="15"/>
+                                    <Label Text="{Binding NetTotal}" Grid.Row="0" Grid.Column="7" FontSize="15"/>
+                                    <Label Text="{Binding GrossTotal}" Grid.Row="0" Grid.Column="8" FontSize="15"/>
+                                    <Label Text="{Binding Discount}" Grid.Row="0" Grid.Column="9" FontSize="15"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ITS.WRM.SFA.Droid.Pages.DocumentItemsPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms">
+    <ContentPage.Content>
+
+        <StackLayout
+            Padding="0"
+            BackgroundColor="White"
+            HorizontalOptions="FillAndExpand"
+            Spacing="0"
+            VerticalOptions="FillAndExpand">
+            <StackLayout
+                x:Name="lblDetailCustomer"
+                BackgroundColor="White"
+                HeightRequest="70"
+                HorizontalOptions="FillAndExpand"
+                Spacing="2"
+                VerticalOptions="Center">
+                <Label
+                    x:Name="lblOrderForm"
+                    FontAttributes="Bold"
+                    FontSize="26"
+                    HorizontalOptions="Center"
+                    Text=""
+                    VerticalOptions="Center"
+                    VerticalTextAlignment="Center" />
+            </StackLayout>
+            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="140" />
+                    <RowDefinition Height="7*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <StackLayout
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Margin="0"
+                    Padding="0"
+                    HorizontalOptions="FillAndExpand"
+                    Spacing="0"
+                    VerticalOptions="FillAndExpand">
+                    <Grid
+                        Margin="0"
+                        Padding="0"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*" />
+                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="2*" />
+                        </Grid.ColumnDefinitions>
+                        <SearchBar
+                            x:Name="srchBarcode"
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Margin="10,0,0,0"
+                            Focused="BarcodeFocused"
+                            HeightRequest="40"
+                            HorizontalOptions="FillAndExpand"
+                            SearchButtonPressed="SearchBarcodeByKey"
+                            Text="{Binding Filter}"
+                            Unfocused="BarcodeUnFocused" />
+                        <SearchBar
+                            x:Name="srchDescription"
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Margin="10,0,0,0"
+                            Focused="DescriptionFocused"
+                            HeightRequest="40"
+                            HorizontalOptions="FillAndExpand"
+                            SearchButtonPressed="SearchItemByKey"
+                            Text="{Binding Filter}"
+                            Unfocused="DescriptionUnFocused" />
+                        <controls:ImageButton
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Margin="10,0,0,0"
+                            BackgroundColor="#01abdf"
+                            Clicked="btnSearchItem"
+                            FontSize="15"
+                            HeightRequest="50"
+                            HorizontalOptions="FillAndExpand"
+                            Image="search.png"
+                            TextColor="#ffffff"
+                            VerticalOptions="FillAndExpand" />
+                        <controls:ImageButton
+                            x:Name="btnInsert"
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="10,0,0,0"
+                            BackgroundColor="#01abdf"
+                            Clicked="OnInsert"
+                            FontSize="15"
+                            HeightRequest="50"
+                            HorizontalOptions="FillAndExpand"
+                            TextColor="#ffffff"
+                            VerticalOptions="FillAndExpand" />
+                        <Label
+                            Grid.Row="0"
+                            Grid.Column="2"
+                            Margin="0,0,0,0"
+                            FontSize="14"
+                            YAlign="Center" />
+                        <Label
+                            Grid.Row="1"
+                            Grid.Column="2"
+                            Margin="0,0,0,0"
+                            FontSize="14"
+                            YAlign="Center" />
+                    </Grid>
+                </StackLayout>
+                <StackLayout
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand">
+                    <StackLayout
+                        Padding="0"
+                        BackgroundColor="#474a4f"
+                        HeightRequest="50"
+                        Spacing="0">
+                        <Label
+                            x:Name="SearchHeader"
+                            FontSize="18"
+                            HeightRequest="45"
+                            TextColor="#ffffff"
+                            VerticalTextAlignment="Center" />
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <ListView
+                            x:Name="ItemDetailsListView"
+                            HorizontalOptions="FillAndExpand"
+                            RowHeight="100"
+                            SeparatorColor="#008dda"
+                            SeparatorVisibility="Default"
+                            VerticalOptions="FillAndExpand">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <ViewCell.ContextActions>
+                                            <MenuItem
+                                                Clicked="EditItem"
+                                                CommandParameter="{Binding Oid}"
+                                                Icon="edit2.png"
+                                                Text="edit." />
+                                            <MenuItem
+                                                Clicked="DeleteItem"
+                                                CommandParameter="{Binding Oid}"
+                                                Icon="delete.png" />
+                                        </ViewCell.ContextActions>
+                                        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="3*" />
+                                                <RowDefinition Height="2*" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="15*" />
+                                                <ColumnDefinition Width="26*" />
+                                                <ColumnDefinition Width="11*" />
+                                                <ColumnDefinition Width="28*" />
+                                                <ColumnDefinition Width="21*" />
+                                            </Grid.ColumnDefinitions>
+
+                                            <Label
+                                                Grid.Row="0"
+                                                Grid.Column="0"
+                                                Margin="3,0,0,0"
+                                                FontAttributes="Bold"
+                                                FontSize="14"
+                                                Text="{Binding CodeDescr}"
+                                                YAlign="Center" />
+                                            <Label
+                                                Grid.Row="1"
+                                                Grid.Column="0"
+                                                Margin="3,0,0,0"
+                                                FontSize="13"
+                                                Text="{Binding TotalVatAmountDescr}"
+                                                YAlign="Center" />
+
+                                            <Label
+                                                Grid.Row="0"
+                                                Grid.Column="1"
+                                                FontAttributes="Bold"
+                                                FontSize="14"
+                                                LineBreakMode="TailTruncation"
+                                                Text="{Binding NameDescr}"
+                                                YAlign="Center" />
+                                            <Label
+                                                Grid.Row="1"
+                                                Grid.Column="1"
+                                                FontSize="13"
+                                                Text="{Binding DiscountDesc}"
+                                                YAlign="Center" />
+
+                                            <Label
+                                                Grid.Row="0"
+                                                Grid.Column="2"
+                                                FontAttributes="Bold"
+                                                FontSize="14"
+                                                Text="{Binding QtyDescr}"
+                                                XAlign="Center"
+                                                YAlign="Start" />
+
+                                            <Label
+                                                Grid.Row="1"
+                                                Grid.Column="2"
+                                                FontAttributes="Bold"
+                                                FontSize="14"
+                                                Text="{Binding PackingQtyDescr}"
+                                                XAlign="Center"
+                                                YAlign="Start" />
+
+
+
+                                            <Label
+                                                Grid.Row="0"
+                                                Grid.Column="3"
+                                                FontAttributes="Bold"
+                                                FontSize="14"
+                                                Text="{Binding UnitPriceDescrWithoutvat}"
+                                                XAlign="End"
+                                                YAlign="Center" />
+                                            <Label
+                                                Grid.Row="1"
+                                                Grid.Column="3"
+                                                FontAttributes="Bold"
+                                                FontSize="14"
+                                                Text="{Binding GrossTotalDescrWithoutVat}"
+                                                XAlign="End"
+                                                YAlign="Center" />
+
+                                            <Label
+                                                Grid.Row="0"
+                                                Grid.Column="4"
+                                                Margin="0,0,2,0"
+                                                FontAttributes="Bold"
+                                                FontSize="14"
+                                                Text="{Binding UnitPriceDescr}"
+                                                XAlign="End"
+                                                YAlign="Center" />
+                                            <Label
+                                                Grid.Row="1"
+                                                Grid.Column="4"
+                                                Margin="0,0,2,0"
+                                                FontAttributes="Bold"
+                                                FontSize="14"
+                                                Text="{Binding GrossTotalDescr}"
+                                                XAlign="End"
+                                                YAlign="Center" />
+                                        </Grid>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+        <!--</ScrollView>-->
+    </ContentPage.Content>
+</ContentPage>

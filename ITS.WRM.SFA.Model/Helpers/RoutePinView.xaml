@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<StackLayout
+    x:Class="ITS.WRM.SFA.Model.Helpers.RoutePinView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    AnchorX="0.5"
+    AnchorY="1.0"
+    HeightRequest="49"
+    WidthRequest="39">
+    <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+        <Image
+            AbsoluteLayout.LayoutBounds="0, 0, 39, 49"
+            AbsoluteLayout.LayoutFlags="None"
+            Source="{Binding ImageName}" />
+
+        <Label
+            AbsoluteLayout.LayoutBounds="8, 10, 22, 17"
+            AbsoluteLayout.LayoutFlags="None"
+            BackgroundColor="{Binding BackColor}"
+            FontAttributes="Bold"
+            FontSize="11"
+            HeightRequest="60"
+            HorizontalTextAlignment="Center"
+            Text="{Binding Display}"
+            TextColor="{Binding Color}"
+            WidthRequest="100" />
+
+    </AbsoluteLayout>
+</StackLayout>

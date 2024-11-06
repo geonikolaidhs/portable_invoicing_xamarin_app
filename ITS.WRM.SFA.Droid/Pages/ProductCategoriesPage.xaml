@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             x:Class="ITS.WRM.SFA.Droid.Pages.ProductCategoriesPage">
+
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <!--LAYOUT WRAPPER-->
+            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  BackgroundColor="White"  Spacing="0" AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                     AbsoluteLayout.LayoutFlags="All">
+                <Grid x:Name="PageGrid" x:Uid="PageGrid2" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="White">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <!--LEFT PANEL - FILTERS & CATEGORIES-->
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="{Binding FirstColumn}"/>
+                        <ColumnDefinition Width="{Binding SecondColumn}"/>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout Orientation="Vertical" Grid.Row="0" Spacing="0" Padding="0" x:Name="FilterPanelStack" >
+                        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" x:Name="FilterPanelGrid" RowSpacing="0" ColumnSpacing="0">
+                            <Grid.RowDefinitions >
+                                <RowDefinition Height="2*"/>
+                                <RowDefinition Height="5*"/>
+                                <RowDefinition Height="8*"/>
+                            </Grid.RowDefinitions>
+                            <StackLayout Grid.Row="0"  Spacing="0" >
+                                <Button VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" x:Name="btnCategoryParth" BackgroundColor="#01abdf" TextColor="WhiteSmoke" Text="" Clicked="OnBackCategory" />
+                            </StackLayout>
+                            <!--CATEGORIES-->
+                            <StackLayout  Spacing="0" Padding="0" Orientation="Vertical" Grid.Row="1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  BackgroundColor="#474a4f">
+                                <ListView  x:Name="CategoryList"  ItemTapped="OnCategoryTap" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" >
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate >
+                                            <ViewCell>
+                                                <Grid >
+                                                    <Grid.RowDefinitions >
+                                                        <RowDefinition Height="*"></RowDefinition>
+                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Label TextColor="#e95420" YAlign="Center"  x:Name="CategoryDescr"  Text="{Binding Description}"/>
+                                                </Grid>
+                                            </ViewCell>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </StackLayout>
+                            <!--FILTERS-->
+                            <StackLayout Grid.Row="2" BackgroundColor="#000000" Spacing="0" Padding="0">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <!--SWITCH ACTIVE ITEMS-->
+                                    <Label YAlign="Center" x:Name ="lblSwitch" TextColor="WhiteSmoke" Grid.Row="0" Grid.Column="0" FontSize="15" HeightRequest="55"/>
+                                    <Switch x:Name="switchActiveItem" IsToggled="True" Grid.Row="0" Grid.Column="1" HorizontalOptions="End"  VerticalOptions="End"/>
+                                    <!--SWITCH ALL CATEGORIES-->
+                                    <Label YAlign="Center" x:Name ="lblSearchAll" TextColor="WhiteSmoke" Grid.Row="1" Grid.Column="0" FontSize="15" HeightRequest="55"/>
+                                    <Switch x:Name="switchSearchAll" IsToggled="True" Grid.Row="1" Grid.Column="1"  />
+                                    <!--SWITCH ONLY ITEMS WITH STOCK-->
+                                    <Label YAlign="Center" x:Name ="lblOnlyStockItems" TextColor="WhiteSmoke" Grid.Row="2" Grid.Column="0" FontSize="15" HeightRequest="55"/>
+                                    <Switch x:Name="switchOnlyStockItems" IsToggled="True" Grid.Row="2" Grid.Column="1"  />
+                                    <!--DATEPICKER CREATED ON-->
+                                    <Label x:Name="lblDateInserFrom" Grid.Row="3" Grid.Column="0" TextColor="WhiteSmoke" FontSize="15" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" />
+                                    <Switch x:Name="switcDateFromActive" Grid.Row="4" Grid.Column="1" HorizontalOptions="End" VerticalOptions="End" />
+                                    <DatePicker x:Name="pckDateInsertFrom" TextColor="WhiteSmoke" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" Grid.Row="4" Grid.Column="0"  FontSize="15">
+                                        <DatePicker.Format>dd-MM-yyyy</DatePicker.Format>
+                                    </DatePicker>
+                                    <!--DATEPICKER UPDATED ON-->
+                                    <Label  x:Name="lblDateUpdatedOn" Grid.Row="5" Grid.Column="0" TextColor="WhiteSmoke" FontSize="15" HeightRequest="55"/>
+                                    <Switch x:Name="switchUpdatedActive" Grid.Row="6" Grid.Column="1"  HorizontalOptions="End" VerticalOptions="End" />
+                                    <DatePicker x:Name="pckDateUpdated" TextColor="WhiteSmoke" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" Grid.Row="6" Grid.Column="0" FontSize="15">
+                                        <DatePicker.Format>dd-MM-yyyy</DatePicker.Format>
+                                    </DatePicker>
+                                </Grid>
+                            </StackLayout>
+                        </Grid>
+                    </StackLayout>
+
+                    <!--RIGHT PANEL MAIN WRAPPER-->
+                    <StackLayout Grid.Row="0" Grid.Column="1"  Spacing="0" Padding="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" >
+
+                        <Grid>
+                            <!--TITLE - FILTER_CHECKBOX-->
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="65"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="33*"/>
+                                <ColumnDefinition Width="33*"/>
+                                <ColumnDefinition Width="33*"/>
+                            </Grid.ColumnDefinitions>
+                            <controls:CheckBox  Grid.Column="0" Grid.Row="0" x:Name="CheckBoxFilterPanel" Checked="True" CheckedText="Filters ON" UncheckedText="Filters Off" CheckedChanged="OnCheckedChanged" />
+                            <Label Grid.Column="1" Grid.Row="0" x:Name="Header" Text=""  FontSize="26" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold"  />
+                            <Label Grid.Column="2" Grid.Row="0" x:Name="lblCategory" Text="" FontSize="Medium" />
+                        </Grid>
+                        <Grid >
+                            <!--SEARCHBARS & BUTTONS-->
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="70*"/>
+                                <ColumnDefinition Width="30*"/>
+                            </Grid.ColumnDefinitions>
+                            <SearchBar x:Name="BarcodeInput" Grid.Row="1" Grid.Column="0" Unfocused="OnBarcodeInputUnFocused" Focused="OnBarcodeInputFocused" SearchButtonPressed="SearchBarcodeByKeyboard" />
+                            <SearchBar x:Name="DescriptionInput" Grid.Row="2" Grid.Column="0" Unfocused="OnDescriptionInputUnFocused" Focused="OnDescriptionInputFocused" SearchButtonPressed="SearchDescriptionByKeyboard" />
+                            <controls:ImageButton  BackgroundColor="#01abdf" Grid.Row="0" Grid.Column="1" TextColor="WhiteSmoke" HeightRequest="40" WidthRequest="150" Image="search.png"  Clicked="btnSearchItem"/>
+                        </Grid>
+
+
+                        <!--SEARCH RESULTS-->
+                        <StackLayout HorizontalOptions="FillAndExpand" BackgroundColor="#474a4f" HeightRequest="70" Padding="0" Spacing="0" Margin="0,0,0,0">
+                            <Label YAlign="Center" XAlign="Start" FontAttributes="Bold" FontSize="16" x:Name="SearchHeader" TextColor="WhiteSmoke"  VerticalTextAlignment="Center" HeightRequest="70"  HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+                        <!--ITEM LISTVIEW HEADER-->
+                        <StackLayout  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0" Spacing="0" Margin="0,0,0,0">
+                            <Grid BackgroundColor="#474a4f" Padding="0" Margin="0,0,0,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50*"></ColumnDefinition>
+                                    <ColumnDefinition Width="20*"></ColumnDefinition>
+                                    <ColumnDefinition Width="20*"></ColumnDefinition>
+                                    <ColumnDefinition Width="5*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="50" />
+                                </Grid.RowDefinitions>
+                                <Label YAlign="Center" Margin="10,0,0,0" x:Name="lblDescription" Text=""  Grid.Row="0" Grid.Column="0" FontAttributes="Bold" FontSize="17" TextColor="WhiteSmoke" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                                <Label XAlign="Center" YAlign="Center"  x:Name="lblCode" Text=""  Grid.Row="0" Grid.Column="1" FontAttributes="Bold" FontSize="17" TextColor="WhiteSmoke" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                                <Label XAlign="End" YAlign="Center" x:Name="lblStock" Margin= "10,0,0,0"  Text="" Grid.Row="0" Grid.Column="2"  FontAttributes="Bold" FontSize="17" TextColor="WhiteSmoke" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                            </Grid>
+                        </StackLayout>
+                        <!--ITEM LISTVIEW -->
+                        <ListView  x:Name="ItemListView"  RowHeight="70" SeparatorVisibility="Default" SeparatorColor="#008dda">
+                            <ListView.ItemTemplate>
+                                <DataTemplate >
+                                    <ViewCell>
+                                        <ViewCell.ContextActions>
+                                            <MenuItem Clicked="OnMore" Text="Λεπτ." CommandParameter="{Binding Oid}" Icon="details.png" IsDestructive="false"/>
+                                        </ViewCell.ContextActions>
+                                        <Grid x:Name="SearchItemGrid" x:Uid="SearchItemGrid" RowSpacing="0">
+                                            <Grid.RowDefinitions >
+                                                <RowDefinition Height="3*"></RowDefinition>
+                                                <RowDefinition Height="2*"></RowDefinition>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="50*"></ColumnDefinition>
+                                                <ColumnDefinition Width="20*"></ColumnDefinition>
+                                                <ColumnDefinition Width="20*"></ColumnDefinition>
+                                                <ColumnDefinition Width="5*"></ColumnDefinition>
+
+                                            </Grid.ColumnDefinitions>
+                                            <Label  YAlign="Center" Margin="10,0,0,0" Text="{Binding DisplayDescription}" Grid.Row="0" Grid.Column="0" LineBreakMode="TailTruncation"
+                                                    FontAttributes="Bold" FontSize="15"  />
+                                            <Label  YAlign="Start" Margin="10,0,0,0" Text="{Binding VatDescription}" Grid.Row="1" Grid.Column="0" FontSize="13"/>
+
+                                            <Label  YAlign="Center"  XAlign="Center" Margin="0,0,0,0" Text="{Binding BarcodeCode}" Grid.Row="0" Grid.Column="1" FontSize="14" FontAttributes="Bold" />
+                                            <Label   YAlign="Start" XAlign="Center" Margin="0,0,0,0" Text="{Binding MeasurementDescription}" Grid.Row="1" Grid.Column="1" FontSize="13"/>
+
+                                            <Label  YAlign="End" XAlign="End" Margin="0,0,0,0"  Text="{Binding DisplayStock}" Grid.Row="0" Grid.Column="2" FontSize="16" FontAttributes="Bold" />
+
+                                        </Grid>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

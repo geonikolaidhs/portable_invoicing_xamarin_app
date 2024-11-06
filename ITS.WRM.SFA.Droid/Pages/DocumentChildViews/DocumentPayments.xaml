@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ITS.WRM.SFA.Droid.Pages.DocumentChildViews.DocumentPayments">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="0" Padding="0" BackgroundColor="WhiteSmoke" >
+                <StackLayout x:Name="lblDetailCustomer" HeightRequest="80" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Spacing="10" BackgroundColor="WhiteSmoke">
+                    <Label x:Name="lblPaymentMethodsTitle" Text="" FontSize="26" HorizontalOptions="Center" FontAttributes="Bold" />
+                </StackLayout>
+                <StackLayout Spacing="10">
+                    <Grid >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40"></RowDefinition>
+                            <RowDefinition Height="40"></RowDefinition>
+                            <RowDefinition Height="40"></RowDefinition>
+                            <RowDefinition Height="40"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label x:Name="lblPaymentType" Grid.Row="0" Grid.Column="0"  YAlign="Center" HeightRequest="40" BackgroundColor="#01abdf"  FontSize="17" TextColor="WhiteSmoke" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                        <Picker x:Name="pckPaymentMethod" Grid.Row="0" Grid.Column="1" VerticalOptions="Center" SelectedIndex="0"  FontSize="17"/>
+
+                        <BoxView Grid.Row="1" Grid.Column="1" BackgroundColor="#bfbcbc" HeightRequest="1" VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+                        <Label x:Name="lblTotalAmount" Grid.Row="1" Grid.Column="0" YAlign="Center" HeightRequest="40" BackgroundColor="#01abdf"  FontSize="17" TextColor="WhiteSmoke" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                        <Label  x:Name="lblTotalAmountValue" Grid.Row="1" Grid.Column="1"  HeightRequest="40" FontSize="17" BackgroundColor="#ecebeb" />
+
+                        <BoxView Grid.Row="2" Grid.Column="1" BackgroundColor="#bfbcbc" HeightRequest="1" VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+                        <Label x:Name="lblPaymentAmount" Grid.Row="2" Grid.Column="0" YAlign="Center" HeightRequest="40" BackgroundColor="#01abdf"  FontSize="17" TextColor="WhiteSmoke" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                        <Entry Focused="AmountFocused" Unfocused="AmountUnFocused"  x:Name="txtAmount" Grid.Row="2" Grid.Column="1" Keyboard="Numeric" HeightRequest="40" FontSize="17"/>
+
+                        <BoxView Grid.Row="3" Grid.Column="1" BackgroundColor="#bfbcbc" HeightRequest="1" VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+                        <Label x:Name="lblBalance" Grid.Row="3" Grid.Column="0" YAlign="Center" HeightRequest="40" BackgroundColor="#01abdf"  FontSize="17" TextColor="WhiteSmoke" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                        <Label x:Name="lblBalanceValue" Grid.Row="3" Grid.Column="1" HeightRequest="40" FontSize="17"/>
+                    </Grid>
+                </StackLayout>
+                <StackLayout Margin="10,10,10,10" Padding="10,10,10,10" BackgroundColor="AliceBlue">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="55"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Button  Margin="5,5,5,5" WidthRequest="250" HeightRequest="40" x:Name="btnRemainingAmount" BackgroundColor="#2196F3" Clicked="RecaltulateAmount" TextColor="WhiteSmoke" FontSize="16" Grid.Row="0" Grid.Column="0"/>
+                        <Button Margin="5,5,5,5" WidthRequest="250" HeightRequest="40" x:Name="btnSave" BackgroundColor="#2196F3" Clicked="SavePayment" TextColor="WhiteSmoke" FontSize="16" Grid.Row="0" Grid.Column="1"/>
+                    </Grid>
+                </StackLayout>
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Spacing="10" >
+                    <ListView x:Name="DocumentPaymentListView"  RowHeight="50" SeparatorVisibility="Default" SeparatorColor="#008dda">
+                        <ListView.Header>
+                            <Grid BackgroundColor="#474a4f">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="40*"></ColumnDefinition>
+                                    <ColumnDefinition Width="20*"></ColumnDefinition>
+                                    <ColumnDefinition Width="40*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="50" />
+                                </Grid.RowDefinitions>
+                                <Label x:Name="lblPaymentName" FontSize="18"  Text="" Grid.Row="0" Grid.Column="0" FontAttributes="Bold" TextColor="WhiteSmoke" />
+                                <Label XAlign="End" x:Name="lblPaymentAmountDescr" FontSize="18" Text="" Grid.Row="0" Grid.Column="1" FontAttributes="Bold" TextColor="WhiteSmoke" />
+                                <Label XAlign="End" x:Name="emptyLbl" Text="" FontSize="18" Grid.Row="0" Grid.Column="2" FontAttributes="Bold" TextColor="WhiteSmoke" />
+                            </Grid>
+                        </ListView.Header>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <ViewCell.ContextActions>
+                                        <MenuItem Clicked="RemovePayment" Text="Λεπτ." CommandParameter="{Binding Oid}" Icon ="delete.png"/>
+                                    </ViewCell.ContextActions>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="40*"></ColumnDefinition>
+                                            <ColumnDefinition Width="20*"></ColumnDefinition>
+                                            <ColumnDefinition Width="40*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Label FontSize="17" Text="{Binding PaymentMethod.Description}" Grid.Row="0" Grid.Column="0" />
+                                        <Label XAlign="End" FontSize="17" Text="{Binding DisplayAmount}" Grid.Row="0" Grid.Column="1"/>
+                                        <Label XAlign="End" Grid.Row="0" Grid.Column="2"/>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace  ITS.WRM.SFA.Model.Interface
+{
+    public interface IDocumentPayment
+    {
+        decimal Amount { get; set; }
+        string PaymentMethodCode { get; set; }
+        IDocumentHeader DocumentHeader { get; set; }
+        IPaymentMethod PaymentMethod { get; set; }
+        Guid DocumentHeaderOid { get; set; }
+        ITransactionCoupon TransactionCoupon { get; set; }
+    }
+}

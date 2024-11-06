@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ITS.WRM.SFA.Droid.Pages.LoginPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout VerticalOptions="Fill" BackgroundColor="WhiteSmoke">
+                <StackLayout VerticalOptions="CenterAndExpand">
+                    <Image VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand" Source="wrm.png" />
+
+                    <Entry HeightRequest="50" FontSize="18" Focused="UsernameFocused" Unfocused="UsernameUnFocused" x:Name="Username" Placeholder=""  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+                    <Entry HeightRequest="50" FontSize="18" Focused="PasswordFocused" Unfocused="PasswordUnFocused" x:Name="password" Placeholder="" IsPassword="true" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+                    <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="WhiteSmoke" HeightRequest="30" Spacing="10" >
+
+                    </StackLayout>
+                    <Button x:Name="btnLogin"  BackgroundColor="#01abdf" TextColor="WhiteSmoke" Image="login1.png" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Clicked="OnButtonClickedLogin"/>
+                    <Button  x:Name="btnSettings" BackgroundColor="#01abdf" VerticalOptions="FillAndExpand" TextColor="WhiteSmoke" HorizontalOptions="FillAndExpand" Image="settings12.png" Clicked="OnSettings"/>
+                </StackLayout>
+                <StackLayout VerticalOptions="End">
+
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

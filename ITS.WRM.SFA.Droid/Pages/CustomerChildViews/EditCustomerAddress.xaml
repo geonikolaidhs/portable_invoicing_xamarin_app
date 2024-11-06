@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ITS.WRM.SFA.Droid.Pages.EditCustomerAddress"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Content>
+
+        <!--  Edit ADDRESS STACK  -->
+        <StackLayout
+            x:Name="AddressTypeStack"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand">
+            <StackLayout
+                BackgroundColor="#474a4f"
+                HeightRequest="60"
+                HorizontalOptions="FillAndExpand"
+                Spacing="0"
+                VerticalOptions="Start">
+                <Label
+                    x:Name="lblEditAddress"
+                    FontAttributes="Bold"
+                    FontSize="26"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    TextColor="#FFFFFF"
+                    VerticalOptions="Center"
+                    VerticalTextAlignment="Center" />
+            </StackLayout>
+
+            <Grid
+                Padding="0"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30*" />
+                    <RowDefinition Height="45*" />
+                    <RowDefinition Height="130" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100*" />
+                </Grid.ColumnDefinitions>
+
+
+                <StackLayout
+                    x:Name="AddressGridStack"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand">
+                    <Grid
+                        x:Name="AddressTypeGrid"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20*" />
+                            <ColumnDefinition Width="80*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Label
+                            x:Name="lblStreetAddress"
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Margin="10,0,0,0"
+                            FontAttributes="Bold"
+                            FontSize="17"
+                            Text="" />
+                        <Entry
+                            x:Name="StreetAddress"
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Focused="StreetAddressFocused"
+                            FontSize="17"
+                            Unfocused="StreetAddressUnFocused" />
+
+                        <Label
+                            x:Name="lblCity"
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Margin="10,0,0,0"
+                            FontAttributes="Bold"
+                            FontSize="17"
+                            Text="" />
+                        <Entry
+                            x:Name="NewCity"
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Focused="NewCityFocused"
+                            FontSize="17"
+                            Unfocused="NewCityUnFocused" />
+
+                        <Label
+                            x:Name="lblPostCode"
+                            Grid.Row="2"
+                            Grid.Column="0"
+                            Margin="10,0,0,0"
+                            FontAttributes="Bold"
+                            FontSize="17"
+                            Text="" />
+                        <Entry
+                            x:Name="NewPostCode"
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            Focused="PostcodeFocused"
+                            FontSize="17"
+                            Unfocused="PostcodeUnFocused" />
+
+                        <Label
+                            x:Name="lblAddressType"
+                            Grid.Row="3"
+                            Grid.Column="0"
+                            Margin="10,0,0,0"
+                            FontAttributes="Bold"
+                            FontSize="17"
+                            Text="" />
+                        <Picker
+                            x:Name="pckAddressType"
+                            Grid.Row="3"
+                            Grid.Column="1"
+                            FontSize="17"
+                            SelectedIndex="0"
+                            VerticalOptions="Center" />
+
+                        <Label
+                            x:Name="lblVatLevel"
+                            Grid.Row="4"
+                            Grid.Column="0"
+                            Margin="10,0,0,0"
+                            FontAttributes="Bold"
+                            FontSize="17"
+                            Text="" />
+                        <Picker
+                            x:Name="pckVatLevel"
+                            Grid.Row="4"
+                            Grid.Column="1"
+                            FontSize="17"
+                            SelectedIndex="0"
+                            VerticalOptions="Center" />
+
+                        <Label
+                            x:Name="lblCoords"
+                            Grid.Row="5"
+                            Grid.Column="0"
+                            Margin="10,0,0,0"
+                            FontAttributes="Bold"
+                            FontSize="17"
+                            Text="" />
+                        <Label
+                            x:Name="Coords"
+                            Grid.Row="5"
+                            Grid.Column="1"
+                            FontAttributes="Bold"
+                            FontSize="17"
+                            Text="" />
+
+                    </Grid>
+                </StackLayout>
+
+                <StackLayout
+                    x:Name="MapStack"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand">
+                    <Grid
+                        Padding="0"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="80*" />
+                            <RowDefinition Height="55" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100*" />
+                        </Grid.ColumnDefinitions>
+                        <StackLayout
+                            x:Name="Map"
+                            Grid.Row="0"
+                            Grid.Column="0" />
+                        <StackLayout
+                            x:Name="MapButtons"
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Padding="10">
+                            <Grid
+                                ColumnSpacing="20"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="FillAndExpand">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="80*" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50*" />
+                                    <ColumnDefinition Width="50*" />
+                                    <ColumnDefinition Width="50*" />
+                                </Grid.ColumnDefinitions>
+                                <Button
+                                    x:Name="btnStreetType"
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    BackgroundColor="#6a6d80"
+                                    Clicked="HandleClicked"
+                                    FontSize="15"
+                                    HorizontalOptions="FillAndExpand"
+                                    Text="Street"
+                                    TextColor="#FFFFFF" />
+                                <Button
+                                    x:Name="btnHybridType"
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    BackgroundColor="#6a6d80"
+                                    Clicked="HandleClicked"
+                                    FontSize="15"
+                                    HorizontalOptions="FillAndExpand"
+                                    Text="Hybrid"
+                                    TextColor="#FFFFFF" />
+                                <Button
+                                    x:Name="btnSatelliteType"
+                                    Grid.Row="0"
+                                    Grid.Column="2"
+                                    BackgroundColor="#6a6d80"
+                                    Clicked="HandleClicked"
+                                    FontSize="15"
+                                    HorizontalOptions="FillAndExpand"
+                                    Text="Satellite"
+                                    TextColor="#FFFFFF" />
+                            </Grid>
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+
+
+                <StackLayout
+                    x:Name="ButtonStack"
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand">
+                    <Grid
+                        Padding="0"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30*" />
+                            <RowDefinition Height="30*" />
+                            <RowDefinition Height="10" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50*" />
+                            <ColumnDefinition Width="50*" />
+                        </Grid.ColumnDefinitions>
+                        <Button
+                            x:Name="btnSave"
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            BackgroundColor="#2196F3"
+                            Clicked="SaveAddress"
+                            FontSize="15"
+                            HorizontalOptions="FillAndExpand"
+                            TextColor="#FFFFFF" />
+                        <Button
+                            x:Name="btnGetLocation"
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            BackgroundColor="#2196F3"
+                            Clicked="GetLocation"
+                            FontSize="15"
+                            HorizontalOptions="FillAndExpand"
+                            TextColor="#FFFFFF" />
+                        <Button
+                            x:Name="btnSetLocation"
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            BackgroundColor="#2196F3"
+                            Clicked="SetLocation"
+                            FontSize="15"
+                            HorizontalOptions="FillAndExpand"
+                            TextColor="#FFFFFF" />
+                        <Button
+                            x:Name="btnHideAddressForm"
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            BackgroundColor="#2196F3"
+                            Clicked="HideAddressForm"
+                            FontSize="15"
+                            HorizontalOptions="FillAndExpand"
+                            TextColor="#FFFFFF" />
+                    </Grid>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

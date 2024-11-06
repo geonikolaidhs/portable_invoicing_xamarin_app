@@ -1,0 +1,316 @@
+{
+	"sessionToken": "r:416034387a27c9bbc7f9c65cd9043486",
+	"logins": [{
+		"adminMultiShops": [],
+		"permissions": {
+			"pages": {
+				"permissions": true,
+				"reports": true,
+				"topsellers": true,
+				"transactions": true,
+				"settings": true,
+				"tickets": true,
+				"receiptscan": true,
+				"shift": true,
+				"products": true,
+				"expenses": true,
+				"inventory": true,
+				"transform": true,
+				"finance": true
+			},
+			"partials": {
+				"keyboard": true,
+				"databasesync": true,
+				"uploadcsv": true,
+				"logout": true,
+				"returnproducts": true,
+				"creditCustomers": true,
+				"receiveCreditBalance": true
+			}
+		},
+		"lockPin": "511553",
+		"firstName": "Admin",
+		"position": "Administrator",
+		"superAdmin": true,
+		"createdAt": "2018-09-13T08:11:26.926Z",
+		"updatedAt": "2019-10-09T22:21:28.138Z",
+		"objectId": "amv4OUAFrD"
+	}, {
+		"permissions": {
+			"pages": {
+				"permissions": true,
+				"reports": true,
+				"topsellers": true,
+				"transactions": true,
+				"settings": true,
+				"tickets": true,
+				"receiptscan": true,
+				"finance": true,
+				"transform": true,
+				"expenses": true
+			},
+			"partials": {
+				"keyboard": true,
+				"databasesync": true,
+				"uploadcsv": true,
+				"logout": true,
+				"returnproducts": true,
+				"creditCustomers": false
+			}
+		},
+		"firstName": "Hilal",
+		"lastName": "vp",
+		"lockPin": "1234567",
+		"position": "cashier",
+		"email": "vphilal@gmail.com",
+		"mobileNumber": "056137197",
+		"createdAt": "2019-01-06T08:42:40.371Z",
+		"updatedAt": "2019-10-11T10:59:00.695Z",
+		"objectId": "HLx25xMiIO"
+	}, {
+		"permissions": {
+			"pages": {
+				"permissions": true,
+				"reports": true,
+				"topsellers": true,
+				"transactions": true,
+				"settings": true,
+				"tickets": true,
+				"receiptscan": true,
+				"shift": true,
+				"products": true,
+				"expenses": true,
+				"inventory": true,
+				"transform": true,
+				"finance": true
+			},
+			"partials": {
+				"keyboard": true,
+				"databasesync": true,
+				"uploadcsv": true,
+				"logout": true,
+				"returnproducts": true
+			}
+		},
+		"firstName": "Reddy",
+		"lastName": "sankuru",
+		"lockPin": "1234",
+		"position": "cashier 1",
+		"email": "",
+		"mobileNumber": "",
+		"createdAt": "2019-01-07T09:40:16.498Z",
+		"updatedAt": "2019-10-09T22:21:37.276Z",
+		"objectId": "b6vZfg76OO"
+	}, {
+		"permissions": {
+			"pages": {
+				"permissions": true,
+				"reports": true,
+				"topsellers": true,
+				"transactions": true,
+				"settings": true,
+				"tickets": true,
+				"receiptscan": true,
+				"shift": true,
+				"products": true,
+				"expenses": true,
+				"inventory": true,
+				"transform": true,
+				"finance": true
+			},
+			"partials": {
+				"keyboard": true,
+				"databasesync": true,
+				"uploadcsv": true,
+				"logout": true,
+				"returnproducts": true,
+				"creditCustomers": true,
+				"receiveCreditBalance": true
+			}
+		},
+		"firstName": "Hilal ",
+		"lastName": "Hilal",
+		"lockPin": "1234",
+		"position": "cashier2",
+		"email": "hilal@instashop.ae",
+		"mobileNumber": "0567137197",
+		"createdAt": "2019-01-07T13:34:27.265Z",
+		"updatedAt": "2019-10-09T22:21:40.829Z",
+		"objectId": "NmQSeHHEAc"
+	}],
+	"clientName": "Shop Training Client",
+	"currency": "AED",
+	"accountId": "YdkUZZrD9P",
+	"email": "undefined",
+	"alertsEmails": [],
+	"marketPlaceLogoUrl": "https://data.instashop.ae/parse/files/Q8p0cZi0Es6POXNb4tNqqP7NdzXsqKd9Mzzdkdq6/6a42f81e-e65d-40b5-bee1-a9f9dbefd5ad_client_logo_thumb_ining_client.png",
+	"clientId": "mLZZqRVU24",
+	"client": {
+		"city": {
+			"createdAt": "2016-08-16T15:14:51.961Z",
+			"updatedAt": "2019-01-05T12:25:31.871Z",
+			"name": "Dubai",
+			"enabled": true,
+			"country": {
+				"__type": "Pointer",
+				"className": "Countries",
+				"objectId": "ryFmc6ACd1"
+			},
+			"objectId": "MucutAkewM"
+		},
+		"country": {
+			"updatedAt": "2019-10-11T09:55:20.240Z",
+			"name": "United Arab Emirates",
+			"createdAt": "2016-08-16T15:17:03.189Z",
+			"countryCode": "AE",
+			"enabled": true,
+			"imageUrl": "https://data.instashop.ae/parse/files/Q8p0cZi0Es6POXNb4tNqqP7NdzXsqKd9Mzzdkdq6/376cd575-acb8-42e7-b867-32e0cfff0cc6_uae.png",
+			"priority": 1000,
+			"languageCode": "ar",
+			"currencyCode": "AED",
+			"changeOptions": [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],
+			"carrierCodes": ["du", "etisalat"],
+			"timezone": "Asia/Dubai",
+			"phonePrefix": "+971",
+			"instapointsMultiplier": 1,
+			"currencyMaxFractionDigits": 2,
+			"currencyRate": 1,
+			"showVAT": true,
+			"mapSettings": {
+				"defaultCamera": {
+					"bounds": {
+						"pointA": {
+							"latitude": 26.1885368,
+							"longitude": 56.1956679
+						},
+						"pointB": {
+							"latitude": 24.3592228,
+							"longitude": 54.3613388
+						},
+						"zoomLevel": 17
+					}
+				},
+				"GMSPlacesAutocomplete": {
+					"filter": "kGMSPlacesAutocompleteTypeFilterNoFilter",
+					"country": "AE"
+				}
+			},
+			"contactLanguage": "en",
+			"offset": 4,
+			"activePrayHours": false,
+			"prescriptionRequirements": {
+				"id_front": true,
+				"id_back": true,
+				"prescription": true,
+				"insurance_card": true
+			},
+			"fraudPriceThreshold": 450,
+			"imageFile": {
+				"__type": "File",
+				"name": "376cd575-acb8-42e7-b867-32e0cfff0cc6_uae.png",
+				"url": "https://data.instashop.ae/parse/files/Q8p0cZi0Es6POXNb4tNqqP7NdzXsqKd9Mzzdkdq6/376cd575-acb8-42e7-b867-32e0cfff0cc6_uae.png"
+			},
+			"verifiedCallerId": "+97338242171",
+			"maximumAdditionalPurchasePrice": 200,
+			"sampleLicensePlate": "J-12345",
+			"activeRamadanHours": false,
+			"tips": {
+				"options": [3, 5, 7],
+				"customRange": {
+					"min": 2,
+					"max": 100,
+					"step": 1
+				}
+			},
+			"categoriesFraudPriceThresholds": {
+				"G2fSV6eOTS": {
+					"name": "Tobacco",
+					"threshold": 450
+				},
+				"IZGhVKE3ux": {
+					"name": "Prepaid Cards",
+					"threshold": 450
+				}
+			},
+			"smsVerificationCallerId": "+13085351932",
+			"topCarMakers": {
+				"__type": "Relation",
+				"className": "CarMakers"
+			},
+			"objectId": "ryFmc6ACd1"
+		},
+		"closed": false,
+		"contactInfo": {
+			"address": "Swiss Tower, JLT",
+			"email": "contact@instashop.ae",
+			"phone": "+9715",
+			"mobile": ""
+		},
+		"currency": "AED",
+		"identifier": "ShopTrainingClient",
+		"imageUrl": "https://data.instashop.ae/parse/files/Q8p0cZi0Es6POXNb4tNqqP7NdzXsqKd9Mzzdkdq6/20f1f460-7d33-4d9e-a2b8-60d6bc39a873_client_thumbnail_source_c42fdd7b-0f0f-4a32-b56b-ca20e5a3ddcf_source.jpg",
+		"marketPlaceLogoUrl": "https://data.instashop.ae/parse/files/Q8p0cZi0Es6POXNb4tNqqP7NdzXsqKd9Mzzdkdq6/6a42f81e-e65d-40b5-bee1-a9f9dbefd5ad_client_logo_thumb_ining_client.png",
+		"name": "Shop Training Client",
+		"objectId": "mLZZqRVU24",
+		"productsStats": [{
+			"occ": 4592,
+			"en": 4436,
+			"dis": 156,
+			"oos": 1,
+			"is": 4435,
+			"perRem": 156,
+			"date": "2019-10-11T22:20:00.162Z",
+			"allpr": 131791
+		}, {
+			"occ": 4592,
+			"en": 4436,
+			"dis": 156,
+			"oos": 1,
+			"is": 4435,
+			"perRem": 156,
+			"date": "2019-10-12T22:20:00.201Z",
+			"allpr": 131838
+		}, {
+			"occ": 4592,
+			"en": 4436,
+			"dis": 156,
+			"oos": 2,
+			"is": 4434,
+			"perRem": 156,
+			"date": "2019-10-13T22:20:00.241Z",
+			"allpr": 131998
+		}, {
+			"occ": 4599,
+			"en": 4443,
+			"dis": 156,
+			"oos": 3,
+			"is": 4440,
+			"perRem": 156,
+			"date": "2019-10-14T22:20:00.250Z",
+			"allpr": 132372
+		}, {
+			"occ": 4601,
+			"en": 4445,
+			"dis": 156,
+			"oos": 2,
+			"is": 4443,
+			"perRem": 156,
+			"date": "2019-10-15T22:20:00.244Z",
+			"allpr": 132900
+		}],
+		"supportedPaymentTypes": [],
+		"vat": {},
+		"siteNumber": "12345",
+		"embeddedBarcode": [{
+			"prefix": "9",
+			"size": 13,
+			"pluSize": 7,
+			"priceSize": 5
+		}, {
+			"prefix": "2",
+			"size": 12,
+			"pluSize": 6,
+			"priceSize": 5
+		}]
+	}
+}

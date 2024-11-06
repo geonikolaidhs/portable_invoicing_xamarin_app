@@ -1,0 +1,899 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ITS.WRM.SFA.Droid.Pages.DocumentChildViews.DocumentDetailPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout
+                BackgroundColor="White"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand">
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*" />
+                        <ColumnDefinition Width="7*" />
+                    </Grid.ColumnDefinitions>
+
+                    <StackLayout
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        BackgroundColor="#474a4f"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand">
+                        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <StackLayout BackgroundColor="#474a4f">
+                                <Button
+                                    x:Name="btnAddLine"
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    BackgroundColor="#2196F3"
+                                    Clicked="AddLineItem"
+                                    HorizontalOptions="FillAndExpand"
+                                    TextColor="#FFFFFF" />
+                                <Button
+                                    x:Name="btnRemovLine"
+                                    Grid.Row="1"
+                                    Grid.Column="0"
+                                    BackgroundColor="#2196F3"
+                                    Clicked="RemoveLineItem"
+                                    HorizontalOptions="FillAndExpand"
+                                    TextColor="#FFFFFF" />
+                                <Button
+                                    x:Name="btnCancelLine"
+                                    Grid.Row="2"
+                                    Grid.Column="0"
+                                    BackgroundColor="#2196F3"
+                                    Clicked="CancelLineItem"
+                                    HorizontalOptions="FillAndExpand"
+                                    TextColor="#FFFFFF" />
+                                <Button
+                                    x:Name="btnSaveAndClose"
+                                    Grid.Row="3"
+                                    Grid.Column="0"
+                                    BackgroundColor="#2196F3"
+                                    Clicked="SaveAndClose"
+                                    HorizontalOptions="FillAndExpand"
+                                    TextColor="#FFFFFF" />
+                                <Button
+                                    x:Name="btnRecalculate"
+                                    Grid.Row="4"
+                                    Grid.Column="0"
+                                    BackgroundColor="#2196F3"
+                                    Clicked="RecalculateItem"
+                                    HorizontalOptions="FillAndExpand"
+                                    TextColor="#FFFFFF" />
+                            </StackLayout>
+                        </Grid>
+                    </StackLayout>
+                    <StackLayout
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand">
+                        <Grid
+                            ColumnSpacing="0"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="FillAndExpand">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="43" />
+                                <RowDefinition Height="43" />
+                                <RowDefinition Height="43" />
+                                <RowDefinition Height="43" />
+                                <RowDefinition Height="43" />
+                                <RowDefinition Height="43" />
+                                <RowDefinition Height="43" />
+                                <RowDefinition Height="43" />
+                                <RowDefinition Height="43" />
+                                <RowDefinition Height="43" />
+                                <RowDefinition Height="43" />
+                                <RowDefinition Height="43" />
+                                <RowDefinition Height="43" />
+                                <RowDefinition Height="43" />
+                                <RowDefinition Height="43" />
+                                <RowDefinition Height="43" />
+                                <RowDefinition Height="43" />
+                                <RowDefinition Height="43" />
+                                <RowDefinition Height="43" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*" />
+                                <ColumnDefinition Width="8*" />
+                            </Grid.ColumnDefinitions>
+
+
+                            <Label
+                                x:Name="lblCode"
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                FontAttributes="Bold"
+                                FontSize="15"
+                                Text=""
+                                YAlign="Center" />
+                            <Label
+                                x:Name="lblCodeValue"
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                BackgroundColor="#dde1e2"
+                                FontSize="Medium"
+                                HorizontalOptions="FillAndExpand"
+                                Text=""
+                                TextColor="#393318"
+                                VerticalOptions="FillAndExpand"
+                                YAlign="Center" />
+                            <BoxView
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Margin="0,0,0,0"
+                                BackgroundColor="#a9afb1"
+                                HeightRequest="2"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="End" />
+                            <BoxView
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Margin="0,0,0,0"
+                                BackgroundColor="#a9afb1"
+                                HeightRequest="2"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="End" />
+                            <Label
+                                x:Name="lblBarccode"
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                FontAttributes="Bold"
+                                FontSize="15"
+                                Text=""
+                                YAlign="Center" />
+                            <Label
+                                x:Name="lblBarcodeValue"
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                BackgroundColor="#dde1e2"
+                                FontSize="Medium"
+                                HorizontalOptions="FillAndExpand"
+                                Text=""
+                                TextColor="#393318"
+                                VerticalOptions="FillAndExpand"
+                                YAlign="Center" />
+                            <BoxView
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Margin="0,0,0,0"
+                                BackgroundColor="#a9afb1"
+                                HeightRequest="2"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="End" />
+                            <BoxView
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Margin="0,0,0,0"
+                                BackgroundColor="#a9afb1"
+                                HeightRequest="2"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="End" />
+
+                            <Label
+                                x:Name="lblDescription"
+                                Grid.Row="2"
+                                Grid.Column="0"
+                                FontAttributes="Bold"
+                                FontSize="15"
+                                Text=""
+                                YAlign="Center" />
+                            <Label
+                                x:Name="lblDescriptionValue"
+                                Grid.Row="2"
+                                Grid.Column="1"
+                                BackgroundColor="#dde1e2"
+                                FontSize="Medium"
+                                HorizontalOptions="FillAndExpand"
+                                LineBreakMode="TailTruncation"
+                                Text=""
+                                TextColor="#393318"
+                                VerticalOptions="FillAndExpand"
+                                YAlign="Center" />
+                            <BoxView
+                                Grid.Row="2"
+                                Grid.Column="0"
+                                Margin="0,0,0,0"
+                                BackgroundColor="#a9afb1"
+                                HeightRequest="2"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="End" />
+                            <BoxView
+                                Grid.Row="2"
+                                Grid.Column="1"
+                                Margin="0,0,0,0"
+                                BackgroundColor="#a9afb1"
+                                HeightRequest="2"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="End" />
+
+
+                            <Label
+                                x:Name="lblMeasurement"
+                                Grid.Row="3"
+                                Grid.Column="0"
+                                FontAttributes="Bold"
+                                FontSize="15"
+                                Text=""
+                                YAlign="Center" />
+                            <Label
+                                x:Name="lblMeasurementValue"
+                                Grid.Row="3"
+                                Grid.Column="1"
+                                BackgroundColor="#dde1e2"
+                                FontSize="Medium"
+                                HorizontalOptions="FillAndExpand"
+                                Text=""
+                                TextColor="#393318"
+                                VerticalOptions="FillAndExpand"
+                                YAlign="Center" />
+                            <BoxView
+                                Grid.Row="3"
+                                Grid.Column="0"
+                                Margin="0,0,0,0"
+                                BackgroundColor="#a9afb1"
+                                HeightRequest="2"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="End" />
+                            <BoxView
+                                Grid.Row="3"
+                                Grid.Column="1"
+                                Margin="0,0,0,0"
+                                BackgroundColor="#a9afb1"
+                                HeightRequest="2"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="End" />
+
+
+                            <Label
+                                x:Name="lblVatCategory"
+                                Grid.Row="4"
+                                Grid.Column="0"
+                                FontAttributes="Bold"
+                                FontSize="15"
+                                Text=""
+                                YAlign="Center" />
+                            <Label
+                                x:Name="lblVatCategoryValue"
+                                Grid.Row="4"
+                                Grid.Column="1"
+                                BackgroundColor="#dde1e2"
+                                FontSize="Medium"
+                                HorizontalOptions="FillAndExpand"
+                                Text=""
+                                TextColor="#393318"
+                                VerticalOptions="FillAndExpand"
+                                YAlign="Center" />
+                            <BoxView
+                                Grid.Row="4"
+                                Grid.Column="0"
+                                Margin="0,0,0,0"
+                                BackgroundColor="#a9afb1"
+                                HeightRequest="2"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="End" />
+                            <BoxView
+                                Grid.Row="4"
+                                Grid.Column="1"
+                                Margin="0,0,0,0"
+                                BackgroundColor="#a9afb1"
+                                HeightRequest="2"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="End" />
+
+                            <Label
+                                x:Name="lblQty"
+                                Grid.Row="5"
+                                Grid.Column="0"
+                                FontAttributes="Bold"
+                                FontSize="15"
+                                Text=""
+                                VerticalTextAlignment="Center"
+                                YAlign="Center" />
+                            <StackLayout Grid.Row="5" Grid.Column="1">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="42" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*" />
+                                        <ColumnDefinition Width="60" />
+                                        <ColumnDefinition Width="1*" />
+                                        <ColumnDefinition Width="60" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label
+                                        Grid.Row="0"
+                                        Grid.Column="0"
+                                        YAlign="Center" />
+                                    <Entry
+                                        x:Name="txtQtyValue"
+                                        Grid.Row="0"
+                                        Grid.Column="2"
+                                        Focused="QtyValueFocused"
+                                        FontSize="Medium"
+                                        HorizontalOptions="FillAndExpand"
+                                        HorizontalTextAlignment="Center"
+                                        Keyboard="Numeric"
+                                        Text=""
+                                        TextChanged="OnQtyChanged"
+                                        Unfocused="QtyValueUnFocused" />
+                                    <Button
+                                        x:Name="btnRemoveQty"
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        BackgroundColor="#393318"
+                                        Clicked="RemoveQty"
+                                        FontSize="Medium"
+                                        Text="-"
+                                        TextColor="#FFFFFF" />
+                                    <Button
+                                        x:Name="btnAddQty"
+                                        Grid.Row="0"
+                                        Grid.Column="3"
+                                        BackgroundColor="#2196F3"
+                                        Clicked="AddQty"
+                                        Text="+"
+                                        TextColor="#FFFFFF" />
+                                </Grid>
+                            </StackLayout>
+                            <BoxView
+                                Grid.Row="5"
+                                Grid.Column="0"
+                                Margin="0,0,0,0"
+                                BackgroundColor="#a9afb1"
+                                HeightRequest="2"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="End" />
+                            <BoxView
+                                Grid.Row="5"
+                                Grid.Column="1"
+                                Margin="0,0,0,0"
+                                BackgroundColor="#a9afb1"
+                                HeightRequest="2"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="End" />
+                            <!--  ///  -->
+                            <Label
+                                x:Name="lblPacingQty"
+                                Grid.Row="6"
+                                Grid.Column="0"
+                                FontAttributes="Bold"
+                                FontSize="15"
+                                Text=""
+                                VerticalTextAlignment="Center"
+                                YAlign="Center" />
+                            <StackLayout Grid.Row="6" Grid.Column="1">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="42" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*" />
+                                        <ColumnDefinition Width="60" />
+                                        <ColumnDefinition Width="1*" />
+                                        <ColumnDefinition Width="60" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label
+                                        Grid.Row="0"
+                                        Grid.Column="0"
+                                        YAlign="Center" />
+                                    <Entry
+                                        x:Name="txtPackingQtyValue"
+                                        Grid.Row="0"
+                                        Grid.Column="2"
+                                        Focused="PackingQtyValueFocused"
+                                        FontSize="Medium"
+                                        HorizontalOptions="FillAndExpand"
+                                        HorizontalTextAlignment="Center"
+                                        Keyboard="Numeric"
+                                        Text=""
+                                        TextChanged="OnPackingQtyChanged"
+                                        Unfocused="PackingQtyValueUnFocused" />
+                                    <Button
+                                        x:Name="btnRemovePackingQty"
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        BackgroundColor="#393318"
+                                        Clicked="RemovePackingQty"
+                                        FontSize="Medium"
+                                        Text="-"
+                                        TextColor="#FFFFFF" />
+                                    <Button
+                                        x:Name="btnAddPackingQty"
+                                        Grid.Row="0"
+                                        Grid.Column="3"
+                                        BackgroundColor="#2196F3"
+                                        Clicked="AddPackingQty"
+                                        Text="+"
+                                        TextColor="#FFFFFF" />
+                                </Grid>
+                            </StackLayout>
+                            <BoxView
+                                Grid.Row="6"
+                                Grid.Column="0"
+                                Margin="0,0,0,0"
+                                BackgroundColor="#a9afb1"
+                                HeightRequest="2"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="End" />
+                            <BoxView
+                                Grid.Row="6"
+                                Grid.Column="1"
+                                Margin="0,0,0,0"
+                                BackgroundColor="#a9afb1"
+                                HeightRequest="2"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="End" />
+
+
+                            <!--  ///  -->
+                            <Label
+                                x:Name="lblPrice"
+                                Grid.Row="7"
+                                Grid.Column="0"
+                                FontAttributes="Bold"
+                                FontSize="15"
+                                Text=""
+                                YAlign="Center" />
+                            <Entry
+                                x:Name="txtPrice"
+                                Grid.Row="7"
+                                Grid.Column="1"
+                                Focused="OnPriceFocused"
+                                FontSize="Medium"
+                                HorizontalOptions="FillAndExpand"
+                                Keyboard="Numeric"
+                                Text=""
+                                TextChanged="OnPriceChange"
+                                TextColor="#393318"
+                                Unfocused="OnPriceUnFocused" />
+                            <BoxView
+                                Grid.Row="7"
+                                Grid.Column="0"
+                                Margin="0,0,0,0"
+                                BackgroundColor="#a9afb1"
+                                HeightRequest="2"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="End" />
+                            <BoxView
+                                Grid.Row="7"
+                                Grid.Column="1"
+                                Margin="0,0,0,0"
+                                BackgroundColor="#a9afb1"
+                                HeightRequest="2"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="End" />
+
+                            <Label
+                                x:Name="lblNetPrice"
+                                Grid.Row="8"
+                                Grid.Column="0"
+                                FontAttributes="Bold"
+                                FontSize="15"
+                                Text=""
+                                YAlign="Center" />
+                            <Entry
+                                x:Name="txtNetPrice"
+                                Grid.Row="8"
+                                Grid.Column="1"
+                                Focused="OnNetPriceFocused"
+                                FontSize="Medium"
+                                HorizontalOptions="FillAndExpand"
+                                Keyboard="Numeric"
+                                Text=""
+                                TextChanged="OnNetPriceChange"
+                                TextColor="#393318"
+                                Unfocused="OnNetPriceUnFocused" />
+                            <BoxView
+                                Grid.Row="8"
+                                Grid.Column="0"
+                                Margin="0,0,0,0"
+                                BackgroundColor="#a9afb1"
+                                HeightRequest="2"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="End" />
+                            <BoxView
+                                Grid.Row="8"
+                                Grid.Column="1"
+                                Margin="0,0,0,0"
+                                BackgroundColor="#a9afb1"
+                                HeightRequest="2"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="End" />
+
+                            <Label
+                                x:Name="LblPriceCatalogDiscountPercent"
+                                Grid.Row="9"
+                                Grid.Column="0"
+                                FontAttributes="Bold"
+                                FontSize="15"
+                                Text=""
+                                YAlign="Center" />
+                            <Label
+                                x:Name="LblPriceCatalogDiscountPercentValue"
+                                Grid.Row="9"
+                                Grid.Column="1"
+                                BackgroundColor="#dde1e2"
+                                FontSize="Medium"
+                                HorizontalOptions="FillAndExpand"
+                                Text=""
+                                TextColor="#393318"
+                                VerticalOptions="FillAndExpand"
+                                YAlign="Center" />
+
+                            <BoxView
+                                Grid.Row="9"
+                                Grid.Column="0"
+                                Margin="0,0,0,0"
+                                BackgroundColor="#a9afb1"
+                                HeightRequest="2"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="End" />
+                            <BoxView
+                                Grid.Row="9"
+                                Grid.Column="1"
+                                Margin="0,0,0,0"
+                                BackgroundColor="#a9afb1"
+                                HeightRequest="2"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="End" />
+
+                            <Label
+                                x:Name="LblPriceCatalogDiscountMoney"
+                                Grid.Row="10"
+                                Grid.Column="0"
+                                FontAttributes="Bold"
+                                FontSize="15"
+                                Text=""
+                                YAlign="Center" />
+                            <Label
+                                x:Name="LblPriceCatalogDiscountMoneyValue"
+                                Grid.Row="10"
+                                Grid.Column="1"
+                                BackgroundColor="#dde1e2"
+                                FontSize="Medium"
+                                HorizontalOptions="FillAndExpand"
+                                Text=""
+                                TextColor="#393318"
+                                VerticalOptions="FillAndExpand"
+                                YAlign="Center" />
+                            <BoxView
+                                Grid.Row="10"
+                                Grid.Column="0"
+                                Margin="0,0,0,0"
+                                BackgroundColor="#a9afb1"
+                                HeightRequest="2"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="End" />
+                            <BoxView
+                                Grid.Row="10"
+                                Grid.Column="1"
+                                Margin="0,0,0,0"
+                                BackgroundColor="#a9afb1"
+                                HeightRequest="2"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="End" />
+
+
+                            <Label
+                                x:Name="LblLineDiscountPercent"
+                                Grid.Row="11"
+                                Grid.Column="0"
+                                FontAttributes="Bold"
+                                FontSize="15"
+                                Text=""
+                                YAlign="Center" />
+                            <Entry
+                                x:Name="txtLineDiscountPercentValue"
+                                Grid.Row="11"
+                                Grid.Column="1"
+                                Focused="DiscountPercentValueFocused"
+                                FontSize="Medium"
+                                HorizontalOptions="FillAndExpand"
+                                Keyboard="Numeric"
+                                Text=""
+                                TextColor="#393318"
+                                Unfocused="DiscountPercentValueUnFocused" />
+                            <BoxView
+                                Grid.Row="11"
+                                Grid.Column="0"
+                                Margin="0,0,0,0"
+                                BackgroundColor="#a9afb1"
+                                HeightRequest="2"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="End" />
+                            <BoxView
+                                Grid.Row="11"
+                                Grid.Column="1"
+                                Margin="0,0,0,0"
+                                BackgroundColor="#a9afb1"
+                                HeightRequest="2"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="End" />
+
+
+                            <Label
+                                x:Name="LblLineDiscountMoney"
+                                Grid.Row="12"
+                                Grid.Column="0"
+                                FontAttributes="Bold"
+                                FontSize="15"
+                                Text=""
+                                YAlign="Center" />
+                            <Entry
+                                x:Name="txtLineDiscountMoneyValue"
+                                Grid.Row="12"
+                                Grid.Column="1"
+                                Focused="DiscountMoneyValueFocused"
+                                FontSize="Medium"
+                                HorizontalOptions="FillAndExpand"
+                                Keyboard="Numeric"
+                                Text=""
+                                TextColor="#393318"
+                                Unfocused="DiscountMoneyValueUnFocused" />
+                            <BoxView
+                                Grid.Row="12"
+                                Grid.Column="0"
+                                Margin="0,0,0,0"
+                                BackgroundColor="#a9afb1"
+                                HeightRequest="2"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="End" />
+                            <BoxView
+                                Grid.Row="12"
+                                Grid.Column="1"
+                                Margin="0,0,0,0"
+                                BackgroundColor="#a9afb1"
+                                HeightRequest="2"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="End" />
+
+
+                            <Label
+                                x:Name="LblNetTotal"
+                                Grid.Row="13"
+                                Grid.Column="0"
+                                FontAttributes="Bold"
+                                FontSize="15"
+                                Text=""
+                                YAlign="Center" />
+                            <Label
+                                x:Name="LblNetTotalValue"
+                                Grid.Row="13"
+                                Grid.Column="1"
+                                BackgroundColor="#dde1e2"
+                                FontSize="Medium"
+                                HorizontalOptions="FillAndExpand"
+                                Text=""
+                                TextColor="#393318"
+                                VerticalOptions="FillAndExpand"
+                                YAlign="Center" />
+
+                            <BoxView
+                                Grid.Row="13"
+                                Grid.Column="0"
+                                Margin="0,0,0,0"
+                                BackgroundColor="#a9afb1"
+                                HeightRequest="2"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="End" />
+                            <BoxView
+                                Grid.Row="13"
+                                Grid.Column="1"
+                                Margin="0,0,0,0"
+                                BackgroundColor="#a9afb1"
+                                HeightRequest="2"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="End" />
+
+                            <Label
+                                x:Name="LblTotalDiscountMoney"
+                                Grid.Row="14"
+                                Grid.Column="0"
+                                FontAttributes="Bold"
+                                FontSize="15"
+                                Text=""
+                                YAlign="Center" />
+                            <Label
+                                x:Name="LblTotalDiscountMoneyValue"
+                                Grid.Row="14"
+                                Grid.Column="1"
+                                BackgroundColor="#dde1e2"
+                                FontSize="Medium"
+                                HorizontalOptions="FillAndExpand"
+                                Text=""
+                                TextColor="#393318"
+                                VerticalOptions="FillAndExpand"
+                                YAlign="Center" />
+
+                            <BoxView
+                                Grid.Row="14"
+                                Grid.Column="0"
+                                Margin="0,0,0,0"
+                                BackgroundColor="#a9afb1"
+                                HeightRequest="2"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="End" />
+                            <BoxView
+                                Grid.Row="14"
+                                Grid.Column="1"
+                                Margin="0,0,0,0"
+                                BackgroundColor="#a9afb1"
+                                HeightRequest="2"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="End" />
+
+                            <Label
+                                x:Name="LblTotalAfterDiscount"
+                                Grid.Row="15"
+                                Grid.Column="0"
+                                FontAttributes="Bold"
+                                FontSize="15"
+                                Text=""
+                                YAlign="Center" />
+                            <Label
+                                x:Name="LblTotalAfterDiscountValue"
+                                Grid.Row="15"
+                                Grid.Column="1"
+                                BackgroundColor="#dde1e2"
+                                FontSize="Medium"
+                                HorizontalOptions="FillAndExpand"
+                                Text=""
+                                TextColor="#393318"
+                                VerticalOptions="FillAndExpand"
+                                YAlign="Center" />
+
+                            <BoxView
+                                Grid.Row="15"
+                                Grid.Column="0"
+                                Margin="0,0,0,0"
+                                BackgroundColor="#a9afb1"
+                                HeightRequest="2"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="End" />
+                            <BoxView
+                                Grid.Row="15"
+                                Grid.Column="1"
+                                Margin="0,0,0,0"
+                                BackgroundColor="#a9afb1"
+                                HeightRequest="2"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="End" />
+
+                            <Label
+                                x:Name="LblTotalVATAmount"
+                                Grid.Row="16"
+                                Grid.Column="0"
+                                FontAttributes="Bold"
+                                FontSize="15"
+                                Text=""
+                                YAlign="Center" />
+                            <Label
+                                x:Name="LblTotalVATAmountValue"
+                                Grid.Row="16"
+                                Grid.Column="1"
+                                BackgroundColor="#dde1e2"
+                                FontSize="Medium"
+                                HorizontalOptions="FillAndExpand"
+                                Text=""
+                                TextColor="#393318"
+                                VerticalOptions="FillAndExpand"
+                                YAlign="Center" />
+
+                            <BoxView
+                                Grid.Row="16"
+                                Grid.Column="0"
+                                Margin="0,0,0,0"
+                                BackgroundColor="#a9afb1"
+                                HeightRequest="2"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="End" />
+                            <BoxView
+                                Grid.Row="16"
+                                Grid.Column="1"
+                                Margin="0,0,0,0"
+                                BackgroundColor="#a9afb1"
+                                HeightRequest="2"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="End" />
+
+                            <Label
+                                x:Name="LblTotal"
+                                Grid.Row="17"
+                                Grid.Column="0"
+                                FontAttributes="Bold"
+                                FontSize="15"
+                                Text=""
+                                YAlign="Center" />
+                            <Label
+                                x:Name="LblTotalValue"
+                                Grid.Row="17"
+                                Grid.Column="1"
+                                BackgroundColor="#dde1e2"
+                                FontAttributes="Bold"
+                                FontSize="22"
+                                HorizontalOptions="FillAndExpand"
+                                Text=""
+                                TextColor="#393318"
+                                VerticalOptions="FillAndExpand"
+                                YAlign="Center" />
+                            <BoxView
+                                Grid.Row="17"
+                                Grid.Column="0"
+                                Margin="0,0,0,0"
+                                BackgroundColor="#a9afb1"
+                                HeightRequest="2"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="End" />
+                            <BoxView
+                                Grid.Row="17"
+                                Grid.Column="1"
+                                Margin="0,0,0,0"
+                                BackgroundColor="#a9afb1"
+                                HeightRequest="2"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="End" />
+
+
+                            <Label
+                                x:Name="LblRemarks"
+                                Grid.Row="18"
+                                Grid.Column="0"
+                                FontAttributes="Bold"
+                                FontSize="15"
+                                Text=""
+                                VerticalTextAlignment="Center"
+                                YAlign="Center" />
+                            <Entry
+                                x:Name="LblRemarksValue"
+                                Grid.Row="18"
+                                Grid.Column="1"
+                                Focused="RemarksFocused"
+                                FontSize="Medium"
+                                HorizontalOptions="FillAndExpand"
+                                Text=""
+                                TextColor="#393318"
+                                Unfocused="RemarksUnFocused"
+                                VerticalOptions="Center" />
+
+                            <BoxView
+                                Grid.Row="18"
+                                Grid.Column="0"
+                                Margin="0,0,0,0"
+                                BackgroundColor="#a9afb1"
+                                HeightRequest="2"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="End" />
+                            <BoxView
+                                Grid.Row="18"
+                                Grid.Column="1"
+                                Margin="0,0,0,0"
+                                BackgroundColor="#a9afb1"
+                                HeightRequest="2"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="End" />
+                        </Grid>
+
+
+                    </StackLayout>
+                </Grid>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             x:Class="ITS.WRM.SFA.Droid.Pages.TabItemPrice">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#FFFFFF">
+            <StackLayout x:Name="lblDetailCustomer" HeightRequest="100" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Spacing="10" BackgroundColor="#474a4f">
+                <Label x:Name="lblProduct" TextColor="WhiteSmoke" FontSize="28" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" />
+            </StackLayout>
+
+            <ListView x:Name="PriceCatalogListView" BackgroundColor="WhiteSmoke" SeparatorColor="#182f4c" SeparatorVisibility="Default" RowHeight="100">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="60*"></RowDefinition>
+                                    <RowDefinition Height="60*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="40*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="20*"></ColumnDefinition>
+                                    <ColumnDefinition Width="20*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <Label  Text="{Binding PriceCatalogDescription}" YAlign="Center" Grid.Row="0" Grid.Column="0" FontSize="15" FontAttributes="Bold" Margin="20,2,2,2"/>
+                                <Label  Text="{Binding Value}" Grid.Row="1" Grid.Column="0" YAlign="Start" FontSize="15" FontAttributes="Bold" Margin="20,2,2,2"/>
+
+                                <Label Text="" Grid.Row="0" Grid.Column="1"/>
+
+                                <Label Text="{Binding Createheader}" Grid.Row="0" Grid.Column="2" Margin="2,2,2,2"/>
+                                <Label Text="{Binding VatIncludedHeader}" Grid.Row="1" Grid.Column="2" Margin="2,2,2,2"/>
+
+                                <Label   Text="{Binding UpdateHeader}" Grid.Row="0" Grid.Column="3" Margin="2,2,2,2"/>
+                                <Label Text="{Binding IsActiveHeader}" Grid.Row="1" Grid.Column="3" Margin="2,2,2,2"/>
+
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

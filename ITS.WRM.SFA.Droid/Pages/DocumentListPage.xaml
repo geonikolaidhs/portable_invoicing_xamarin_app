@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             x:Class="ITS.WRM.SFA.Droid.Pages.DocumentListPage">
+    <ContentPage.Content>
+
+        <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" Spacing="1" Padding="1" BackgroundColor="White">
+            <StackLayout x:Name="lblDetailCustomer" HeightRequest="100" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Spacing="10" >
+                <Label  x:Name="lblOrderList"  FontSize="26" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" TextColor="#000000" />
+            </StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <!--<RowDefinition Height="Auto"></RowDefinition>-->
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10*"></ColumnDefinition>
+                    <ColumnDefinition Width="20*"></ColumnDefinition>
+                    <ColumnDefinition Width="10*"></ColumnDefinition>
+                    <ColumnDefinition Width="20*"></ColumnDefinition>
+                    <ColumnDefinition Width="10*"></ColumnDefinition>
+                    <ColumnDefinition Width="20*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <!--Row 0  Col 0-1 -->
+                <Label Margin="2,2,2,2" x:Name="lblCustomer" Grid.Row="0" Grid.Column="0" FontSize="15" LineBreakMode="TailTruncation" />
+                <Entry Focused="DescriptionFocused" Unfocused="DescriptionUnFocused" Margin="2,2,2,2" x:Name="srchDescription" Grid.Row="0" Grid.Column="1" Placeholder=""  FontSize="15" />
+
+                <!--Row 0  Col 2-3 -->
+                <Label Margin="2,2,2,2" x:Name="lblFrom" Grid.Row="0" VerticalOptions="FillAndExpand" Grid.Column="2" FontSize="15" LineBreakMode="TailTruncation" />
+                <DatePicker Margin="2,2,2,2" x:Name="pckDateFrom"  Grid.Row="0" Grid.Column="3" VerticalOptions="FillAndExpand" FontSize="15" >
+                    <DatePicker.Format>dd-MM-yyyy</DatePicker.Format>
+                </DatePicker>
+
+                <!--Row 0  Col 4-5 -->
+                <Label Margin="2,2,2,2" x:Name="lblTo" Grid.Row="0" Grid.Column="4" FontSize="15" LineBreakMode="TailTruncation" />
+                <DatePicker Margin="2,2,2,2" x:Name="pckDateTo"  Grid.Row="0" Grid.Column="5"  FontSize="15">
+                    <DatePicker.Format>dd-MM-yyyy</DatePicker.Format>
+                </DatePicker>
+
+                <!--Row 1  Col 0-1 -->
+                <Label Margin="2,2,2,2" x:Name="lblSelectedDocumentStatus" VerticalOptions="Center" FontSize="15" TextColor="#000000" Text="" Grid.Row="1" Grid.Column="0" LineBreakMode="TailTruncation" />
+                <Picker Margin="2,2,2,2" x:Name="pckDocumentStatus" Title="" HorizontalOptions="FillAndExpand" VerticalOptions="Center"  FontSize="15" Grid.Row="1" Grid.Column="1" />
+
+                <!--Row 1  Col 2-3 -->
+                <Label Margin="2,2,2,2" x:Name="lblSelectedDocumentType" VerticalOptions="Center" FontSize="15" TextColor="#000000" Text="" Grid.Row="1" Grid.Column="2" LineBreakMode="TailTruncation"  />
+                <Picker Margin="2,2,2,2" x:Name="pckDocumentType" Title="" HorizontalOptions="FillAndExpand" VerticalOptions="Center"  FontSize="15" Grid.Row="1" Grid.Column="3" />
+
+                <!--Row 1  Col 4-5 -->
+                <Label Margin="2,2,2,2" x:Name="lblSearchType" Grid.Row="1" Grid.Column="4" TextColor="#000000" FontSize="15"  LineBreakMode="TailTruncation" />
+                <Switch Margin="2,2,2,2" x:Name="switchSearchType" Grid.Row="1" Grid.Column="5" IsToggled="True" />
+
+                <!--Row 2 -->
+                <controls:ImageButton  Margin="2,5,2,5" BackgroundColor="#01abdf" Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="2" TextColor="#ffffff" HeightRequest="45" WidthRequest="200" HorizontalOptions="FillAndExpand"  Image="search.png"  Clicked="SearchDocument"/>
+            </Grid>
+
+            <!--DOCUMENT LISTVIEW HEADER-->
+            <Grid BackgroundColor="#474a4f" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="35*"></ColumnDefinition>
+                    <ColumnDefinition Width="11*"></ColumnDefinition>
+                    <ColumnDefinition Width="11*"></ColumnDefinition>
+                    <ColumnDefinition Width="11*"></ColumnDefinition>
+                    <ColumnDefinition Width="20*"></ColumnDefinition>
+                    <ColumnDefinition Width="11*"></ColumnDefinition>
+                    <ColumnDefinition Width="3*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                </Grid.RowDefinitions>
+                <Label YAlign="Center" x:Name="Customer" Text="" Grid.Row="0" Grid.Column="0"  FontAttributes="Bold" FontSize="17" TextColor="WhiteSmoke"/>
+                <Label YAlign="Center" x:Name="CreatedDate" Text="" Grid.Row="0" Grid.Column="1"  FontAttributes="Bold" FontSize="17" TextColor="WhiteSmoke"/>
+                <Label YAlign="Center" x:Name="Status" Text=""  Grid.Row="0" Grid.Column="2"  FontAttributes="Bold" FontSize="17" TextColor="WhiteSmoke"/>
+                <Label YAlign="Center" x:Name="IsSynchronized" Text="" Grid.Row="0" Grid.Column="3"  FontAttributes="Bold" FontSize="17" TextColor="WhiteSmoke"/>
+                <Label YAlign="Center" x:Name="Type" Text="" Grid.Row="0" Grid.Column="4"  FontAttributes="Bold" FontSize="17" TextColor="WhiteSmoke"/>
+                <Label YAlign="Center" XAlign="End" x:Name="GrossTotal" Text="" Grid.Row="0" Grid.Column="5"  FontAttributes="Bold" FontSize="17" TextColor="WhiteSmoke"/>
+            </Grid>
+            <ListView x:Name="OrderList" RowHeight="60" SeparatorVisibility="Default" SeparatorColor="#008dda">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Clicked="DeleteDocumentHeader" Text="delete." CommandParameter="{Binding Oid}" Icon ="delete.png"/>
+                                <MenuItem Clicked="EditDocumentHeader" Text="Λεπτ." CommandParameter="{Binding Oid}" Icon ="edit2.png"/>
+                                <MenuItem Clicked="PrintDocumentHeader" Text="Λεπτ." CommandParameter="{Binding Oid}" Icon ="printer.png"/>
+                            </ViewCell.ContextActions>
+                            <Grid x:Name="OrderListGrid" x:Uid="OrderListGrid" RowSpacing="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="3*"></RowDefinition>
+                                    <RowDefinition Height="2*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="35*"></ColumnDefinition>
+                                    <ColumnDefinition Width="11*"></ColumnDefinition>
+                                    <ColumnDefinition Width="11*"></ColumnDefinition>
+                                    <ColumnDefinition Width="11*"></ColumnDefinition>
+                                    <ColumnDefinition Width="20*"></ColumnDefinition>
+                                    <ColumnDefinition Width="11*"></ColumnDefinition>
+                                    <ColumnDefinition Width="3*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <Label  YAlign="Center" Margin="10,0,0,0" LineBreakMode="TailTruncation" Text="{Binding CompanyName}"  Grid.Row="0" Grid.Column="0" FontAttributes="Bold" FontSize="15"/>
+                                <Label  YAlign="Start"  Margin="10,0,0,0" LineBreakMode="TailTruncation" Text="{Binding CustomerCode}" Grid.Row="1" Grid.Column="0" FontSize="13"/>
+
+                                <Label  YAlign="Center" Margin="0,0,0,0" LineBreakMode="TailTruncation" Text="{Binding CreatedDate}" Grid.Row="0" Grid.Column="1" FontSize="15"/>
+                                <Label YAlign="Center" XAlign="Center" Margin="0,0,0,0" LineBreakMode="TailTruncation" Text="{Binding Status}" Grid.Row="0" Grid.Column="2" FontSize="15" TextColor="{Binding StatusColor}"/>
+                                <Label YAlign="Center" XAlign="Center" Margin="0,0,0,0" LineBreakMode="TailTruncation" Text="{Binding IsSynchronizedString}" Grid.Row="0" Grid.Column="3" FontSize="15"  TextColor="{Binding SynchronizedColor}" />
+                                <Label YAlign="Center" Margin="0,0,0,0" LineBreakMode="TailTruncation" Text="{Binding Type}" Grid.Row="0" Grid.Column="4" FontSize="15"/>
+                                <Label YAlign="Center" XAlign="End"  Margin="0,0,0,0" LineBreakMode="TailTruncation"   Text="{Binding GrossTotalString}" Grid.Row="0" Grid.Column="5" FontSize="15"/>
+
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Primary" Icon="cart1.png" Priority="1" Activated="OnNewDocument" ></ToolbarItem>
+    </ContentPage.ToolbarItems>
+</ContentPage>

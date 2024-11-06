@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ITS.WRM.SFA.Droid.Pages.TabCustomerLocationPage">
+    <ContentPage.Content>
+        <StackLayout Spacing="0" Padding="0" BackgroundColor="#FFFFFF">
+            <StackLayout x:Name="Detail">
+                <StackLayout x:Name="lblDetailCustomer" HeightRequest="60" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Spacing="10" BackgroundColor="#474a4f">
+                    <Label  x:Name="lblDetail" TextColor="#FFFFFF" FontSize="26" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" />
+                </StackLayout>
+                <ListView x:Name="AddressesListView" RowHeight="120">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="40*"></RowDefinition>
+                                        <RowDefinition Height="20*"></RowDefinition>
+                                        <RowDefinition Height="20*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="{Binding AddressDescription}" Grid.Row="0" Grid.Column="0" FontSize="20" FontAttributes="Bold"/>
+                                    <Label Text="Lat:" Grid.Row="1" Grid.Column="0" FontSize="20"/>
+                                    <Label Text="{Binding Lat}" Grid.Row="1" Grid.Column="1" FontSize="20"/>
+                                    <Label Text="Lng:" Grid.Row="2" Grid.Column="0" FontSize="20"/>
+                                    <Label Text="{Binding Lng}" Grid.Row="2" Grid.Column="1" FontSize="20"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

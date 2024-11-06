@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ITS.WRM.SFA.Droid.Pages.Maps.RoutesPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout
+                HeightRequest="10"
+                HorizontalOptions="FillAndExpand"
+                Spacing="10"
+                VerticalOptions="Start">
+                <Label
+                    x:Name="lblStoreRoutes"
+                    FontAttributes="Bold"
+                    FontSize="27"
+                    HorizontalOptions="Center"
+                    TextColor="#000000"
+                    VerticalOptions="Center" />
+            </StackLayout>
+
+            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="15" />
+                    <RowDefinition Height="85" />
+                </Grid.RowDefinitions>
+
+                <!--  LISTVIEW HEADER  -->
+                <StackLayout
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand">
+                    <Grid BackgroundColor="#474a4f">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50*" />
+                            <ColumnDefinition Width="15*" />
+                            <ColumnDefinition Width="15*" />
+                            <ColumnDefinition Width="15*" />
+                            <ColumnDefinition Width="2*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50" />
+                        </Grid.RowDefinitions>
+                        <Label
+                            x:Name="lblName"
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Margin="20,2,2,2"
+                            FontAttributes="Bold"
+                            FontSize="17"
+                            HorizontalOptions="FillAndExpand"
+                            Text=""
+                            TextColor="WhiteSmoke"
+                            VerticalOptions="FillAndExpand"
+                            XAlign="Start"
+                            YAlign="Center" />
+                        <Label
+                            x:Name="lblDuration"
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Margin="2,2,2,2"
+                            FontAttributes="Bold"
+                            FontSize="17"
+                            HorizontalOptions="FillAndExpand"
+                            Text=""
+                            TextColor="WhiteSmoke"
+                            VerticalOptions="FillAndExpand"
+                            XAlign="End"
+                            YAlign="Center" />
+                        <Label
+                            x:Name="lblDistance"
+                            Grid.Row="0"
+                            Grid.Column="2"
+                            Margin="2,2,2,2"
+                            FontAttributes="Bold"
+                            FontSize="17"
+                            HorizontalOptions="FillAndExpand"
+                            Text=""
+                            TextColor="WhiteSmoke"
+                            VerticalOptions="FillAndExpand"
+                            XAlign="End"
+                            YAlign="Center" />
+                        <Label
+                            x:Name="lblNodes"
+                            Grid.Row="0"
+                            Grid.Column="3"
+                            Margin="2,2,2,2"
+                            FontAttributes="Bold"
+                            FontSize="17"
+                            HorizontalOptions="FillAndExpand"
+                            Text=""
+                            TextColor="WhiteSmoke"
+                            VerticalOptions="FillAndExpand"
+                            XAlign="End"
+                            YAlign="Center" />
+                    </Grid>
+                </StackLayout>
+                <!--  ROUTES LISTVIEW  -->
+                <StackLayout
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Orientation="Horizontal"
+                    Spacing="10">
+                    <ListView
+                        x:Name="RouteListView"
+                        RowHeight="50"
+                        SeparatorColor="#b5afaf"
+                        SeparatorVisibility="Default">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell IsEnabled="false">
+                                    <ViewCell.ContextActions>
+                                        <MenuItem
+                                            Clicked="LoadRoute"
+                                            CommandParameter="{Binding Oid}"
+                                            Icon="check.png" />
+                                    </ViewCell.ContextActions>
+                                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="100*" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="50*" />
+                                            <ColumnDefinition Width="15*" />
+                                            <ColumnDefinition Width="15*" />
+                                            <ColumnDefinition Width="15*" />
+                                            <ColumnDefinition Width="2*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Label
+                                            Grid.Row="0"
+                                            Grid.Column="0"
+                                            Margin="20,2,2,2"
+                                            FontAttributes="Bold"
+                                            FontSize="16"
+                                            Text="{Binding Name}"
+                                            XAlign="Start"
+                                            YAlign="Center" />
+                                        <Label
+                                            Grid.Row="0"
+                                            Grid.Column="1"
+                                            Margin="2,2,2,2"
+                                            FontAttributes="Bold"
+                                            FontSize="16"
+                                            Text="{Binding NumberOfPlaces}"
+                                            XAlign="End"
+                                            YAlign="Center" />
+                                        <Label
+                                            Grid.Row="0"
+                                            Grid.Column="2"
+                                            Margin="2,2,2,2"
+                                            FontAttributes="Bold"
+                                            FontSize="16"
+                                            Text="{Binding TotalTime}"
+                                            XAlign="Start"
+                                            YAlign="Center" />
+                                        <Label
+                                            Grid.Row="0"
+                                            Grid.Column="2"
+                                            Margin="2,2,2,2"
+                                            FontAttributes="Bold"
+                                            FontSize="16"
+                                            Text="{Binding TotalDistance}"
+                                            XAlign="Start"
+                                            YAlign="Center" />
+
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

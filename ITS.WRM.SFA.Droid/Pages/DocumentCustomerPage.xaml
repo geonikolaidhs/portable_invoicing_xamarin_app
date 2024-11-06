@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ITS.WRM.SFA.Droid.Pages.DocumentCustomerPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms">
+    <ContentPage.Content>
+        <StackLayout
+            Padding="0"
+            BackgroundColor="White"
+            Spacing="0">
+            <StackLayout
+                x:Name="lblDetailCustomer"
+                BackgroundColor="#ffffff"
+                HeightRequest="100"
+                HorizontalOptions="FillAndExpand"
+                Spacing="10"
+                VerticalOptions="Start">
+                <Label
+                    x:Name="lblCustomer"
+                    FontAttributes="Bold"
+                    FontSize="28"
+                    HorizontalOptions="Center"
+                    Text=""
+                    TextColor="#000000"
+                    VerticalOptions="Center" />
+            </StackLayout>
+            <StackLayout
+                AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                AbsoluteLayout.LayoutFlags="All"
+                BackgroundColor="White">
+                <Label
+                    x:Name="lblHeader"
+                    FontAttributes="Bold"
+                    FontSize="28"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center" />
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="70*" />
+                        <ColumnDefinition Width="30*" />
+                    </Grid.ColumnDefinitions>
+                    <SearchBar
+                        x:Name="srchCustomer"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Focused="SearchBarFocused"
+                        SearchButtonPressed="SearchCustomerByKeyboard"
+                        Unfocused="SearchBarUnFocused" />
+                    <controls:ImageButton
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        BackgroundColor="#01abdf"
+                        Clicked="CustomerSearch"
+                        HeightRequest="50"
+                        HorizontalOptions="FillAndExpand"
+                        Image="search.png"
+                        TextColor="#ffffff"
+                        WidthRequest="200" />
+                </Grid>
+            </StackLayout>
+            <StackLayout
+                Padding="16"
+                BackgroundColor="#474a4f"
+                HeightRequest="45">
+                <Label
+                    x:Name="SearchHeader"
+                    FontSize="17"
+                    TextColor="#ffffff" />
+            </StackLayout>
+            <ListView
+                x:Name="CustomerList"
+                BackgroundColor="WhiteSmoke"
+                HasUnevenRows="True"
+                RowHeight="120"
+                SeparatorColor="#313030"
+                SeparatorVisibility="Default">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem
+                                    Clicked="CreateDocument"
+                                    CommandParameter="{Binding Oid}"
+                                    Icon="cartWhite.png"
+                                    Text="Edit" />
+                            </ViewCell.ContextActions>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="35*" />
+                                    <RowDefinition Height="35*" />
+                                    <RowDefinition Height="20*" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="60*" />
+                                    <ColumnDefinition Width="20*" />
+                                    <ColumnDefinition Width="20*" />
+                                </Grid.ColumnDefinitions>
+                                <!--  FIRST-COLUMN  -->
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    Margin="15,0,0,0"
+                                    FontAttributes="Bold"
+                                    FontSize="18"
+                                    Text="{Binding CompanyName}"
+                                    VerticalTextAlignment="Center" />
+                                <Label
+                                    Grid.Row="1"
+                                    Grid.Column="0"
+                                    Margin="15,0,0,0"
+                                    FontSize="17"
+                                    Text="{Binding Address}" />
+                                <Label
+                                    Grid.Row="2"
+                                    Grid.Column="0"
+                                    Margin="15,0,0,0"
+                                    FontSize="16"
+                                    Text="{Binding Profession}"
+                                    VerticalTextAlignment="Center" />
+                                <!--  SECOND COLUMN  -->
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    FontSize="16"
+                                    Text="{Binding Code}" />
+                                <Label
+                                    Grid.Row="1"
+                                    Grid.Column="1"
+                                    FontSize="18"
+                                    Text="" />
+                                <!--  FOURTH COLUMN  -->
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="2"
+                                    FontSize="16"
+                                    Text="{Binding TaxCode}" />
+                                <Label
+                                    Grid.Row="1"
+                                    Grid.Column="2"
+                                    FontAttributes="Bold"
+                                    FontSize="16"
+                                    Text="{Binding Number}" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

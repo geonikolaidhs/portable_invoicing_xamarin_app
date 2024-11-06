@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ITS.WRM.SFA.Droid.Pages.TabCustomerAddressesPage">
+    <ContentPage.Content>
+        <StackLayout Spacing="0" Padding="0" BackgroundColor="#FFFFFF">
+            <StackLayout x:Name="DetailStack">
+                <StackLayout x:Name="lblDetailCustomer" HeightRequest="60" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Spacing="5" BackgroundColor="#474a4f">
+                    <Label  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" x:Name="lblDetail" TextColor="WhiteSmoke" FontSize="26" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" />
+                </StackLayout>
+                <ListView x:Name="AddressesListView" RowHeight="50" SeparatorVisibility="Default" SeparatorColor="#008dda">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.ContextActions>
+                                    <MenuItem Clicked="editAddress"  CommandParameter="{Binding Oid}" Icon ="edit2.png"/>
+                                </ViewCell.ContextActions>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*">
+                                        </ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="{Binding AddressDescription}" Grid.Row="0" Grid.Column="0" FontSize="20"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

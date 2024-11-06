@@ -1,0 +1,1509 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddCustomerBtnCancel" xml:space="preserve">
+    <value>Ακύρωση</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Αποθήκευση</value>
+  </data>
+  <data name="AddCustomerlblAddNewCustomer" xml:space="preserve">
+    <value>Προσθήκη νέου πελάτη</value>
+  </data>
+  <data name="AddCustomerTxtCode" xml:space="preserve">
+    <value>Κωδικός Πελάτη</value>
+  </data>
+  <data name="AddCustomerTxtCompanyName" xml:space="preserve">
+    <value>Επωνυμία</value>
+  </data>
+  <data name="AddCustomerTxtPriceCatalog" xml:space="preserve">
+    <value>Τιμοκατάλογος</value>
+  </data>
+  <data name="AddCustomerTxtStore" xml:space="preserve">
+    <value>Κατάστημα</value>
+  </data>
+  <data name="AddCustomerTxtTaxCode" xml:space="preserve">
+    <value>Α.Φ.Μ</value>
+  </data>
+  <data name="CustomerDetailBtnCancel" xml:space="preserve">
+    <value>Ακύρωση</value>
+  </data>
+  <data name="CustomerDetailLblCode" xml:space="preserve">
+    <value>Κωδικός πελάτη</value>
+  </data>
+  <data name="CustomerDetailLblPriceCatalog" xml:space="preserve">
+    <value>Τιμολογιακή πολιτική</value>
+  </data>
+  <data name="CustomerDetailLblStore" xml:space="preserve">
+    <value>Κατάστημα</value>
+  </data>
+  <data name="CustomerDetailLblTaxCode" xml:space="preserve">
+    <value>Α.Φ.Μ.</value>
+  </data>
+  <data name="LoginBtnLogin" xml:space="preserve">
+    <value>Είσοδος</value>
+  </data>
+  <data name="LoginPassword" xml:space="preserve">
+    <value>Κωδικός πρόσβασης</value>
+  </data>
+  <data name="LoginUserName" xml:space="preserve">
+    <value>Όνομα χρήστη </value>
+  </data>
+  <data name="MenuCustomer" xml:space="preserve">
+    <value>Πελάτες</value>
+  </data>
+  <data name="MenuLogOut" xml:space="preserve">
+    <value>Αποσύνδεση</value>
+  </data>
+  <data name="MenuNewOrder" xml:space="preserve">
+    <value>Νέα Παραγγελία</value>
+  </data>
+  <data name="MenuOrders" xml:space="preserve">
+    <value>Παραγγελίες</value>
+  </data>
+  <data name="MenuProducts" xml:space="preserve">
+    <value>Προϊόντα</value>
+  </data>
+  <data name="MenuSend" xml:space="preserve">
+    <value>Αποστολή</value>
+  </data>
+  <data name="MenuSynchronization" xml:space="preserve">
+    <value>Συγχρονισμός</value>
+  </data>
+  <data name="SettingPckSelectedStore" xml:space="preserve">
+    <value>Προεπ. Κατάστημα</value>
+  </data>
+  <data name="SettingsBtnCancel" xml:space="preserve">
+    <value>Άκυρο</value>
+  </data>
+  <data name="SettingsLblAuthenticationURL" xml:space="preserve">
+    <value>Διεύθυνση URL ταυτοποίησης</value>
+  </data>
+  <data name="SettingsLblDuplicate" xml:space="preserve">
+    <value>Προεπ. Διπλοεγγραφές</value>
+  </data>
+  <data name="SettingsLblServerURL" xml:space="preserve">
+    <value>Διεύθυνση URL Διακομιστή</value>
+  </data>
+  <data name="SettingsLblSettings" xml:space="preserve">
+    <value>Ρυθμίσεις</value>
+  </data>
+  <data name="SettingsPckCategoryNodeList" xml:space="preserve">
+    <value>Προεπ. Κατηγορία Προϊόντων</value>
+  </data>
+  <data name="SettingsPckDefaultLanguage" xml:space="preserve">
+    <value>Προεπ. Γλώσσα</value>
+  </data>
+  <data name="SettingsPckDefaultPriceCatalog" xml:space="preserve">
+    <value>Προεπ. Τιμοκατάλογος</value>
+  </data>
+  <data name="SettingsPckDocumentStatus" xml:space="preserve">
+    <value>Προεπ. Κατάσταση Παραγγελίας</value>
+  </data>
+  <data name="SettingsSwiScan" xml:space="preserve">
+    <value>Σάρωση με Bluetooth</value>
+  </data>
+  <data name="CustomerListBtnDetails" xml:space="preserve">
+    <value>Λεπτομέρειες</value>
+  </data>
+  <data name="CustomerListBtnEdit" xml:space="preserve">
+    <value>Επεξεργασία</value>
+  </data>
+  <data name="CustomerListLblHeader" xml:space="preserve">
+    <value>Λίστα πελατών</value>
+  </data>
+  <data name="DocumentCustomerPageLblCustomer" xml:space="preserve">
+    <value>Εύρεση Πελάτη</value>
+  </data>
+  <data name="DocumentStoreSeriesTypeLblSeriesType" xml:space="preserve">
+    <value>Τύπος - Σειρά Παραστατικού</value>
+  </data>
+  <data name="ListItemsPageBtnNavigateBack" xml:space="preserve">
+    <value>Πίσω</value>
+  </data>
+  <data name="NewOrderLblCategoryProduct" xml:space="preserve">
+    <value>Κατηγορίες Προϊόντων</value>
+  </data>
+  <data name="NewOrderLblOrderForm" xml:space="preserve">
+    <value>ΦΟΡΜΑ ΠΑΡΑΓΓΕΛΙΑΣ</value>
+  </data>
+  <data name="NewOrderLblSumOrder" xml:space="preserve">
+    <value>Σύνολο Παραστατικού</value>
+  </data>
+  <data name="OrderFormPageBtnScan" xml:space="preserve">
+    <value>Σάρωση</value>
+  </data>
+  <data name="OrderFormPageLblOrderForm" xml:space="preserve">
+    <value>Είδη Παραστατικού</value>
+  </data>
+  <data name="OrderFormPageSrchBarcode" xml:space="preserve">
+    <value>Αριθμός Barcode</value>
+  </data>
+  <data name="OrderFormPageSrchDescription" xml:space="preserve">
+    <value>Περιγραφή</value>
+  </data>
+  <data name="OrderFormPageSwiInsertAll" xml:space="preserve">
+    <value>Μαζική εισαγωγή</value>
+  </data>
+  <data name="Code" xml:space="preserve">
+    <value>Κωδικός</value>
+  </data>
+  <data name="OrderFormPageTxtDescription" xml:space="preserve">
+    <value>Περιγραφή</value>
+  </data>
+  <data name="OrderFormPageTxtDiscount" xml:space="preserve">
+    <value>Έκπτωση</value>
+  </data>
+  <data name="OrderFormPageTxtFinaSum" xml:space="preserve">
+    <value>Τελικό Σύνολο</value>
+  </data>
+  <data name="OrderFormPageTxtQty" xml:space="preserve">
+    <value>Ποσότητα</value>
+  </data>
+  <data name="OrderFormPageTxtUnitPrice" xml:space="preserve">
+    <value>Τιμή Μονάδας</value>
+  </data>
+  <data name="ProductDetailsCategories" xml:space="preserve">
+    <value>ΚΑΤΗΓΟΡΙΕΣ</value>
+  </data>
+  <data name="ProductDetailsTabBarcodes" xml:space="preserve">
+    <value>Barcodes</value>
+  </data>
+  <data name="ProductDetailsTabDetails" xml:space="preserve">
+    <value>ΛΕΠΤΟΜΕΡΙΕΣ ΠΡΟΪΟΝΤΟΣ</value>
+  </data>
+  <data name="TabProductMainDetailsLblBuyer" xml:space="preserve">
+    <value>Αγοραστής</value>
+  </data>
+  <data name="TabProductMainDetailsLblDefaultBarcode" xml:space="preserve">
+    <value>Κύριο Barcode</value>
+  </data>
+  <data name="TabProductMainDetailsLblDefaultSupplier" xml:space="preserve">
+    <value>Βασικός Προμηθευτής</value>
+  </data>
+  <data name="TabProductMainDetailsLblInsertedDate" xml:space="preserve">
+    <value>Ημν/νία Καταχώρησης</value>
+  </data>
+  <data name="TabProductMainDetailsLblMaxOrderQty" xml:space="preserve">
+    <value>Μέγιστη Ποσ. Παραγγελίας</value>
+  </data>
+  <data name="TabProductMainDetailsLblMinOrderQty" xml:space="preserve">
+    <value>Μέγιστη Ποσ. Παραγγελίας</value>
+  </data>
+  <data name="TabProductMainDetailsLblMotherCode" xml:space="preserve">
+    <value>Μητρικός Κωδικός</value>
+  </data>
+  <data name="TabProductMainDetailsLblOrderQty" xml:space="preserve">
+    <value>Ποσότητα παραγγελίας</value>
+  </data>
+  <data name="TabProductMainDetailsLblPackingMeasurementUnit" xml:space="preserve">
+    <value>Μ.Μ. Συσκευασίας</value>
+  </data>
+  <data name="TabProductMainDetailsLblPackingQty" xml:space="preserve">
+    <value>Ποσότητα Συσκευασίας</value>
+  </data>
+  <data name="TabProductMainDetailsLblPoints" xml:space="preserve">
+    <value>Πόντοι</value>
+  </data>
+  <data name="TabProductMainDetailsLblSeasonality" xml:space="preserve">
+    <value>Εποχικότητα</value>
+  </data>
+  <data name="TabProductMainDetailsLblVatCategory" xml:space="preserve">
+    <value>Κατηγορία Φ.Π.Α.</value>
+  </data>
+  <data name="TabProductBarcodeLblCreatedOn" xml:space="preserve">
+    <value>Δημιουργήθηκε</value>
+  </data>
+  <data name="TabProductBarcodeLblMeasurmentUnit" xml:space="preserve">
+    <value>Μονάδα Μέτρησης</value>
+  </data>
+  <data name="TabProductBarcodesLblBarcode" xml:space="preserve">
+    <value>Barcode</value>
+  </data>
+  <data name="AddCustomerMsgFailureSaved" xml:space="preserve">
+    <value>Υπήρξε κάποιο πρόβλημα κατα τη διάρκεια της αποθήκευσης</value>
+  </data>
+  <data name="AddCustomerMsgSuccesfullSaved" xml:space="preserve">
+    <value>Ο πελάτης αποθηκεύτηκε επιτυχώς</value>
+  </data>
+  <data name="CustomerDetailPageMsgFailureEdit" xml:space="preserve">
+    <value>Υπήρξαν σφάλματα κατά τη διαδικασία αποθήκευσης των αλλαγών</value>
+  </data>
+  <data name="CustomerDetailPageMsgSuccessEdit" xml:space="preserve">
+    <value>Η επεξεργασία Πελάτη ολοκληρώθηκε επιτυχώς.</value>
+  </data>
+  <data name="LoginMsgFailureLoginBadRequest" xml:space="preserve">
+    <value>Ο κωδικός ή το όνομα χρήστη είναι λάθος. Δοκιμάστε ξανά</value>
+  </data>
+  <data name="LoginMsgFailureLoginUrl" xml:space="preserve">
+    <value>Ελέγξτε τη διεύθυνση URL, που χρησιμοποιείτε για την ταυτοποίηση των στοιχείων σας</value>
+  </data>
+  <data name="MainPageMsgSingOut" xml:space="preserve">
+    <value>Θέλετε να αποσυνδεθείτε;</value>
+  </data>
+  <data name="MainPageMsgSync" xml:space="preserve">
+    <value>Θέλετε να συγχρονίσετε τα δεδομένα</value>
+  </data>
+  <data name="MainPageMsgTab" xml:space="preserve">
+    <value>To Tab δεν είναι έτοιμο</value>
+  </data>
+  <data name="MainPageMsgUpload" xml:space="preserve">
+    <value>Είστε σίγουρος/η ότι θέλετε να κάνετε αποστολή΄;</value>
+  </data>
+  <data name="MsgBtnOk" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="MsgNo" xml:space="preserve">
+    <value>Όχι</value>
+  </data>
+  <data name="MsgTypeAlert" xml:space="preserve">
+    <value>Ειδοποίηση</value>
+  </data>
+  <data name="MsgTypeSync" xml:space="preserve">
+    <value>Συγχρονισμός</value>
+  </data>
+  <data name="MsgTypeUpload" xml:space="preserve">
+    <value>Αποστολή</value>
+  </data>
+  <data name="MsgYes" xml:space="preserve">
+    <value>Ναι</value>
+  </data>
+  <data name="MainPageMsgDownloadData" xml:space="preserve">
+    <value>Φόρτωση δεδομένων. Παρακαλώ περιμένετε</value>
+  </data>
+  <data name="MsgTypeSingOut" xml:space="preserve">
+    <value>Αποσύνδεση</value>
+  </data>
+  <data name="ProductDetailsTabMotherCodes" xml:space="preserve">
+    <value>ΣΥΝΑΦΗ ΕΙΔΗ</value>
+  </data>
+  <data name="ProductDetailsTabLikedItems" xml:space="preserve">
+    <value>ΣΥΝΔΕΔΕΜΕΝΑ ΕΙΔΗ</value>
+  </data>
+  <data name="AddCustomerBtnCheck" xml:space="preserve">
+    <value>Ελεγχος πελάτη στη βάση</value>
+  </data>
+  <data name="ProductDetailsTabItemExtraInfo" xml:space="preserve">
+    <value>ΠΡΟΣΘΕΤΕΣ ΠΛΗΡΟΦΟΡΙΕΣ</value>
+  </data>
+  <data name="ProductDetailsTabLinkedTo" xml:space="preserve">
+    <value>ΣΥΝΔΕΔΕΜΕΝΟ ΣΕ</value>
+  </data>
+  <data name="ProductPageAllCategories" xml:space="preserve">
+    <value>Όλες οι Κατηγορίες</value>
+  </data>
+  <data name="ProductPageCategory" xml:space="preserve">
+    <value>Κατηγορία</value>
+  </data>
+  <data name="ProductPageLblSearchAllCategories" xml:space="preserve">
+    <value>Αναζήτηση σε όλες τις κατηγορίες</value>
+  </data>
+  <data name="ProductPageSearchByCodeOrBaercode" xml:space="preserve">
+    <value>Αναζήτηση με κωδικό ή barcode</value>
+  </data>
+  <data name="ProductPageItemNotFount" xml:space="preserve">
+    <value>Δεν βρέθηκαν αποτελέσματα</value>
+  </data>
+  <data name="ProductPageSearchBarByBarcode" xml:space="preserve">
+    <value>Αναζήτησε με barcode</value>
+  </data>
+  <data name="ProductPageSearchBarByCode" xml:space="preserve">
+    <value>Αναζήτηση με κωδικό προϊόντος</value>
+  </data>
+  <data name="TabProductCategoryLblNode" xml:space="preserve">
+    <value>Κόμβος</value>
+  </data>
+  <data name="TabProductCategoryLblPath" xml:space="preserve">
+    <value>Διαδρομή</value>
+  </data>
+  <data name="TabProductCategoryLblRoot" xml:space="preserve">
+    <value>Ρίζα</value>
+  </data>
+  <data name="TabProductItemExtraInfoExpiresAt" xml:space="preserve">
+    <value>Λήγει στις</value>
+  </data>
+  <data name="TabProductItemExtraInfoLbIngredients" xml:space="preserve">
+    <value>Συστατικά</value>
+  </data>
+  <data name="TabProductItemExtraInfoLblDescription" xml:space="preserve">
+    <value>Περιγραφή</value>
+  </data>
+  <data name="TabProductItemExtraInfoLblPackedAt" xml:space="preserve">
+    <value>Συσκευάστηκε στις</value>
+  </data>
+  <data name="TabProductLinkedItemsLblCode" xml:space="preserve">
+    <value>Κωδικός</value>
+  </data>
+  <data name="TabProductLinkedItemsLblName" xml:space="preserve">
+    <value>Ονομασία</value>
+  </data>
+  <data name="TabProductLinkedItemsLblQtyFactor" xml:space="preserve">
+    <value>Ποσότητα Εγγυοδοσίας</value>
+  </data>
+  <data name="TabProductLinkedIToLblCode" xml:space="preserve">
+    <value>Κωδικός</value>
+  </data>
+  <data name="TabProductLinkedIToLblName" xml:space="preserve">
+    <value>Ονομασία</value>
+  </data>
+  <data name="TabProductLinkedIToLblQty" xml:space="preserve">
+    <value>Ποσότητα Εγγυοδοσίας</value>
+  </data>
+  <data name="TabProductMainDetailsLblCode" xml:space="preserve">
+    <value>Κωδικός</value>
+  </data>
+  <data name="TabProductMotherCodeLblBarcode" xml:space="preserve">
+    <value>Προεπ. Barcode</value>
+  </data>
+  <data name="TabProductMotherCodeLblDescription" xml:space="preserve">
+    <value>Περιγραφή</value>
+  </data>
+  <data name="TabProductMotherCodeLblIsActive" xml:space="preserve">
+    <value>Ενεργός</value>
+  </data>
+  <data name="TabProductMotherCodeLblMotherCode" xml:space="preserve">
+    <value>Μητρικός Κωδικός</value>
+  </data>
+  <data name="TabProductMotherCodeLblTaxCode" xml:space="preserve">
+    <value>Κατηγορία Φ.Π.Α.</value>
+  </data>
+  <data name="Closed" xml:space="preserve">
+    <value>Κλειστό</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>Ανοιχτό</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Διεύθυνση</value>
+  </data>
+  <data name="FinalAmount" xml:space="preserve">
+    <value>Τελικό Σύνολο</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Ημ/νία</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Σύνολο</value>
+  </data>
+  <data name="TotalAfterDiscount" xml:space="preserve">
+    <value>Καθαρή Αξία</value>
+  </data>
+  <data name="TotalDiscount" xml:space="preserve">
+    <value>Συνολική Έκπτωση</value>
+  </data>
+  <data name="TotalProductsNumber" xml:space="preserve">
+    <value>Συνολικός Αριθμός Προϊόντων</value>
+  </data>
+  <data name="TotalVATAmount" xml:space="preserve">
+    <value>Σύνολο Φ.Π.Α.</value>
+  </data>
+  <data name="NewOrderTabInsertItemPage" xml:space="preserve">
+    <value>Εισαγωγή Ειδών</value>
+  </data>
+  <data name="OderDocDetailLblTotalDiscount" xml:space="preserve">
+    <value>Συνολικό % έκπτωσης</value>
+  </data>
+  <data name="OrderDocDetailBarcode" xml:space="preserve">
+    <value>Barcode</value>
+  </data>
+  <data name="OrderDocDetailLblCode" xml:space="preserve">
+    <value>Κωδικός</value>
+  </data>
+  <data name="OrderDocDetailLblLineDiscount" xml:space="preserve">
+    <value>Έκπτωση γραμμής %</value>
+  </data>
+  <data name="OrderDocDetailLblLineDiscountMoney" xml:space="preserve">
+    <value>Έκπτωση γραμμής(€):</value>
+  </data>
+  <data name="OrderDocDetailLblMeasurement" xml:space="preserve">
+    <value>Μον. Μέτρησης</value>
+  </data>
+  <data name="OrderDocDetailLblPoints" xml:space="preserve">
+    <value>Πόντοι</value>
+  </data>
+  <data name="OrderDocDetailLblPriceDiscountMoney" xml:space="preserve">
+    <value>Έκπτωση Τιμ/λόγου €</value>
+  </data>
+  <data name="OrderDocDetailLblQty" xml:space="preserve">
+    <value>Ποσότητα</value>
+  </data>
+  <data name="OrderDocDetailLblRemarks" xml:space="preserve">
+    <value>Παρατηρήσεις</value>
+  </data>
+  <data name="OrderDocDetailLblTotal" xml:space="preserve">
+    <value>Σύνολο</value>
+  </data>
+  <data name="OrderDocDetailLblTotalDiscountMoney" xml:space="preserve">
+    <value>Συνολική έκπτωση €</value>
+  </data>
+  <data name="OrderDocDetailLblTotalVat" xml:space="preserve">
+    <value>Σύνολο Φ.Π.Α.(€):</value>
+  </data>
+  <data name="OrderDocDetailLblVatCategory" xml:space="preserve">
+    <value>Κατηγορία Φ.Π.Α.(%)</value>
+  </data>
+  <data name="OrderDocDetailsLblNetTotal" xml:space="preserve">
+    <value>Σύνολο Προ Έκπτωσης</value>
+  </data>
+  <data name="OrderDocDetailsLblPriceDiscount" xml:space="preserve">
+    <value>Έκπτωση Τιμ/λόγου %</value>
+  </data>
+  <data name="OrderDocDetailUnitPrice" xml:space="preserve">
+    <value>Τιμή μονάδος</value>
+  </data>
+  <data name="OrderDocDetaulLblTotalAfterDiscount" xml:space="preserve">
+    <value>Καθαρή Αξία</value>
+  </data>
+  <data name="OrdrerDocDetailDescription" xml:space="preserve">
+    <value>Περιγραφή</value>
+  </data>
+  <data name="PleaseFillInAllRequiredFields" xml:space="preserve">
+    <value>Παρακαλώ συμπληρώστε όλα τα απαιτούμενα πεδία</value>
+  </data>
+  <data name="Question" xml:space="preserve">
+    <value>Ερώτηση</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Προειδοποίηση</value>
+  </data>
+  <data name="NoResultsFoundMessage" xml:space="preserve">
+    <value>Δεν βρέθηκαν αποτελέσματα</value>
+  </data>
+  <data name="DocumentCustomerLblCode" xml:space="preserve">
+    <value>Κωδικός</value>
+  </data>
+  <data name="DocumentCustomerLblName" xml:space="preserve">
+    <value>Επωνυμία</value>
+  </data>
+  <data name="DocumentCustomerLblTaxCode" xml:space="preserve">
+    <value>ΑΦΜ</value>
+  </data>
+  <data name="DocumentCustomersrchPlaceHolder" xml:space="preserve">
+    <value>Αναζήτηση πελάτη με επωνυμία ή κωδικό ή ΑΦΜ</value>
+  </data>
+  <data name="MsgAddOrEditCustomer" xml:space="preserve">
+    <value>Ένας Πελάτης βρέθηκε με το συγκεκριμένο Α.Φ.Μ. επιλέξτε Αποθήκευση για να συνεχίσετε με το συγκεκριμένο Πελάτη ή Προσθήκη Νεας Διεύθυνσης για τη δημιουργία νέας διεύθυνσης για το συγκεκριμένο Πελάτη</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>Πόλη</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>Όνομα</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Επώνυμο</value>
+  </data>
+  <data name="PostCode" xml:space="preserve">
+    <value>Ταχ. Κώδικας</value>
+  </data>
+  <data name="Street" xml:space="preserve">
+    <value>Οδός</value>
+  </data>
+  <data name="DocumentSeries" xml:space="preserve">
+    <value>Σειρά</value>
+  </data>
+  <data name="DocumentType" xml:space="preserve">
+    <value>Τύπος Παραστατικού</value>
+  </data>
+  <data name="btnHome" xml:space="preserve">
+    <value>Αρχική κατηγορία</value>
+  </data>
+  <data name="NewOrderTabItemCategories" xml:space="preserve">
+    <value>Κατηγορίες προϊόντων</value>
+  </data>
+  <data name="msgSelectCategoryFirst" xml:space="preserve">
+    <value>Επιλέξτε πρώτα μία κατηγορία</value>
+  </data>
+  <data name="TotalOrderLblRemarks" xml:space="preserve">
+    <value>Παρατηρήσεις</value>
+  </data>
+  <data name="CustomerDetails" xml:space="preserve">
+    <value>Λεπτομέρειες Πελάτη</value>
+  </data>
+  <data name="EditCustomer" xml:space="preserve">
+    <value>Επεξεργασία Πελάτη</value>
+  </data>
+  <data name="AddressType" xml:space="preserve">
+    <value>Τύπος Διεύθυνσης</value>
+  </data>
+  <data name="SyncDatabaseMsg" xml:space="preserve">
+    <value>Παρακαλώ συγχρονίστε τη βάση δεδομένων σας.</value>
+  </data>
+  <data name="MsgSaveSettingsToContinue" xml:space="preserve">
+    <value>Για να συνεχίσετε καταχωρήστε τις απαιτούμενες πληροφορίες.</value>
+  </data>
+  <data name="Customer" xml:space="preserve">
+    <value>Πελάτης</value>
+  </data>
+  <data name="DocumentStatus" xml:space="preserve">
+    <value>Κατάσταση</value>
+  </data>
+  <data name="InsertItems" xml:space="preserve">
+    <value>Εισαγωγή Προϊόντων</value>
+  </data>
+  <data name="GetLocation" xml:space="preserve">
+    <value>Λήψη GPS Στίγματος</value>
+  </data>
+  <data name="AddressNotFound" xml:space="preserve">
+    <value>Η τρέχουσα διεύθυνση δε μπορεί να εντοπιστεί. Δοκιμάστε ξανά σε λίγα λεπτά.</value>
+  </data>
+  <data name="VatLevel" xml:space="preserve">
+    <value>Επίπεδο Φ.Π.Α.</value>
+  </data>
+  <data name="NewOrderDetails" xml:space="preserve">
+    <value>ΛΕΠΤΟΜΕΡΕΙΕΣ </value>
+  </data>
+  <data name="Barcode" xml:space="preserve">
+    <value>Barcode</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Ακύρωση</value>
+  </data>
+  <data name="CrossTotal" xml:space="preserve">
+    <value>Εκτιμ. Συνολο</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Περιγραφή</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Επεξεργασία</value>
+  </data>
+  <data name="LineNumber" xml:space="preserve">
+    <value>Α/Α</value>
+  </data>
+  <data name="NetTotal" xml:space="preserve">
+    <value>Καθ. Αξια</value>
+  </data>
+  <data name="Qty" xml:space="preserve">
+    <value>Ποσότητα</value>
+  </data>
+  <data name="Recaltulate" xml:space="preserve">
+    <value>Επανυπολογισμός</value>
+  </data>
+  <data name="SaveAndClose" xml:space="preserve">
+    <value>Αποθήκευση και κλείσιμο</value>
+  </data>
+  <data name="SaveAndContiniue" xml:space="preserve">
+    <value>Αποθήκευση και συνέχεια</value>
+  </data>
+  <data name="UnitPrice" xml:space="preserve">
+    <value>Τιμή Μον.</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>Ποσό</value>
+  </data>
+  <data name="Balance" xml:space="preserve">
+    <value>Ρέστα</value>
+  </data>
+  <data name="PaymentMethods" xml:space="preserve">
+    <value>Τρόποι Πληρωμής</value>
+  </data>
+  <data name="RemainingAmount" xml:space="preserve">
+    <value>Υπολογισμός Υπόλοιπου</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Κλείσιμο</value>
+  </data>
+  <data name="AddNew" xml:space="preserve">
+    <value>Προσθήκη Νέου</value>
+  </data>
+  <data name="OrderPaymentMethodsTab" xml:space="preserve">
+    <value>ΤΡΟΠΟΙ ΠΛΗΡΩΜΗΣ</value>
+  </data>
+  <data name="SelectPaymentMethod" xml:space="preserve">
+    <value>Επιλέξτε τρόπο πληρωμής</value>
+  </data>
+  <data name="sendExceptionMsg" xml:space="preserve">
+    <value>Σφάλμα:</value>
+  </data>
+  <data name="sendMsgNoDataFound" xml:space="preserve">
+    <value>Δεν βρέθηκαν παραστατικά για αποστολή</value>
+  </data>
+  <data name="sendMsgSuccessSend" xml:space="preserve">
+    <value>Επιτυχής αποστολή παραστατικών</value>
+  </data>
+  <data name="msgNoPaymentMethodFound" xml:space="preserve">
+    <value>Δεν βρέθηκε τρόπος πληρωμής. Επιλέξτε ένα τρόπο πληρωμής</value>
+  </data>
+  <data name="paymentMethod" xml:space="preserve">
+    <value>Τρόπος Πληρωμής</value>
+  </data>
+  <data name="DefaultCategoryNode" xml:space="preserve">
+    <value>Προεπιλεγμένη κατηγορία</value>
+  </data>
+  <data name="DefaultDocumentSeries" xml:space="preserve">
+    <value>Προεπιλεγμένη σειρά</value>
+  </data>
+  <data name="DefaultDocumentStatus" xml:space="preserve">
+    <value>Προεπιλεγμένη κατάσταση παραστατικού</value>
+  </data>
+  <data name="DefaultDocumentStatusToSend" xml:space="preserve">
+    <value>Κατάσταση παραστατικού για αποστολή</value>
+  </data>
+  <data name="DefaultDocumentType" xml:space="preserve">
+    <value>Προεπιλεγμένος τύπος παραστατικού</value>
+  </data>
+  <data name="DefaultLanguage" xml:space="preserve">
+    <value>Προεπιλεγμένη γλώσσα</value>
+  </data>
+  <data name="DefaultPriceCatalog" xml:space="preserve">
+    <value>Προεπιλεγμένος κατάλογος</value>
+  </data>
+  <data name="DefaultStrore" xml:space="preserve">
+    <value>Προεπιλεγμένο κατάστημα</value>
+  </data>
+  <data name="pckLblSelectDefaultDocumentStatus" xml:space="preserve">
+    <value>Επιλέξτε προεπιλεγμένη κατάσταση παραστατικού </value>
+  </data>
+  <data name="pckLblSelectDocumentSatusToSend" xml:space="preserve">
+    <value>Επιλέξτε κατάσταση παραστατικού για αποστολή</value>
+  </data>
+  <data name="OrderList" xml:space="preserve">
+    <value>Λίστα Παραστατικών</value>
+  </data>
+  <data name="CompanyName" xml:space="preserve">
+    <value>Επωνυμία</value>
+  </data>
+  <data name="GrossTotal" xml:space="preserve">
+    <value>Τελικό Σύνολο</value>
+  </data>
+  <data name="SelectOrderStatus" xml:space="preserve">
+    <value>Επιλέξτε κατάσταση παρστατικού</value>
+  </data>
+  <data name="msgIsLinkedItem" xml:space="preserve">
+    <value>Αυτό το είδος είναι συνδεδεμένο</value>
+  </data>
+  <data name="msgItemNotIncludeInThisCategoryItem" xml:space="preserve">
+    <value>To προιόν δεν περιλαμβάνεται σε αυτή τη κατηγορία</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Αναζήτηση</value>
+  </data>
+  <data name="msgConfirmDelete" xml:space="preserve">
+    <value>Είστε σίγουροι οτι θέλετε να διαγράψετε το παραστατικό;</value>
+  </data>
+  <data name="MsgUpdateDocument" xml:space="preserve">
+    <value>Επιτυχής ενημέρωση παραστατικού</value>
+  </data>
+  <data name="SendError" xml:space="preserve">
+    <value>Σφάλμα αποστολής</value>
+  </data>
+  <data name="MsgSendingData" xml:space="preserve">
+    <value>Αποστολή παραστατικών. Παρακαλώ περιμένετε</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>Από</value>
+  </data>
+  <data name="msgSuccessSynchronize" xml:space="preserve">
+    <value>Ο συγχρονισμός ολοκληρώθηκε με επιτυχία</value>
+  </data>
+  <data name="Active" xml:space="preserve">
+    <value>Ενεργή</value>
+  </data>
+  <data name="CodeBarcode" xml:space="preserve">
+    <value>Κωδικός Είδους/Barcode</value>
+  </data>
+  <data name="CreatedOn" xml:space="preserve">
+    <value>Δημ/κε </value>
+  </data>
+  <data name="DefaultValue" xml:space="preserve">
+    <value>Αρχική Τιμή</value>
+  </data>
+  <data name="Discount" xml:space="preserve">
+    <value>Εκπτωση</value>
+  </data>
+  <data name="IsVat" xml:space="preserve">
+    <value>Συμ/μένου Φ.Π.Α.</value>
+  </data>
+  <data name="Markup" xml:space="preserve">
+    <value>Markoup</value>
+  </data>
+  <data name="PriceCatalog" xml:space="preserve">
+    <value>Τιμοκατάλογος</value>
+  </data>
+  <data name="Prices" xml:space="preserve">
+    <value>ΤΙΜΕΣ</value>
+  </data>
+  <data name="UpdatedOn" xml:space="preserve">
+    <value>Εν/κε</value>
+  </data>
+  <data name="TotalOrderHeader" xml:space="preserve">
+    <value>Σύνολο Παραστατικού</value>
+  </data>
+  <data name="SearchItem" xml:space="preserve">
+    <value>Εύρεση Προϊόντος</value>
+  </data>
+  <data name="btnSEarchBarcode" xml:space="preserve">
+    <value>Αναζήτηση Barcode</value>
+  </data>
+  <data name="msgNotSupportThisPayment" xml:space="preserve">
+    <value>Αυτή η μέθοδος πληρωμής δεν υποστηρίζει αρνητικό υπόλοιπο</value>
+  </data>
+  <data name="DeliveryAddress" xml:space="preserve">
+    <value>Δ/νση Προορισμού</value>
+  </data>
+  <data name="strMsgNoDocumentSending" xml:space="preserve">
+    <value>Δεν υπήρχαν παραστατικά για αποστολή</value>
+  </data>
+  <data name="InvalidDetailValue" xml:space="preserve">
+    <value>Μη έγκυρη τιμή λεπτομερειών</value>
+  </data>
+  <data name="ItemsWithZeroPricesAreNotAllowed" xml:space="preserve">
+    <value>Δεν επιτρέπεται προσθήκη προϊόντων με μηδενική τιμή</value>
+  </data>
+  <data name="MaxItemOrderQtyExceeded" xml:space="preserve">
+    <value>Yπέρβαση μέγιστης τιμής</value>
+  </data>
+  <data name="PleaseDefineTaxCodeBarcodeForItem" xml:space="preserve">
+    <value>Παρακαλώ συμπληρώστε ένα φορολογικό κωδικό Barcode για το προϊόν</value>
+  </data>
+  <data name="SelectedPriceCatalogPolicyNotContainsAllItems" xml:space="preserve">
+    <value>Η επιλεγμένη τιμολογιακή πολιτική δεν υποστηρίζεται για όλα τα προϊόντα</value>
+  </data>
+  <data name="VatFactorNotFound" xml:space="preserve">
+    <value>Vat Factor Not Found</value>
+  </data>
+  <data name="TaxCode" xml:space="preserve">
+    <value>Α.Φ.Μ.</value>
+  </data>
+  <data name="SearchByNameOrTaxCode" xml:space="preserve">
+    <value>Αναζήτηση με Επωνυμία ή ΑΦΜ</value>
+  </data>
+  <data name="NullDefaultPriceCatalogPolicy" xml:space="preserve">
+    <value>Δεν θπάρχει προεπιλεγμένη τιμολογιακή πολιτική καταστήματος</value>
+  </data>
+  <data name="msgNoUserFoundPleaseInsertAuthedicationUrl" xml:space="preserve">
+    <value>Δεν βρέθηκε χρήστης. Παρακαλώ εισάγετε τα στοιχεία Authedication URL στις ρυθμίσεις</value>
+  </data>
+  <data name="SearchByDescription" xml:space="preserve">
+    <value>Αναζήτηση με περιγραφή</value>
+  </data>
+  <data name="IsActiveItem" xml:space="preserve">
+    <value>Ενεργά είδη</value>
+  </data>
+  <data name="DateUpdated" xml:space="preserve">
+    <value>Ημ/νία Ενημέρωσης:</value>
+  </data>
+  <data name="InsertedFroDatem" xml:space="preserve">
+    <value>Ημ/νια εισαγωγής από:</value>
+  </data>
+  <data name="LoadAllItems" xml:space="preserve">
+    <value>Αναζήτηση προϊόντων</value>
+  </data>
+  <data name="msgLoadAllItems" xml:space="preserve">
+    <value>Θέλετε να εμφανίσετε όλα τα προϊόντα;</value>
+  </data>
+  <data name="MeasurementUnit" xml:space="preserve">
+    <value>M.M.</value>
+  </data>
+  <data name="IsActive" xml:space="preserve">
+    <value>Ενεργό</value>
+  </data>
+  <data name="Inactive" xml:space="preserve">
+    <value>Ανενεργό</value>
+  </data>
+  <data name="WithoutVat" xml:space="preserve">
+    <value>Χωρίς ΦΠΑ</value>
+  </data>
+  <data name="WithVat" xml:space="preserve">
+    <value>Με ΦΠΑ</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>Τιμή</value>
+  </data>
+  <data name="Customercode" xml:space="preserve">
+    <value>Κωδ. Πελάτη.</value>
+  </data>
+  <data name="CustomerTaxCode" xml:space="preserve">
+    <value>ΑΦΜ</value>
+  </data>
+  <data name="phone" xml:space="preserve">
+    <value>Τηλ</value>
+  </data>
+  <data name="profession" xml:space="preserve">
+    <value>Επάγγελμα</value>
+  </data>
+  <data name="AddCustomerBtnSaveNewAddress" xml:space="preserve">
+    <value>Δημιουργία Δ/νσης</value>
+  </data>
+  <data name="Results" xml:space="preserve">
+    <value>Αποτελέσματα Αναζήτησης</value>
+  </data>
+  <data name="SearchByNameTaxCodeCodePhone" xml:space="preserve">
+    <value>Αναζήτηση με επωνυμία ή ΑΦΜ ή κωδικό ή τηλέφωνο</value>
+  </data>
+  <data name="TabCustomerAddresses" xml:space="preserve">
+    <value>ΔΙΕΥΘΥΝΣΕΙΣ</value>
+  </data>
+  <data name="TabCustomerDetails" xml:space="preserve">
+    <value>ΣΤΟΙΧΕΙΑ ΠΕΛΑΤΗ</value>
+  </data>
+  <data name="TabCustomerLocation" xml:space="preserve">
+    <value>ΤΟΠΟΘΕΣΙΑ</value>
+  </data>
+  <data name="TabCustomerOrders" xml:space="preserve">
+    <value>ΠΑΡΑΓΓΕΛΙΕΣ</value>
+  </data>
+  <data name="ThereIsNoAddressPleaseAddNewAdderess" xml:space="preserve">
+    <value>Δεν υπάρχει δ/νση. Παρακαλώ συμπληρώστε μια δ/νση</value>
+  </data>
+  <data name="orderCode" xml:space="preserve">
+    <value>Κωδ</value>
+  </data>
+  <data name="orderDescr" xml:space="preserve">
+    <value>Περ</value>
+  </data>
+  <data name="orderDiscount" xml:space="preserve">
+    <value>Εκπτωση</value>
+  </data>
+  <data name="orderQTY" xml:space="preserve">
+    <value>Ποσ</value>
+  </data>
+  <data name="orderTotal" xml:space="preserve">
+    <value>Σύνολο</value>
+  </data>
+  <data name="orderUnitPrice" xml:space="preserve">
+    <value>Τιμή</value>
+  </data>
+  <data name="orderVat" xml:space="preserve">
+    <value>ΦΠΑ</value>
+  </data>
+  <data name="DocumentDetails" xml:space="preserve">
+    <value>Λεπτομέρειες Παραστατικού</value>
+  </data>
+  <data name="strMsgServiceUnavailable" xml:space="preserve">
+    <value>Η διαδικτυακή υπηρεσία δεν είναι διαθέσιμη</value>
+  </data>
+  <data name="LoadingDataPleaseWait" xml:space="preserve">
+    <value>Φόρτωση δεδομένων. Παρακαλώ περιμένετε...</value>
+  </data>
+  <data name="SearchingDataPleaseWait" xml:space="preserve">
+    <value>Αναζήτηση δεδομένων. Παρακαλώ περιμένετε...</value>
+  </data>
+  <data name="CalculatePleaseWait" xml:space="preserve">
+    <value>Υπολογισμός. Παρακαλώ περιμένετε...</value>
+  </data>
+  <data name="Area" xml:space="preserve">
+    <value>Περιοχή</value>
+  </data>
+  <data name="RemoveLine" xml:space="preserve">
+    <value>Διαγραφή Γραμμής</value>
+  </data>
+  <data name="TaxOffice" xml:space="preserve">
+    <value>ΔΟΥ</value>
+  </data>
+  <data name="AddTaxOffice" xml:space="preserve">
+    <value>Προσθήκη ΔΟΥ</value>
+  </data>
+  <data name="SearchTaxOffice" xml:space="preserve">
+    <value>Αναζήτηση ΔΟΥ</value>
+  </data>
+  <data name="MsgMissingTaxOffice" xml:space="preserve">
+    <value>Λείπει ΔΟΥ</value>
+  </data>
+  <data name="NullDeliveryAddress" xml:space="preserve">
+    <value>Δεν υπάρχει Δ/νση Προορισμού</value>
+  </data>
+  <data name="msgPleaseTypeDeliveryAddressToContiniue" xml:space="preserve">
+    <value>Παρακαλώ συμπληρώστε την Δ/νση προορισμού για να συνεχίσετε</value>
+  </data>
+  <data name="msgNotConnectionFound" xml:space="preserve">
+    <value>Δεν υπάρχει σύνδεση. Είστε σε off line λειτουργία.</value>
+  </data>
+  <data name="ChooseDeliveryAddress" xml:space="preserve">
+    <value>Eπιλέξτε Δ/νση προορισμού</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>Εως</value>
+  </data>
+  <data name="AllDocuments" xml:space="preserve">
+    <value>Όλα τα παραστατικά</value>
+  </data>
+  <data name="CopyingCompletedSuccessful" xml:space="preserve">
+    <value>Η αντιγραφή ολοκληρώθηκε με επιτυχία</value>
+  </data>
+  <data name="CopyingDatabasePleaseWait" xml:space="preserve">
+    <value>Αντιγραφή Βάσης. Παρακαλώ περιμένετε...</value>
+  </data>
+  <data name="DoYouWantToCopyDatabase" xml:space="preserve">
+    <value>Θέλετε να αντιγράψετε τη βάση δεδομένων;</value>
+  </data>
+  <data name="DoYouWantToExportDatabase" xml:space="preserve">
+    <value>Θέλετε να εξάγετε τη βάση δεδομένων;</value>
+  </data>
+  <data name="DoYouWantToImportDatabase" xml:space="preserve">
+    <value>Θέλετε να εισάγετε τη βάση;</value>
+  </data>
+  <data name="ExportDatabase" xml:space="preserve">
+    <value>Εξαγωγή Βάσης Δεδομένων</value>
+  </data>
+  <data name="ExportDatabaseCompletedSuccessful" xml:space="preserve">
+    <value>H εξαγωγή της βάσης ολοκληρώθηκε με επιτυχία</value>
+  </data>
+  <data name="ExportingDatabasePleaseWait" xml:space="preserve">
+    <value>Εξαγωγή βάσης. Παρακαλώ περιμένετε...</value>
+  </data>
+  <data name="ImportDatabase" xml:space="preserve">
+    <value>Εισαγωγή βάσης</value>
+  </data>
+  <data name="ImportDatabaseCompletedSuccessful" xml:space="preserve">
+    <value>Η εισαγωγή της βάσης ολοκληρώθηκε με επιτυχία</value>
+  </data>
+  <data name="ImportingDatabasePleaseWait" xml:space="preserve">
+    <value>Εισαγωγή βάσης. Παρακαλώ περιμένετε...</value>
+  </data>
+  <data name="LoginPleaseWait" xml:space="preserve">
+    <value>Γίνεται σύνδεση. Παρακαλώ περιμένετε...</value>
+  </data>
+  <data name="ConfirmYouHaveChangesToThisDocument" xml:space="preserve">
+    <value>Υπάρχουν αλλαγές σε αυτό το παραστατικό. Θέλετε να τις αποθηκεύσετε;</value>
+  </data>
+  <data name="YouTryToLoadAllCustomers" xml:space="preserve">
+    <value>Πρόκειται να εμφανίσετε όλους τους πελάτες. Θέλετε να συνεχίσετε;</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Προσθήκη</value>
+  </data>
+  <data name="AddItem" xml:space="preserve">
+    <value>Προσθήκη Προϊόντος</value>
+  </data>
+  <data name="ItemsToAdd" xml:space="preserve">
+    <value>Προϊόντα για προσθήκη</value>
+  </data>
+  <data name="SavingDocumentsPleaseWait" xml:space="preserve">
+    <value>Αποθήκευση παραστατικών. Παρακαλώ περιμένετε...</value>
+  </data>
+  <data name="FailureAdd" xml:space="preserve">
+    <value>Αποτυχημένες προσθήκες</value>
+  </data>
+  <data name="SuccessAdd" xml:space="preserve">
+    <value>Επιτυχής προσθήκες </value>
+  </data>
+  <data name="WarningYouSelectedItemToAddInDocumentDoYouWantToSaveThem" xml:space="preserve">
+    <value>Έχετε επιλέξει προϊόντα για εισαγωγή στο παραστατικό. Θέλετε να τα αποθηκεύσετε; Αν απαντήσετε όχι όλα τα επιλεγμένα προϊόντα θα χαθούν.</value>
+  </data>
+  <data name="ItemsCount" xml:space="preserve">
+    <value>Σύνολο προϊόντων</value>
+  </data>
+  <data name="DatabaseURLDownload" xml:space="preserve">
+    <value>Database URL Download</value>
+  </data>
+  <data name="AreYouSureToDownloadDatabase" xml:space="preserve">
+    <value>Θέλετε να κάνετε λήψη της βάση δεδομένων;</value>
+  </data>
+  <data name="DownloadingDatabasePleaseWait" xml:space="preserve">
+    <value>Λήψη Βάσης δεδομένων. Παρακαλώ περιμένετε...</value>
+  </data>
+  <data name="MigrationDatabase" xml:space="preserve">
+    <value>MigrationDatabase. Παρακαλώ περιμένετε...</value>
+  </data>
+  <data name="NoConnectionFoundTurnOnYourWiFi" xml:space="preserve">
+    <value>Δεν υπάρχει σύνδεση. Ανοίξτε το wifi της συσκευής σας.</value>
+  </data>
+  <data name="UnzipFile" xml:space="preserve">
+    <value>Αποσυμπίεση Αρχείου. Παρακαλώ περιμένετε...</value>
+  </data>
+  <data name="of" xml:space="preserve">
+    <value>από</value>
+  </data>
+  <data name="Step" xml:space="preserve">
+    <value>Βήμα</value>
+  </data>
+  <data name="MsgThereWasAProblemConnecting" xml:space="preserve">
+    <value>Υπήρξε ένα πρόβλημα κατά τη σύνδεση</value>
+  </data>
+  <data name="PROMOTION_DISCOUNT" xml:space="preserve">
+    <value>Εκπτωση Promotion</value>
+  </data>
+  <data name="All_ItemCategories" xml:space="preserve">
+    <value>Όλες οι κατηγορίες</value>
+  </data>
+  <data name="LoadAllCategoryItems" xml:space="preserve">
+    <value>Θέλετε να εμφανίσεται όλα τα είδη της Κατηγορίας</value>
+  </data>
+  <data name="SubCategoriesNotFound" xml:space="preserve">
+    <value>Δεν Βρέθηκαν Υποκατηγορίες</value>
+  </data>
+  <data name="SearchResults" xml:space="preserve">
+    <value>Αποτελέσματα Αναζήτησης</value>
+  </data>
+  <data name="InsertAtLeastTwoCharacters" xml:space="preserve">
+    <value>Εισάγεται 2 χαρακτήρες για αναζήτηση</value>
+  </data>
+  <data name="Documents" xml:space="preserve">
+    <value>Παραστατικά</value>
+  </data>
+  <data name="DeleteFromList" xml:space="preserve">
+    <value>Διαγραφή</value>
+  </data>
+  <data name="SelectDocumentType" xml:space="preserve">
+    <value>Επιλέξτε τύπο παρστατικού</value>
+  </data>
+  <data name="CompName" xml:space="preserve">
+    <value>Επωνυμία</value>
+  </data>
+  <data name="CreatedDate" xml:space="preserve">
+    <value>Ημ.Δημ.</value>
+  </data>
+  <data name="FinalizedDate" xml:space="preserve">
+    <value>Ημ.Οριστικ.</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Τύπος Παρ.</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>Αξία</value>
+  </data>
+  <data name="InsertDocumentDetails" xml:space="preserve">
+    <value>Εισάγεται τουλάχιστον ένα είδος στο παραστατικό</value>
+  </data>
+  <data name="ChangeDocumentStatus" xml:space="preserve">
+    <value>Αλλάξτε τη κατάσταση παραστατικού σε</value>
+  </data>
+  <data name="DocumentAlreadySend" xml:space="preserve">
+    <value>Το παραστατικό έχει αποσταλεί</value>
+  </data>
+  <data name="FailToSend" xml:space="preserve">
+    <value>Αποτυχία αποστολής</value>
+  </data>
+  <data name="IsSynchronized" xml:space="preserve">
+    <value>Απεσταλμένο</value>
+  </data>
+  <data name="NoChangesAllowed" xml:space="preserve">
+    <value>Δεν επιτρέπονται αλλαγές</value>
+  </data>
+  <data name="SaveSend" xml:space="preserve">
+    <value>Αποθήκευση και Αποστολή</value>
+  </data>
+  <data name="DocumentCustomer" xml:space="preserve">
+    <value>Πελάτης Παραστατικού</value>
+  </data>
+  <data name="SelectedCustomer" xml:space="preserve">
+    <value>Επιλεγμένος Πελάτης</value>
+  </data>
+  <data name="DocumentTotal" xml:space="preserve">
+    <value>Σύνολο Παραστατικού</value>
+  </data>
+  <data name="SearchAllCategories" xml:space="preserve">
+    <value>Αναζ/ση σε όλες τις κατηγορίες</value>
+  </data>
+  <data name="PriceCatalogDetailNotFound" xml:space="preserve">
+    <value>Δεν βρέθηκε τιμή τιμοκαταλόγου</value>
+  </data>
+  <data name="DefaultQty" xml:space="preserve">
+    <value>Προεπιλεγμένη Ποσότητα</value>
+  </data>
+  <data name="MissingDocumentPayment" xml:space="preserve">
+    <value>Υπολοίπονται πληρωμές αξίας</value>
+  </data>
+  <data name="DeviceSettings" xml:space="preserve">
+    <value>Ρυθμ'ισεις Συσκευών</value>
+  </data>
+  <data name="AllOpenDocumentsToSync" xml:space="preserve">
+    <value>Θα πρέπει να στείλετε ή να διαγράψετε όλα τά ανοιχτά παραστατικά, για να συγχρονίσετε</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>Όλα</value>
+  </data>
+  <data name="SelectDevice" xml:space="preserve">
+    <value>Επιλέξτε Συσκευή</value>
+  </data>
+  <data name="SfaId" xml:space="preserve">
+    <value>Κωδικός Συσκευής</value>
+  </data>
+  <data name="PortableInvoicing" xml:space="preserve">
+    <value>Φορητή Τιμολόγιση</value>
+  </data>
+  <data name="StockItems" xml:space="preserve">
+    <value>Είδη σε Απόθεμα</value>
+  </data>
+  <data name="UpdateItemsStock" xml:space="preserve">
+    <value>Ενημέρωση Αποθέματος</value>
+  </data>
+  <data name="Executed" xml:space="preserve">
+    <value>Εκτελέστηκε</value>
+  </data>
+  <data name="GetStockDocuments" xml:space="preserve">
+    <value>Παραλαβή Παραστατικών </value>
+  </data>
+  <data name="NonExecuted" xml:space="preserve">
+    <value>Σε Εκκρεμότητα</value>
+  </data>
+  <data name="Received" xml:space="preserve">
+    <value>Παρελήφθησαν</value>
+  </data>
+  <data name="StockDocuments" xml:space="preserve">
+    <value>Παραστατικά Φόρτωσης</value>
+  </data>
+  <data name="DocumentAlreadyExecuted" xml:space="preserve">
+    <value>Το παραστατικό έχει εκτελεστεί</value>
+  </data>
+  <data name="Stock" xml:space="preserve">
+    <value>Απόθεμα</value>
+  </data>
+  <data name="DocumentHasItemsOutOfStock" xml:space="preserve">
+    <value>Το παραστατικό έχει είδη με ανεπαρκές απόθεμα</value>
+  </data>
+  <data name="UpdateStockFromDocument" xml:space="preserve">
+    <value>Θέλετε να ενημερώσετε το απόθεμα των ειδών?</value>
+  </data>
+  <data name="AvailiableStock" xml:space="preserve">
+    <value>Το διαθέσιμο απόθεμα είναι :</value>
+  </data>
+  <data name="OutOfStock" xml:space="preserve">
+    <value>Δεν υπάρχει επαρκής ποσότητα αποθέματος.</value>
+  </data>
+  <data name="InvalidQuantity" xml:space="preserve">
+    <value>Μή επιτρεπτή ποσότητα</value>
+  </data>
+  <data name="LoadingDocument" xml:space="preserve">
+    <value>Παραστατικό Φόρτωσης</value>
+  </data>
+  <data name="LoadingDocumentType" xml:space="preserve">
+    <value>Τύπος Παραστατικού Φόρτωσης</value>
+  </data>
+  <data name="UnLoadingDocument" xml:space="preserve">
+    <value>Παραστατικό Εκφόρτωσης</value>
+  </data>
+  <data name="UnLoadingDocumentSeries" xml:space="preserve">
+    <value>Σειρά Παραστατικού Εκφόρτωσης</value>
+  </data>
+  <data name="UnLoadingDocumentType" xml:space="preserve">
+    <value>Τύπος Παραστατικού Εκφόρτωσης</value>
+  </data>
+  <data name="WrongSettingsLoadingDocument" xml:space="preserve">
+    <value>Λάθος ρυθμίσεις για το παραστατικό φόρτωσης</value>
+  </data>
+  <data name="ChooseDocumentType" xml:space="preserve">
+    <value>Επιλέξτε τύπο παραστατικού</value>
+  </data>
+  <data name="NewUnloadingDocument" xml:space="preserve">
+    <value>Νέο Δελτίο Εκφόρτωσης</value>
+  </data>
+  <data name="BlueToothPrinter" xml:space="preserve">
+    <value>BlueTooth Printer</value>
+  </data>
+  <data name="BlueToothScanner" xml:space="preserve">
+    <value>BlueTooth Scanner</value>
+  </data>
+  <data name="Change" xml:space="preserve">
+    <value>Ρέστα</value>
+  </data>
+  <data name="OnlyItemsWithStock" xml:space="preserve">
+    <value>Μόνο είδη με απόθεμα</value>
+  </data>
+  <data name="SendPrint" xml:space="preserve">
+    <value>Αποστολή και Έκτύπωση</value>
+  </data>
+  <data name="QuantityOnOpenDocuments" xml:space="preserve">
+    <value>Δεσμευμένη Ποσότητα</value>
+  </data>
+  <data name="LoadAllStockItems" xml:space="preserve">
+    <value>Θέλετε να εμφανίσεται όλα τα είδη με απόθεμα ?</value>
+  </data>
+  <data name="DefaultPolicyNotFound" xml:space="preserve">
+    <value>Δεν βρέθηκε προεπιλεγμένη τιμολογιακή πολιτική</value>
+  </data>
+  <data name="Fail" xml:space="preserve">
+    <value>Αποτυχία</value>
+  </data>
+  <data name="DocumentFailToPrint" xml:space="preserve">
+    <value>To Παραστατικό δεν εκτυπώθηκε</value>
+  </data>
+  <data name="DocumentPrintSuccessfully" xml:space="preserve">
+    <value>Το παραστατικό εκτυπώθηκε επιτυχώς</value>
+  </data>
+  <data name="DocumentSentAndPrint" xml:space="preserve">
+    <value>Το παραστατικό στάλθηκε και εκτυπώθηκε επιτυχώς</value>
+  </data>
+  <data name="DocumentSentButFailToPrint" xml:space="preserve">
+    <value>Το παραστατικό στάλθηκε αλλά δεν εκτυπώθηκε</value>
+  </data>
+  <data name="VehicleNumber" xml:space="preserve">
+    <value>Αρ. Μεταφ. Μέσου</value>
+  </data>
+  <data name="Invalid_Schema" xml:space="preserve">
+    <value>Invalid Schema</value>
+  </data>
+  <data name="Cashier" xml:space="preserve">
+    <value>Χειριστής</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Σχόλια</value>
+  </data>
+  <data name="CONSUMED_POINTS" xml:space="preserve">
+    <value>Πόντοι που αφαιρέθηκαν</value>
+  </data>
+  <data name="CURRENT_TOTAL" xml:space="preserve">
+    <value>Τρέχον Υπόλοιπο</value>
+  </data>
+  <data name="DOCUMENT_DISCOUNTS" xml:space="preserve">
+    <value>Εκπτώσεις Συνόλου</value>
+  </data>
+  <data name="LINE_DISCOUNTS" xml:space="preserve">
+    <value>Εκπτώσεις Ειδών</value>
+  </data>
+  <data name="POINTS_OF_TRANSACTION" xml:space="preserve">
+    <value>Πόντοι Συναλλαγής</value>
+  </data>
+  <data name="PREVIOUS_TOTAL_POINTS" xml:space="preserve">
+    <value>Προηγούμενο υπόλοιπο πόντων</value>
+  </data>
+  <data name="Reason" xml:space="preserve">
+    <value>Αιτιολογία</value>
+  </data>
+  <data name="RECEIPT_SOURCE_INVALID" xml:space="preserve">
+    <value>RECEIPT_SOURCE_INVALID</value>
+  </data>
+  <data name="Store" xml:space="preserve">
+    <value>Κατάστημα</value>
+  </data>
+  <data name="PrinterLineChars" xml:space="preserve">
+    <value>Αρ. Χαρακτήρων Γραμμής Εκτύπωσης</value>
+  </data>
+  <data name="SentDocumentBeforePrinting" xml:space="preserve">
+    <value>Πρέπει να συγχρονίσετε το παραστατικό, για να εκτυπώσετε</value>
+  </data>
+  <data name="DeviceNotConnected" xml:space="preserve">
+    <value>Δεν βρέθηκε συνδεδεμένη συσκευή</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>Εκτύπωση</value>
+  </data>
+  <data name="DiscountWithoutVat" xml:space="preserve">
+    <value>Έκπτωση Άνευ ΦΠΑ</value>
+  </data>
+  <data name="DiscountWithVat" xml:space="preserve">
+    <value>Έκπτωση Με ΦΠΑ</value>
+  </data>
+  <data name="DocumentTotalWitoutVat" xml:space="preserve">
+    <value>Σύν. Άνευ ΦΠΑ</value>
+  </data>
+  <data name="UnitPriceWithoutvat" xml:space="preserve">
+    <value>Τιμή Μον. Άνευ ΦΠΑ</value>
+  </data>
+  <data name="PriceWithoutVat" xml:space="preserve">
+    <value>Τιμή Χωρίς ΦΠΑ</value>
+  </data>
+  <data name="TotalPriceWithoutVat" xml:space="preserve">
+    <value>Συν. Αξία Χωρίς ΦΠΑ</value>
+  </data>
+  <data name="TotalPriceWithVat" xml:space="preserve">
+    <value>Συν. Αξία Με ΦΠΑ</value>
+  </data>
+  <data name="Coordinates" xml:space="preserve">
+    <value>Συντεταγμένες</value>
+  </data>
+  <data name="FailContactServer" xml:space="preserve">
+    <value>Απέτυχε η επικοινωνία με το Server</value>
+  </data>
+  <data name="EditTaxOffice" xml:space="preserve">
+    <value>Επεξεργασία ΔΟΥ</value>
+  </data>
+  <data name="TaxCodeExistsOnServer" xml:space="preserve">
+    <value>Το ΑΦΜ υπάρχει σε άλλο πελάτη,</value>
+  </data>
+  <data name="PriceListUnitPrice" xml:space="preserve">
+    <value>Τιμή Τιμοκαταλόγου</value>
+  </data>
+  <data name="PriceWithoutVat2" xml:space="preserve">
+    <value>Τιμ. Άνευ ΦΠΑ</value>
+  </data>
+  <data name="PriceWithVat" xml:space="preserve">
+    <value>Τιμ. Με ΦΠΑ</value>
+  </data>
+  <data name="PackingMu" xml:space="preserve">
+    <value>Μ.Μ. Συσκευασίας</value>
+  </data>
+  <data name="AreYouSureToSendDocument" xml:space="preserve">
+    <value>Θέλετε να γίνει αποστολή του παραστατικού ?</value>
+  </data>
+  <data name="NetworkProblemContinue" xml:space="preserve">
+    <value>Εντοπίστηκε πρόβλημα δικτύου, Θέλετε να συνεχίσετε ?</value>
+  </data>
+  <data name="PackingQty" xml:space="preserve">
+    <value>Ποσότητα Συσκευασίας</value>
+  </data>
+  <data name="PackQty" xml:space="preserve">
+    <value>Ποσ.Συσκ</value>
+  </data>
+  <data name="Proffesion" xml:space="preserve">
+    <value>Επάγγελμα</value>
+  </data>
+  <data name="Map" xml:space="preserve">
+    <value>Χάρτης</value>
+  </data>
+  <data name="Maps" xml:space="preserve">
+    <value>Χάρτες</value>
+  </data>
+  <data name="NewAddress" xml:space="preserve">
+    <value>Νέα Διεύθυσνη</value>
+  </data>
+  <data name="SetLocationFromAddress" xml:space="preserve">
+    <value>Ορισμός τοποθεσίας από τη διεύθυνση</value>
+  </data>
+  <data name="EditAddress" xml:space="preserve">
+    <value>Επεξεργασία Διεύθυνσης</value>
+  </data>
+  <data name="RouteMap" xml:space="preserve">
+    <value>Χάρτης Δρομολογίων</value>
+  </data>
+  <data name="Routes" xml:space="preserve">
+    <value>Δρομολόγια</value>
+  </data>
+  <data name="StoredRoutes" xml:space="preserve">
+    <value>Αποθηκευμένα Δρομολόγια</value>
+  </data>
+  <data name="AvailiableAddresses" xml:space="preserve">
+    <value>Διαθέσιμες Διευθύνσεις</value>
+  </data>
+  <data name="CreateRoute" xml:space="preserve">
+    <value>Δημιουργία Δρομολογίου</value>
+  </data>
+  <data name="InsertMapAddresses" xml:space="preserve">
+    <value>Εισαγωγή διευθύνσεων από το χάρτη</value>
+  </data>
+  <data name="SaveRoute" xml:space="preserve">
+    <value>Αποθήκευση Δρομολογίου</value>
+  </data>
+  <data name="SelectedAddresses" xml:space="preserve">
+    <value>Επιλεγμένες Διευθύνσεις </value>
+  </data>
+  <data name="CalculateRoute" xml:space="preserve">
+    <value>Υπολογισμός Διαδρομής</value>
+  </data>
+  <data name="RouteName" xml:space="preserve">
+    <value>Όνομα Δρομολογίου</value>
+  </data>
+  <data name="Destinations" xml:space="preserve">
+    <value>Αρ. Προορισμών</value>
+  </data>
+  <data name="Distance" xml:space="preserve">
+    <value>Απόσταση</value>
+  </data>
+  <data name="Duration" xml:space="preserve">
+    <value>Χρόνος σε λεπτά</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Όνομα</value>
+  </data>
+  <data name="RouteInfo" xml:space="preserve">
+    <value>Πληροφορίες Δρομολογίου </value>
+  </data>
+</root>

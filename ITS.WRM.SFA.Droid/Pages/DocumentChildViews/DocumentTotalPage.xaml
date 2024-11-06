@@ -1,0 +1,702 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ITS.WRM.SFA.Droid.Pages.DocumentTotalPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout
+                Padding="0"
+                BackgroundColor="White"
+                HorizontalOptions="FillAndExpand"
+                Spacing="0"
+                VerticalOptions="FillAndExpand">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="80" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100*" />
+                    </Grid.ColumnDefinitions>
+                    <StackLayout
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Padding="0"
+                        BackgroundColor="WhiteSmoke"
+                        HorizontalOptions="FillAndExpand"
+                        Spacing="0"
+                        VerticalOptions="FillAndExpand">
+                        <Label
+                            x:Name="lblOrderForm"
+                            FontAttributes="Bold"
+                            FontSize="26"
+                            HorizontalOptions="Center"
+                            Text=""
+                            TextColor="#000000"
+                            VerticalOptions="Center" />
+                        <Label
+                            x:Name="lblDocType"
+                            FontSize="16"
+                            HorizontalOptions="Center"
+                            Text=""
+                            TextColor="#007ad3"
+                            VerticalOptions="Center" />
+                    </StackLayout>
+                    <StackLayout
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Padding="0"
+                        BackgroundColor="White"
+                        HorizontalOptions="FillAndExpand"
+                        Spacing="0"
+                        VerticalOptions="FillAndExpand">
+                        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="70*" />
+                                <ColumnDefinition Width="26*" />
+                            </Grid.ColumnDefinitions>
+                            <StackLayout
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                BackgroundColor="White"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="FillAndExpand">
+                                <Grid
+                                    BackgroundColor="White"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="FillAndExpand">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="50" />
+                                        <RowDefinition Height="50" />
+                                        <RowDefinition Height="50" />
+                                        <RowDefinition Height="50" />
+                                        <RowDefinition Height="50" />
+                                        <RowDefinition Height="50" />
+                                        <RowDefinition Height="50" />
+                                        <RowDefinition Height="50" />
+                                        <RowDefinition Height="50" />
+                                        <RowDefinition Height="50" />
+                                        <RowDefinition Height="50" />
+                                        <RowDefinition Height="50" />
+                                        <RowDefinition Height="50" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="100*" />
+                                    </Grid.ColumnDefinitions>
+                                    <StackLayout
+                                        Grid.Row="0"
+                                        Padding="2"
+                                        Spacing="2">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="50" />
+                                                <RowDefinition Height="1" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="30*" />
+                                                <ColumnDefinition Width="70*" />
+                                            </Grid.ColumnDefinitions>
+                                            <BoxView
+                                                Grid.Row="0"
+                                                Grid.Column="1"
+                                                BackgroundColor="#bfbcbc"
+                                                HeightRequest="1"
+                                                HorizontalOptions="FillAndExpand"
+                                                VerticalOptions="End" />
+                                            <Label
+                                                x:Name="lblCustomer"
+                                                Grid.Row="0"
+                                                Grid.Column="0"
+                                                BackgroundColor="#01abdf"
+                                                FontSize="17"
+                                                HeightRequest="50"
+                                                HorizontalOptions="FillAndExpand"
+                                                TextColor="WhiteSmoke"
+                                                VerticalOptions="Center"
+                                                YAlign="Center" />
+                                            <Label
+                                                x:Name="txtCustomer"
+                                                Grid.Row="0"
+                                                Grid.Column="1"
+                                                Margin="5,5,5,5"
+                                                BackgroundColor="#ecebeb"
+                                                FontSize="17"
+                                                HeightRequest="50"
+                                                HorizontalOptions="FillAndExpand"
+                                                TextColor="#000000"
+                                                VerticalOptions="Center"
+                                                YAlign="Center" />
+                                        </Grid>
+                                    </StackLayout>
+
+                                    <StackLayout
+                                        Grid.Row="1"
+                                        Padding="2"
+                                        Spacing="2">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="50" />
+                                                <RowDefinition Height="1" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="30*" />
+                                                <ColumnDefinition Width="70*" />
+                                            </Grid.ColumnDefinitions>
+                                            <BoxView
+                                                Grid.Row="0"
+                                                Grid.Column="1"
+                                                BackgroundColor="#bfbcbc"
+                                                HeightRequest="1"
+                                                HorizontalOptions="FillAndExpand"
+                                                VerticalOptions="End" />
+                                            <Label
+                                                x:Name="lblAddress"
+                                                Grid.Row="0"
+                                                Grid.Column="0"
+                                                Margin="2,2,2,2"
+                                                BackgroundColor="#01abdf"
+                                                FontSize="17"
+                                                HeightRequest="50"
+                                                HorizontalOptions="FillAndExpand"
+                                                TextColor="WhiteSmoke"
+                                                VerticalOptions="Center"
+                                                YAlign="Center" />
+                                            <Label
+                                                x:Name="txtAddress"
+                                                Grid.Row="0"
+                                                Grid.Column="1"
+                                                Margin="5,5,5,5"
+                                                BackgroundColor="#ecebeb"
+                                                FontSize="17"
+                                                HeightRequest="50"
+                                                HorizontalOptions="FillAndExpand"
+                                                TextColor="#000000"
+                                                VerticalOptions="Center"
+                                                YAlign="Center" />
+                                        </Grid>
+                                    </StackLayout>
+
+                                    <StackLayout
+                                        Grid.Row="2"
+                                        Padding="2,0,0,2"
+                                        Spacing="2">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="50" />
+                                                <RowDefinition Height="1" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="30*" />
+                                                <ColumnDefinition Width="70*" />
+                                            </Grid.ColumnDefinitions>
+                                            <BoxView
+                                                Grid.Row="0"
+                                                Grid.Column="1"
+                                                BackgroundColor="#bfbcbc"
+                                                HeightRequest="1"
+                                                HorizontalOptions="FillAndExpand"
+                                                VerticalOptions="End" />
+                                            <Label
+                                                x:Name="lblStore"
+                                                Grid.Row="0"
+                                                Grid.Column="0"
+                                                Margin="2,2,2,2"
+                                                BackgroundColor="#01abdf"
+                                                FontSize="17"
+                                                HeightRequest="50"
+                                                HorizontalOptions="FillAndExpand"
+                                                TextColor="WhiteSmoke"
+                                                VerticalOptions="Center"
+                                                YAlign="Center" />
+                                            <Label
+                                                x:Name="txtStoreName"
+                                                Grid.Row="0"
+                                                Grid.Column="1"
+                                                Margin="5,5,5,5"
+                                                BackgroundColor="#ecebeb"
+                                                FontSize="17"
+                                                HeightRequest="50"
+                                                HorizontalOptions="FillAndExpand"
+                                                TextColor="#000000"
+                                                VerticalOptions="Center"
+                                                YAlign="Center" />
+                                        </Grid>
+                                    </StackLayout>
+
+                                    <StackLayout
+                                        Grid.Row="3"
+                                        Padding="2"
+                                        Spacing="2">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="50" />
+                                                <RowDefinition Height="1" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="30*" />
+                                                <ColumnDefinition Width="70*" />
+                                            </Grid.ColumnDefinitions>
+                                            <BoxView
+                                                Grid.Row="0"
+                                                Grid.Column="1"
+                                                BackgroundColor="#bfbcbc"
+                                                HeightRequest="1"
+                                                HorizontalOptions="FillAndExpand"
+                                                VerticalOptions="End" />
+                                            <Label
+                                                x:Name="lblTotalDiscount"
+                                                Grid.Row="0"
+                                                Grid.Column="0"
+                                                Margin="2,2,2,2"
+                                                BackgroundColor="#01abdf"
+                                                FontSize="17"
+                                                HeightRequest="50"
+                                                HorizontalOptions="FillAndExpand"
+                                                TextColor="WhiteSmoke"
+                                                VerticalOptions="Center"
+                                                YAlign="Center" />
+                                            <Label
+                                                x:Name="txtTotalDiscount"
+                                                Grid.Row="0"
+                                                Grid.Column="1"
+                                                Margin="5,5,5,5"
+                                                BackgroundColor="#ecebeb"
+                                                FontSize="17"
+                                                HeightRequest="50"
+                                                HorizontalOptions="FillAndExpand"
+                                                TextColor="#000000"
+                                                VerticalOptions="Center"
+                                                YAlign="Center" />
+                                        </Grid>
+                                    </StackLayout>
+
+                                    <StackLayout
+                                        Grid.Row="4"
+                                        Padding="2"
+                                        Spacing="2">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="50" />
+                                                <RowDefinition Height="1" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="30*" />
+                                                <ColumnDefinition Width="70*" />
+                                            </Grid.ColumnDefinitions>
+                                            <BoxView
+                                                Grid.Row="0"
+                                                Grid.Column="1"
+                                                BackgroundColor="#bfbcbc"
+                                                HeightRequest="1"
+                                                HorizontalOptions="FillAndExpand"
+                                                VerticalOptions="End" />
+                                            <Label
+                                                x:Name="lblTotalBeforeDiscount"
+                                                Grid.Row="0"
+                                                Grid.Column="0"
+                                                Margin="2,2,2,2"
+                                                BackgroundColor="#01abdf"
+                                                FontSize="17"
+                                                HeightRequest="50"
+                                                HorizontalOptions="FillAndExpand"
+                                                TextColor="WhiteSmoke"
+                                                VerticalOptions="Center"
+                                                YAlign="Center" />
+                                            <Label
+                                                x:Name="txtTotalBeforeDiscount"
+                                                Grid.Row="0"
+                                                Grid.Column="1"
+                                                Margin="5,5,5,5"
+                                                BackgroundColor="#ecebeb"
+                                                FontSize="17"
+                                                HeightRequest="50"
+                                                HorizontalOptions="FillAndExpand"
+                                                TextColor="#000000"
+                                                VerticalOptions="Center"
+                                                YAlign="Center" />
+                                        </Grid>
+                                    </StackLayout>
+
+                                    <StackLayout
+                                        Grid.Row="5"
+                                        Padding="2"
+                                        Spacing="2">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="50" />
+                                                <RowDefinition Height="1" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="30*" />
+                                                <ColumnDefinition Width="70*" />
+                                            </Grid.ColumnDefinitions>
+                                            <BoxView
+                                                Grid.Row="0"
+                                                Grid.Column="1"
+                                                BackgroundColor="#bfbcbc"
+                                                HeightRequest="1"
+                                                HorizontalOptions="FillAndExpand"
+                                                VerticalOptions="End" />
+                                            <Label
+                                                x:Name="lblTotalProductsNumber"
+                                                Grid.Row="0"
+                                                Grid.Column="0"
+                                                Margin="2,2,2,2"
+                                                BackgroundColor="#01abdf"
+                                                FontSize="17"
+                                                HeightRequest="50"
+                                                HorizontalOptions="FillAndExpand"
+                                                TextColor="WhiteSmoke"
+                                                VerticalOptions="Center"
+                                                YAlign="Center" />
+                                            <Label
+                                                x:Name="txtTotalProductsNumber"
+                                                Grid.Row="0"
+                                                Grid.Column="1"
+                                                Margin="5,5,5,5"
+                                                BackgroundColor="#ecebeb"
+                                                FontSize="17"
+                                                HeightRequest="50"
+                                                HorizontalOptions="FillAndExpand"
+                                                TextColor="#000000"
+                                                VerticalOptions="Center"
+                                                YAlign="Center" />
+                                        </Grid>
+                                    </StackLayout>
+
+                                    <StackLayout
+                                        Grid.Row="6"
+                                        Padding="2"
+                                        Spacing="2">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="50" />
+                                                <RowDefinition Height="1" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="30*" />
+                                                <ColumnDefinition Width="70*" />
+                                            </Grid.ColumnDefinitions>
+                                            <BoxView
+                                                Grid.Row="0"
+                                                Grid.Column="1"
+                                                BackgroundColor="#bfbcbc"
+                                                HeightRequest="1"
+                                                HorizontalOptions="FillAndExpand"
+                                                VerticalOptions="End" />
+                                            <Label
+                                                x:Name="lblTotalVat"
+                                                Grid.Row="0"
+                                                Grid.Column="0"
+                                                Margin="2,2,2,2"
+                                                BackgroundColor="#01abdf"
+                                                FontSize="17"
+                                                HeightRequest="50"
+                                                HorizontalOptions="FillAndExpand"
+                                                TextColor="WhiteSmoke"
+                                                VerticalOptions="Center"
+                                                YAlign="Center" />
+                                            <Label
+                                                x:Name="txtTotalVat"
+                                                Grid.Row="0"
+                                                Grid.Column="1"
+                                                Margin="5,5,5,5"
+                                                BackgroundColor="#ecebeb"
+                                                FontSize="17"
+                                                HeightRequest="50"
+                                                HorizontalOptions="FillAndExpand"
+                                                TextColor="#000000"
+                                                VerticalOptions="Center"
+                                                YAlign="Center" />
+                                        </Grid>
+                                    </StackLayout>
+
+                                    <StackLayout
+                                        Grid.Row="7"
+                                        Padding="2"
+                                        Spacing="2">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="50" />
+                                                <RowDefinition Height="1" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="30*" />
+                                                <ColumnDefinition Width="70*" />
+                                            </Grid.ColumnDefinitions>
+                                            <BoxView
+                                                Grid.Row="0"
+                                                Grid.Column="1"
+                                                BackgroundColor="#bfbcbc"
+                                                HeightRequest="1"
+                                                HorizontalOptions="FillAndExpand"
+                                                VerticalOptions="End" />
+                                            <Label
+                                                x:Name="lblFinalAmount"
+                                                Grid.Row="0"
+                                                Grid.Column="0"
+                                                Margin="2,2,2,2"
+                                                BackgroundColor="#01abdf"
+                                                FontAttributes="Bold"
+                                                FontSize="18"
+                                                HeightRequest="50"
+                                                HorizontalOptions="FillAndExpand"
+                                                TextColor="WhiteSmoke"
+                                                VerticalOptions="Center"
+                                                YAlign="Center" />
+                                            <Label
+                                                x:Name="txtFinalAmount"
+                                                Grid.Row="0"
+                                                Grid.Column="1"
+                                                Margin="5,5,5,5"
+                                                BackgroundColor="#ecebeb"
+                                                FontAttributes="Bold"
+                                                FontSize="22"
+                                                HeightRequest="50"
+                                                HorizontalOptions="FillAndExpand"
+                                                TextColor="#000000"
+                                                VerticalOptions="Center"
+                                                YAlign="Center" />
+                                        </Grid>
+                                    </StackLayout>
+
+                                    <StackLayout
+                                        Grid.Row="8"
+                                        Padding="2"
+                                        Spacing="2">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="50" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="30*" />
+                                                <ColumnDefinition Width="70*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Label
+                                                x:Name="lblDocumentStatus"
+                                                Grid.Row="0"
+                                                Grid.Column="0"
+                                                Margin="2,2,2,2"
+                                                BackgroundColor="#01abdf"
+                                                FontSize="17"
+                                                HeightRequest="50"
+                                                HorizontalOptions="FillAndExpand"
+                                                TextColor="WhiteSmoke"
+                                                VerticalOptions="Center"
+                                                YAlign="Center" />
+                                            <Picker
+                                                x:Name="pckDefaultDocumentStatus"
+                                                Grid.Row="0"
+                                                Grid.Column="1"
+                                                FontSize="17"
+                                                HorizontalOptions="FillAndExpand"
+                                                SelectedIndexChanged="setDocumentStatus"
+                                                TextColor="#000000"
+                                                VerticalOptions="Center" />
+                                        </Grid>
+                                    </StackLayout>
+
+                                    <StackLayout
+                                        Grid.Row="9"
+                                        Padding="2"
+                                        Spacing="2">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="50" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="30*" />
+                                                <ColumnDefinition Width="70*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Label
+                                                x:Name="lblDate"
+                                                Grid.Row="0"
+                                                Grid.Column="0"
+                                                Margin="2,2,2,2"
+                                                BackgroundColor="#01abdf"
+                                                FontSize="17"
+                                                HeightRequest="50"
+                                                HorizontalOptions="FillAndExpand"
+                                                TextColor="WhiteSmoke"
+                                                VerticalOptions="Center"
+                                                YAlign="Center" />
+                                            <DatePicker
+                                                x:Name="pckDate"
+                                                Grid.Row="0"
+                                                Grid.Column="1"
+                                                FontSize="17"
+                                                VerticalOptions="Center">
+                                                <DatePicker.Format>dd-MM-yyyy</DatePicker.Format>
+                                            </DatePicker>
+                                        </Grid>
+                                    </StackLayout>
+
+                                    <StackLayout
+                                        Grid.Row="10"
+                                        Padding="2"
+                                        Spacing="2">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="50" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="30*" />
+                                                <ColumnDefinition Width="70*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Label
+                                                x:Name="lblVehicleNumber"
+                                                Grid.Row="0"
+                                                Grid.Column="0"
+                                                Margin="2,2,2,2"
+                                                BackgroundColor="#01abdf"
+                                                FontSize="17"
+                                                HeightRequest="50"
+                                                HorizontalOptions="FillAndExpand"
+                                                TextColor="WhiteSmoke"
+                                                VerticalOptions="Center"
+                                                YAlign="Center" />
+                                            <Entry
+                                                x:Name="txtVehicleNumber"
+                                                Grid.Row="0"
+                                                Grid.Column="1"
+                                                Margin="5,5,5,5"
+                                                Focused="VehicleNumberFocused"
+                                                FontSize="17"
+                                                HorizontalOptions="FillAndExpand"
+                                                TextColor="#000000"
+                                                Unfocused="VehicleNumberUnFocused"
+                                                VerticalOptions="Center" />
+                                        </Grid>
+                                    </StackLayout>
+
+                                    <StackLayout
+                                        Grid.Row="11"
+                                        Padding="2"
+                                        Spacing="2">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="50" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="30*" />
+                                                <ColumnDefinition Width="70*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Label
+                                                x:Name="lblRemarks"
+                                                Grid.Row="0"
+                                                Grid.Column="0"
+                                                Margin="2,2,2,2"
+                                                BackgroundColor="#01abdf"
+                                                FontSize="17"
+                                                HeightRequest="50"
+                                                HorizontalOptions="FillAndExpand"
+                                                TextColor="WhiteSmoke"
+                                                VerticalOptions="Center"
+                                                YAlign="Center" />
+                                            <Entry
+                                                x:Name="txtRemarks"
+                                                Grid.Row="0"
+                                                Grid.Column="1"
+                                                Margin="5,5,5,5"
+                                                Focused="RemarksFocused"
+                                                FontSize="17"
+                                                HorizontalOptions="FillAndExpand"
+                                                TextChanged="setRemarks"
+                                                TextColor="#000000"
+                                                Unfocused="RemarksUnFocused"
+                                                VerticalOptions="Center" />
+                                        </Grid>
+                                    </StackLayout>
+
+                                    <StackLayout
+                                        Grid.Row="12"
+                                        Padding="2"
+                                        Spacing="2">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="50" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="30*" />
+                                                <ColumnDefinition Width="70*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Label
+                                                x:Name="lblDeliveryAddress"
+                                                Grid.Row="0"
+                                                Grid.Column="0"
+                                                Margin="2,2,2,2"
+                                                BackgroundColor="#01abdf"
+                                                FontSize="17"
+                                                HeightRequest="50"
+                                                TextColor="WhiteSmoke"
+                                                YAlign="Center" />
+                                            <Entry
+                                                x:Name="txtDeliveryAddress"
+                                                Grid.Row="0"
+                                                Grid.Column="1"
+                                                Margin="5,5,5,5"
+                                                Focused="DeliveryAddressFocused"
+                                                FontSize="17"
+                                                HorizontalOptions="FillAndExpand"
+                                                TextChanged="setDeliveryAddress"
+                                                TextColor="#000000"
+                                                Unfocused="DeliveryAddressUnFocused" />
+                                        </Grid>
+                                    </StackLayout>
+                                </Grid>
+                            </StackLayout>
+
+                            <StackLayout
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Padding="2"
+                                HorizontalOptions="FillAndExpand"
+                                Spacing="2"
+                                VerticalOptions="FillAndExpand">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="50" />
+                                        <RowDefinition Height="50" />
+                                        <RowDefinition Height="50" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="90*" />
+                                    </Grid.ColumnDefinitions>
+                                    <controls:ImageButton
+                                        x:Name="btnSave"
+                                        Grid.Row="0"
+                                        Grid.Column="0"
+                                        BackgroundColor="#2196F3"
+                                        Clicked="OnSave"
+                                        HeightRequest="50"
+                                        TextColor="WhiteSmoke" />
+                                    <controls:ImageButton
+                                        x:Name="btnSaveSend"
+                                        Grid.Row="1"
+                                        Grid.Column="0"
+                                        BackgroundColor="#2196F3"
+                                        Clicked="OnSaveSend"
+                                        HeightRequest="50"
+                                        TextColor="WhiteSmoke" />
+                                    <controls:ImageButton
+                                        x:Name="btnSentPrint"
+                                        Grid.Row="2"
+                                        Grid.Column="0"
+                                        BackgroundColor="#2196F3"
+                                        Clicked="OnSavePrint"
+                                        HeightRequest="50"
+                                        TextColor="WhiteSmoke" />
+                                </Grid>
+                            </StackLayout>
+                        </Grid>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

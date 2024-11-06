@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             x:Class="ITS.WRM.SFA.Droid.Pages.SettingsPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="0" Spacing="0" BackgroundColor="WhiteSmoke" >
+
+                <StackLayout HeightRequest="40" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="15" BackgroundColor="WhiteSmoke">
+                    <Label  x:Name="lblSettings" Text="" FontSize="28" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" TextColor="#000000" />
+                </StackLayout>
+
+
+                <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="WhiteSmoke">
+                    <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                        <Grid.RowDefinitions >
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="60"/>
+                            <RowDefinition Height="60"/>
+                            <RowDefinition Height="60"/>
+                            <RowDefinition Height="60"/>
+                            <RowDefinition Height="60"/>
+                        </Grid.RowDefinitions >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackLayout Grid.Row="0" Padding="0" Spacing="0">
+                            <Grid >
+                                <Grid.RowDefinitions >
+                                    <RowDefinition Height="50"/>
+                                </Grid.RowDefinitions >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="30*"/>
+                                    <ColumnDefinition Width="70*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label HeightRequest="50" XAlign="Center" BackgroundColor="#01abdf"  VerticalTextAlignment="Center"  TextColor="WhiteSmoke" Grid.Row="0" Grid.Column="0" x:Name="lblServerURL"   FontSize="18"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" />
+                                <Entry Focused="OnServerUrlFocused" Unfocused="OnServerUrlUnFocused"  BackgroundColor="WhiteSmoke" TextColor="#000000" Grid.Row="0" Grid.Column="1" x:Name="entryServerURL" HeightRequest="50" Keyboard="Text"  HorizontalOptions="FillAndExpand" VerticalOptions="Center"></Entry>
+                            </Grid>
+                        </StackLayout>
+
+                        <StackLayout Grid.Row="1"  Padding="0" Spacing="0">
+                            <Grid>
+                                <Grid.RowDefinitions >
+                                    <RowDefinition Height="50"/>
+                                </Grid.RowDefinitions >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="30*"/>
+                                    <ColumnDefinition Width="70*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label HeightRequest="50" XAlign="Center" BackgroundColor="#01abdf"  VerticalTextAlignment="Center"  TextColor="WhiteSmoke" Grid.Row="0" Grid.Column="0" x:Name="lblAuthenticationURL"  FontSize="18"  HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                                <Entry  Focused="OnAuthUrlFocused" Unfocused="OnAuthUrlUnFocused" BackgroundColor="WhiteSmoke" Grid.Row="0" Grid.Column="1" x:Name="entryAuthenticationURL" Keyboard="Text"  HorizontalOptions="FillAndExpand" VerticalOptions="Center"></Entry>
+                            </Grid>
+                        </StackLayout>
+
+                        <StackLayout Grid.Row="2"   Padding="0" Spacing="0">
+                            <Grid>
+                                <Grid.RowDefinitions >
+                                    <RowDefinition Height="50"/>
+                                </Grid.RowDefinitions >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="30*"/>
+                                    <ColumnDefinition Width="70*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label HeightRequest="50" XAlign="Center" BackgroundColor="#01abdf"   VerticalTextAlignment="Center"  TextColor="WhiteSmoke" Grid.Row="0" Grid.Column="0"  x:Name="lblDownloadURL" FontSize="18"  HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                                <Entry   Focused="OnDBUrlFocused" Unfocused="OnDBUrlUnFocused" BackgroundColor="WhiteSmoke" Grid.Row="0" Grid.Column="1"  x:Name="entryDownloadURL" Keyboard="Text"  HorizontalOptions="FillAndExpand" VerticalOptions="Center"></Entry>
+                            </Grid>
+                        </StackLayout>
+
+                        <StackLayout Grid.Row="3"   Padding="0" Spacing="0">
+                            <Grid>
+                                <Grid.RowDefinitions >
+                                    <RowDefinition Height="50"/>
+                                </Grid.RowDefinitions >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="30*"/>
+                                    <ColumnDefinition Width="70*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label   HeightRequest="50" BackgroundColor="#01abdf" XAlign="Center"  VerticalTextAlignment="Center"  TextColor="WhiteSmoke" Grid.Row="0" Grid.Column="0" x:Name="lblSelectedLanguage" FontSize="18"  HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                                <Picker  BackgroundColor="WhiteSmoke" Grid.Row="0" Grid.Column="1" x:Name="pckLanguageList" Title=""  VerticalOptions="Center"   />
+                            </Grid>
+                        </StackLayout>
+
+                        <StackLayout Grid.Row="4" Padding="0" Spacing="0">
+                            <Grid>
+                                <Grid.RowDefinitions >
+                                    <RowDefinition Height="50"/>
+                                </Grid.RowDefinitions >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="30*"/>
+                                    <ColumnDefinition Width="70*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label HeightRequest="50" XAlign="Center" BackgroundColor="#01abdf"  VerticalTextAlignment="Center"  TextColor="WhiteSmoke" Grid.Row="0" Grid.Column="0"  x:Name="lblSelectedCategoryNode" FontSize="18"  HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                                <Picker BackgroundColor="WhiteSmoke" Grid.Row="0" Grid.Column="1" x:Name="pckCategoryNodeList" Title=""  VerticalOptions="Center"   />
+                            </Grid>
+                        </StackLayout>
+
+                        <StackLayout Grid.Row="5"   Padding="0" Spacing="0">
+                            <Grid>
+                                <Grid.RowDefinitions >
+                                    <RowDefinition Height="50"/>
+                                </Grid.RowDefinitions >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="30*"/>
+                                    <ColumnDefinition Width="70*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label  HeightRequest="50" XAlign="Center" BackgroundColor="#01abdf" VerticalTextAlignment="Center"  TextColor="WhiteSmoke" Grid.Row="0" Grid.Column="0" x:Name="lblSelectedDocumentStatus" FontSize="18"  HorizontalOptions="FillAndExpand" VerticalOptions="Center"  Text=""/>
+                                <Picker BackgroundColor="WhiteSmoke" Grid.Row="0" Grid.Column="1" x:Name="pckDocumentStatus"  Title="" VerticalOptions="Center" SelectedIndexChanged="OnDefaultDocumentStatusChanged" />
+                            </Grid>
+                        </StackLayout>
+
+                        <StackLayout Grid.Row="6"   Padding="0" Spacing="0">
+                            <Grid>
+                                <Grid.RowDefinitions >
+                                    <RowDefinition Height="50"/>
+                                </Grid.RowDefinitions >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="30*"/>
+                                    <ColumnDefinition Width="70*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label HeightRequest="50" XAlign="Center" BackgroundColor="#01abdf"  VerticalTextAlignment="Center"  TextColor="WhiteSmoke" Grid.Row="0" Grid.Column="0" x:Name="lblSelectedDocumentStatusToSend" FontSize="18"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text=""/>
+                                <Picker BackgroundColor="WhiteSmoke" Grid.Row="0" Grid.Column="1" x:Name="pckDocumentStatusToSend" Title="" VerticalOptions="Center" SelectedIndexChanged="OnSendDocumentStatusChanged"  />
+                            </Grid>
+                        </StackLayout>
+
+
+                        <StackLayout Grid.Row="7"   Padding="0" Spacing="0">
+                            <Grid>
+                                <Grid.RowDefinitions >
+                                    <RowDefinition Height="50"/>
+                                </Grid.RowDefinitions >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="30*"/>
+                                    <ColumnDefinition Width="70*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label HeightRequest="50" XAlign="Center" BackgroundColor="#01abdf" VerticalTextAlignment="Center"  TextColor="WhiteSmoke" Grid.Row="0" Grid.Column="0" x:Name="lblSelectedStore"  FontSize="18"  HorizontalOptions="FillAndExpand" VerticalOptions="Center"  Text=""/>
+                                <Picker BackgroundColor="WhiteSmoke" Grid.Row="0" Grid.Column="1" x:Name="pckSelectedStore" Title=""  VerticalOptions="Center" SelectedIndexChanged="OnStoreChanged"  />
+                            </Grid>
+                        </StackLayout>
+
+
+                        <StackLayout Grid.Row="8"   Padding="0" Spacing="0">
+                            <Grid>
+                                <Grid.RowDefinitions >
+                                    <RowDefinition Height="50"/>
+                                </Grid.RowDefinitions >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="30*"/>
+                                    <ColumnDefinition Width="70*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label HeightRequest="50" XAlign="Center" BackgroundColor="#01abdf"  VerticalTextAlignment="Center"  TextColor="WhiteSmoke"  Grid.Row="0" Grid.Column="0" x:Name="lblSelectedDocumentType"  FontSize="18"  HorizontalOptions="FillAndExpand" VerticalOptions="Center"  Text=""/>
+                                <Picker BackgroundColor="WhiteSmoke" Grid.Row="0" Grid.Column="1" x:Name="pckDocumentType" Title="" VerticalOptions="Center"  />
+                            </Grid>
+                        </StackLayout>
+
+
+                        <StackLayout Grid.Row="9"   Padding="0" Spacing="0">
+                            <Grid>
+                                <Grid.RowDefinitions >
+                                    <RowDefinition Height="50"/>
+                                </Grid.RowDefinitions >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="30*"/>
+                                    <ColumnDefinition Width="70*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label HeightRequest="50" XAlign="Center" BackgroundColor="#01abdf"   VerticalTextAlignment="Center"  TextColor="WhiteSmoke" Grid.Row="0" Grid.Column="0" x:Name="lblSelectedDocumentSeries" FontSize="18"  HorizontalOptions="FillAndExpand" VerticalOptions="Center"  Text=""/>
+                                <Picker BackgroundColor="WhiteSmoke" Grid.Row="0" Grid.Column="1" x:Name="pckDocumentSeries" Title="" VerticalOptions="Center"  />
+                            </Grid>
+                        </StackLayout>
+
+                        <StackLayout Grid.Row="10"   Padding="0" Spacing="0">
+                            <Grid>
+                                <Grid.RowDefinitions >
+                                    <RowDefinition Height="50"/>
+                                </Grid.RowDefinitions >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="30*"/>
+                                    <ColumnDefinition Width="70*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label HeightRequest="50" XAlign="Center" BackgroundColor="#01abdf"  VerticalTextAlignment="Center"  TextColor="WhiteSmoke" Grid.Row="0" Grid.Column="0" x:Name="lblSwitch" FontSize="18"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text=""/>
+                                <Switch  BackgroundColor="WhiteSmoke" Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" x:Name="swiScan" Toggled="ScanToogled" />
+                            </Grid>
+                        </StackLayout>
+
+                        <StackLayout Grid.Row="11"   Padding="0" Spacing="0">
+                            <Grid>
+                                <Grid.RowDefinitions >
+                                    <RowDefinition Height="50"/>
+                                </Grid.RowDefinitions >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="30*"/>
+                                    <ColumnDefinition Width="70*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label HeightRequest="50" XAlign="Center" BackgroundColor="#01abdf" Text="Print Service"   VerticalTextAlignment="Center"  TextColor="WhiteSmoke" Grid.Row="0" Grid.Column="0"  x:Name="lblPrintService" FontSize="18"  HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                                <Entry   Focused="OnPrintServiceFocused" Unfocused="OnPrintServiceUnFocused" BackgroundColor="WhiteSmoke" Grid.Row="0" Grid.Column="1"  x:Name="PrintService" Keyboard="Text"  HorizontalOptions="FillAndExpand" VerticalOptions="Center"></Entry>
+                            </Grid>
+                        </StackLayout>
+
+                        <StackLayout Grid.Row="12" Padding="0" Spacing="0">
+                            <Grid>
+                                <Grid.RowDefinitions >
+                                    <RowDefinition Height="50"/>
+                                </Grid.RowDefinitions >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="30*"/>
+                                    <ColumnDefinition Width="70*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label HeightRequest="50" XAlign="Center" BackgroundColor="#01abdf" Text="Dsign Service"  VerticalTextAlignment="Center"  TextColor="WhiteSmoke" Grid.Row="0" Grid.Column="0"  x:Name="lblDsignService" FontSize="18"  HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                                <Entry   Focused="OnDsignServiceFocused" Unfocused="DsignServiceUnFocused" BackgroundColor="WhiteSmoke" Grid.Row="0" Grid.Column="1"  x:Name="DsignService" Keyboard="Text"  HorizontalOptions="FillAndExpand" VerticalOptions="Center"></Entry>
+                            </Grid>
+                        </StackLayout>
+
+                        <controls:ImageButton x:Name="btnImportDb" BackgroundColor="#01abdf" Grid.Row="13" TextColor="WhiteSmoke" HeightRequest="60" WidthRequest="100" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Clicked="OnImportDB"/>
+
+                        <controls:ImageButton x:Name="btnExportDb" BackgroundColor="#01abdf" Grid.Row="14"  TextColor="WhiteSmoke" HeightRequest="60" WidthRequest="100" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Clicked="OnExportDB"/>
+
+                        <controls:ImageButton x:Name="btnDownloadDb" BackgroundColor="#01abdf" Grid.Row="15"  TextColor="WhiteSmoke" HeightRequest="60" WidthRequest="100" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Clicked="OnDownloadDB"/>
+
+                        <controls:ImageButton x:Name="btnSave" BackgroundColor="#01abdf"  Grid.Row="16" TextColor="WhiteSmoke" Text=""  HeightRequest="60" Clicked="OnSaveSettings"/>
+
+                        <controls:ImageButton x:Name="btnCancel" BackgroundColor="#01abdf"  Grid.Row="17"  TextColor="WhiteSmoke" Text="" HeightRequest="60"  Clicked="OnCancel"/>
+
+                    </Grid>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

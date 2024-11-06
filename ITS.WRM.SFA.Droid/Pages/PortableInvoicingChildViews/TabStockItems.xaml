@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             x:Class="ITS.WRM.SFA.Droid.Pages.PortableInvoicingChildViews.TabStockItems">
+    <ContentPage.Content>
+        <StackLayout >
+            <StackLayout  HeightRequest="10" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Spacing="10" >
+                <Label  x:Name="lblStockItems"  FontSize="27" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" TextColor="#000000" />
+            </StackLayout>
+
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  >
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="22*"></RowDefinition>
+                        <RowDefinition Height="9*"></RowDefinition>
+                        <RowDefinition Height="69*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <!--FILTERS-->
+
+                    <StackLayout Grid.Row="0" Grid.Column="0">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="33*"/>
+                                <RowDefinition Height="33*"/>
+                                <RowDefinition Height="33*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="70*"/>
+                                <ColumnDefinition Width="30*"/>
+                            </Grid.ColumnDefinitions>
+                            <controls:ImageButton  x:Name="BtnNewDocumet" BackgroundColor="#01abdf" Grid.Row="0" Grid.Column="1" TextColor="WhiteSmoke" HeightRequest="40" WidthRequest="200"   Clicked="OnNewUnloadingDocument"/>
+                            <SearchBar x:Name="BarcodeInput" Placeholder="Αναζήτηση προϊόντος"  Grid.Row="1" Grid.Column="0" Unfocused="OnBarcodeInputUnFocused" Focused="OnBarcodeInputFocused" SearchButtonPressed="SearchBarcodeByKeyboard" />
+                            <SearchBar x:Name="DescriptionInput" Placeholder="Αναζήτηση προϊόντος"  Grid.Row="2" Grid.Column="0" Unfocused="OnDescriptionInputUnFocused" Focused="OnDescriptionInputFocused" SearchButtonPressed="SearchDescriptionByKeyboard" />
+                            <controls:ImageButton  BackgroundColor="#01abdf" Grid.Row="2" Grid.Column="1" TextColor="WhiteSmoke" HeightRequest="40" WidthRequest="200"  Image="search.png"  Clicked="BtnSearchItem"/>
+                        </Grid>
+                    </StackLayout>
+
+                    <!--ITEM LISTVIEW HEADER-->
+                    <StackLayout Grid.Row="1" Grid.Column="0"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Grid BackgroundColor="#474a4f">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="43*"></ColumnDefinition>
+                                <ColumnDefinition Width="15*"></ColumnDefinition>
+                                <ColumnDefinition Width="15*"></ColumnDefinition>
+                                <ColumnDefinition Width="25*"></ColumnDefinition>
+                                <ColumnDefinition Width="2*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50" />
+                            </Grid.RowDefinitions>
+                            <Label YAlign="Center" Margin="20,2,2,2" x:Name="lblItemDescription" Text="" Grid.Row="0" Grid.Column="0" FontAttributes="Bold" FontSize="17" TextColor="WhiteSmoke" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                            <Label YAlign="Center" XAlign="Center"  x:Name="lblItemCode" Margin= "2,2,2,2"  Text="" Grid.Row="0" Grid.Column="1"  FontAttributes="Bold" FontSize="17" TextColor="WhiteSmoke" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                            <Label XAlign="End" YAlign="Center"  Margin= "2,2,2,2"  x:Name="lblStock" Text="" Grid.Row="0" Grid.Column="2"  FontAttributes="Bold" FontSize="17" TextColor="WhiteSmoke" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                            <Label XAlign="End" YAlign="Center"  Margin= "2,2,2,2"  x:Name="lblCommitedQuantity" Text="" Grid.Row="0" Grid.Column="3"  FontAttributes="Bold" FontSize="17" TextColor="WhiteSmoke" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                            <Label XAlign="End" YAlign="Center"  Margin= "2,2,2,2"  Text="" Grid.Row="0" Grid.Column="4"   HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                        </Grid>
+                    </StackLayout>
+                    <!--ITEM LISTVIEW-->
+                    <StackLayout Grid.Row="2" Grid.Column="0" Spacing="10" Orientation="Horizontal" x:Name="DocumentsTableStack"  >
+                        <ListView x:Name="ItemDataSource" RowHeight="50" SeparatorVisibility="Default" SeparatorColor="#b5afaf" >
+                            <ListView.ItemTemplate>
+                                <DataTemplate >
+                                    <ViewCell IsEnabled="false">
+                                        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="3*"></RowDefinition>
+                                                <RowDefinition Height="2*"></RowDefinition>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="38*"></ColumnDefinition>
+                                                <ColumnDefinition Width="20*"></ColumnDefinition>
+                                                <ColumnDefinition Width="15*"></ColumnDefinition>
+                                                <ColumnDefinition Width="25*"></ColumnDefinition>
+                                                <ColumnDefinition Width="2*"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <Label YAlign="Center" Margin="20,2,2,2" Text="{Binding Description}" Grid.Row="0" Grid.Column="0" FontAttributes="Bold" FontSize="16" />
+                                            <Label YAlign="Center" XAlign="Center" Margin= "2,2,2,2"  Text="{Binding Code}" Grid.Row="0" Grid.Column="1" FontAttributes="Bold" FontSize="16"/>
+                                            <Label XAlign="End" YAlign="Center"  Margin= "2,2,2,2"  Text="{Binding DisplayStock}" Grid.Row="0" Grid.Column="2" FontAttributes="Bold" FontSize="16"/>
+                                            <Label XAlign="End" YAlign="Center"  Margin= "2,2,2,2"  Text="{Binding CommiteddQuantity}" TextColor="{Binding ReserverdQtyColor}" Grid.Row="0" Grid.Column="3" FontAttributes="Bold" FontSize="16"/>
+                                            <Label YAlign="Center"  Margin= "2,2,2,2"  Text="" Grid.Row="0" Grid.Column="4" FontAttributes="Bold" FontSize="16"/>
+                                        </Grid>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+
+
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

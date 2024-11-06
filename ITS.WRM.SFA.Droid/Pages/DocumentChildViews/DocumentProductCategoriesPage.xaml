@@ -1,0 +1,1084 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="ITS.WRM.SFA.Droid.Pages.DocumentProductCategoriesPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ExtendedControls="clr-namespace:ITS.WRM.SFA.Droid.Controls"
+    xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="plainButton" TargetType="Button">
+                <!--<Setter Property="BackgroundColor" Value="#eee" />-->
+                <Setter Property="BackgroundColor" Value="#53b8ef" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="BorderRadius" Value="0" />
+                <Setter Property="FontSize" Value="40" />
+                <Setter Property="BorderWidth" Value="1" />
+                <Setter Property="BorderColor" Value="#7d7777" />
+
+            </Style>
+            <Style x:Key="darkerButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#ddd" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="BorderRadius" Value="0" />
+                <Setter Property="FontSize" Value="40" />
+                <Setter Property="BorderWidth" Value="0" />
+                <Setter Property="BorderColor" Value="#7d7777" />
+            </Style>
+            <Style x:Key="orangeButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#e88d00" />
+                <!--<Setter Property="BackgroundColor" Value="#E8AD00" />-->
+
+                <!--<Setter Property="BackgroundColor" Value="#53b8ef" />-->
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="BorderRadius" Value="0" />
+                <Setter Property="FontSize" Value="40" />
+                <Setter Property="BorderWidth" Value="0" />
+                <Setter Property="BorderColor" Value="#7d7777" />
+            </Style>
+            <Style x:Key="delButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#e95420" />
+                <!--<Setter Property="BackgroundColor" Value="#53b8ef" />-->
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="BorderRadius" Value="0" />
+                <Setter Property="FontSize" Value="40" />
+                <Setter Property="BorderWidth" Value="0" />
+                <Setter Property="BorderColor" Value="#7d7777" />
+            </Style>
+            <Style x:Key="addbutton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#2ea5a0" />
+                <!--<Setter Property="BackgroundColor" Value="#53b8ef" />-->
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="BorderRadius" Value="0" />
+                <Setter Property="FontSize" Value="40" />
+                <Setter Property="BorderWidth" Value="0" />
+                <Setter Property="BorderColor" Value="#7d7777" />
+            </Style>
+
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <!--  LAYOUT WRAPPER  -->
+            <StackLayout
+                AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                AbsoluteLayout.LayoutFlags="All"
+                BackgroundColor="White"
+                HorizontalOptions="FillAndExpand"
+                Spacing="0"
+                VerticalOptions="FillAndExpand">
+                <Grid
+                    x:Name="PageGrid"
+                    x:Uid="PageGrid2"
+                    BackgroundColor="White"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <!--  LEFT PANEL - FILTERS & CATEGORIES  -->
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="{Binding FirstColumn}" />
+                        <ColumnDefinition Width="{Binding SecondColumn}" />
+                    </Grid.ColumnDefinitions>
+                    <StackLayout
+                        x:Name="FilterPanelStack"
+                        Grid.Row="0"
+                        Padding="0"
+                        HorizontalOptions="FillAndExpand"
+                        Orientation="Vertical"
+                        Spacing="0"
+                        VerticalOptions="FillAndExpand">
+                        <Grid
+                            x:Name="FilterPanelGrid"
+                            ColumnSpacing="0"
+                            HorizontalOptions="FillAndExpand"
+                            RowSpacing="0"
+                            VerticalOptions="FillAndExpand">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="2*" />
+                                <RowDefinition Height="5*" />
+                                <RowDefinition Height="8*" />
+                            </Grid.RowDefinitions>
+                            <StackLayout Grid.Row="0" Spacing="0">
+                                <Button
+                                    x:Name="btnCategoryParth"
+                                    BackgroundColor="#01abdf"
+                                    Clicked="OnBackCategory"
+                                    HorizontalOptions="FillAndExpand"
+                                    Text=""
+                                    TextColor="WhiteSmoke"
+                                    VerticalOptions="FillAndExpand" />
+                            </StackLayout>
+                            <!--  CATEGORIES  -->
+                            <StackLayout
+                                Grid.Row="1"
+                                Padding="0"
+                                BackgroundColor="#474a4f"
+                                HorizontalOptions="FillAndExpand"
+                                Orientation="Vertical"
+                                Spacing="0"
+                                VerticalOptions="FillAndExpand">
+                                <ListView
+                                    x:Name="CategoryList"
+                                    HorizontalOptions="FillAndExpand"
+                                    ItemTapped="OnCategoryTap"
+                                    VerticalOptions="FillAndExpand">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <ViewCell>
+                                                <Grid>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="*" />
+                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*" />
+                                                    </Grid.ColumnDefinitions>
+                                                    <Label
+                                                        x:Name="CategoryDescr"
+                                                        Text="{Binding Description}"
+                                                        TextColor="#e95420"
+                                                        YAlign="Center" />
+                                                </Grid>
+                                            </ViewCell>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </StackLayout>
+                            <!--  FILTERS  -->
+                            <StackLayout
+                                Grid.Row="2"
+                                Padding="0"
+                                BackgroundColor="#313030"
+                                Spacing="0">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="50*" />
+                                        <RowDefinition Height="50*" />
+                                        <RowDefinition Height="50*" />
+                                        <RowDefinition Height="50*" />
+                                        <RowDefinition Height="50*" />
+                                        <RowDefinition Height="50*" />
+                                        <RowDefinition Height="50*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="5*" />
+                                        <ColumnDefinition Width="3*" />
+                                    </Grid.ColumnDefinitions>
+                                    <!--  SWITCH ACTIVE ITEMS  -->
+                                    <Label
+                                        x:Name="lblSwitch"
+                                        Grid.Row="0"
+                                        Grid.Column="0"
+                                        FontSize="15"
+                                        HeightRequest="55"
+                                        TextColor="WhiteSmoke"
+                                        YAlign="Center" />
+                                    <controls:CheckBox
+                                        x:Name="switchActiveItem"
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        Margin="0,0,0,0"
+                                        Checked="True"
+                                        CheckedText="ON"
+                                        HorizontalOptions="FillAndExpand"
+                                        TextColor="{Binding CheckBoxTextColor}"
+                                        UncheckedText="OFF"
+                                        VerticalOptions="FillAndExpand" />
+
+                                    <!--  SWITCH ALL CATEGORIES  -->
+                                    <Label
+                                        x:Name="lblSearchAll"
+                                        Grid.Row="1"
+                                        Grid.Column="0"
+                                        FontSize="15"
+                                        HeightRequest="55"
+                                        TextColor="WhiteSmoke"
+                                        YAlign="Center" />
+                                    <controls:CheckBox
+                                        x:Name="switchSearchAll"
+                                        Grid.Row="1"
+                                        Grid.Column="1"
+                                        Margin="0,0,0,0"
+                                        Checked="True"
+                                        CheckedText="ON"
+                                        HorizontalOptions="FillAndExpand"
+                                        TextColor="{Binding CheckBoxTextColor}"
+                                        UncheckedText="OFF"
+                                        VerticalOptions="FillAndExpand" />
+
+                                    <!--  SWITCH ONLY ITEMS WITH STOCK  -->
+                                    <Label
+                                        x:Name="lblOnlyStockItems"
+                                        Grid.Row="2"
+                                        Grid.Column="0"
+                                        FontSize="15"
+                                        HeightRequest="55"
+                                        TextColor="WhiteSmoke"
+                                        YAlign="Center" />
+                                    <controls:CheckBox
+                                        x:Name="switchOnlyStockItems"
+                                        Grid.Row="2"
+                                        Grid.Column="1"
+                                        Margin="0,0,0,0"
+                                        Checked="True"
+                                        CheckedText="ON"
+                                        HorizontalOptions="FillAndExpand"
+                                        TextColor="{Binding CheckBoxTextColor}"
+                                        UncheckedText="OFF"
+                                        VerticalOptions="FillAndExpand" />
+
+                                    <!--  DATEPICKER CREATED ON  -->
+                                    <Label
+                                        x:Name="lblDateInserFrom"
+                                        Grid.Row="3"
+                                        Grid.Column="0"
+                                        FontSize="15"
+                                        HorizontalTextAlignment="Start"
+                                        TextColor="WhiteSmoke"
+                                        VerticalTextAlignment="Center" />
+
+                                    <controls:CheckBox
+                                        x:Name="switcDateFromActive"
+                                        Grid.Row="3"
+                                        Grid.Column="1"
+                                        Margin="0,0,0,0"
+                                        Checked="False"
+                                        CheckedText="ON"
+                                        HorizontalOptions="FillAndExpand"
+                                        TextColor="{Binding CheckBoxTextColor}"
+                                        UncheckedText="OFF"
+                                        VerticalOptions="FillAndExpand" />
+                                    <controls:ExtendedDatePicker
+                                        x:Name="pckDateInsertFrom"
+                                        Grid.Row="4"
+                                        Grid.Column="0"
+                                        FontSize="15"
+                                        HorizontalOptions="EndAndExpand"
+                                        TextColor="WhiteSmoke"
+                                        VerticalOptions="CenterAndExpand">
+                                        <DatePicker.Format>dd-MM-yyyy</DatePicker.Format>
+                                    </controls:ExtendedDatePicker>
+
+                                    <!--  DATEPICKER UPDATED ON  -->
+                                    <Label
+                                        x:Name="lblDateUpdatedOn"
+                                        Grid.Row="5"
+                                        Grid.Column="0"
+                                        FontSize="15"
+                                        HeightRequest="55"
+                                        TextColor="WhiteSmoke" />
+                                    <controls:CheckBox
+                                        x:Name="switchUpdatedActive"
+                                        Grid.Row="5"
+                                        Grid.Column="1"
+                                        Margin="0,0,0,0"
+                                        Checked="False"
+                                        CheckedText="ON"
+                                        HorizontalOptions="FillAndExpand"
+                                        TextColor="{Binding CheckBoxTextColor}"
+                                        UncheckedText="OFF"
+                                        VerticalOptions="FillAndExpand" />
+                                    <DatePicker
+                                        x:Name="pckDateUpdated"
+                                        Grid.Row="6"
+                                        Grid.Column="0"
+                                        FontSize="14"
+                                        HorizontalOptions="EndAndExpand"
+                                        TextColor="WhiteSmoke"
+                                        VerticalOptions="CenterAndExpand">
+                                        <DatePicker.Format>dd-MM-yyyy</DatePicker.Format>
+                                    </DatePicker>
+                                </Grid>
+                            </StackLayout>
+                        </Grid>
+                    </StackLayout>
+
+                    <!--  MAIN WRAPPER  -->
+                    <StackLayout
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Padding="0"
+                        HorizontalOptions="FillAndExpand"
+                        Spacing="0"
+                        VerticalOptions="FillAndExpand">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="65" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="33*" />
+                                <ColumnDefinition Width="33*" />
+                                <ColumnDefinition Width="33*" />
+                            </Grid.ColumnDefinitions>
+                            <Label
+                                x:Name="Header"
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                FontAttributes="Bold"
+                                FontSize="18"
+                                HorizontalOptions="Center"
+                                Text=""
+                                VerticalOptions="Center" />
+                            <Label
+                                x:Name="lblCategory"
+                                Grid.Row="0"
+                                Grid.Column="2"
+                                FontSize="Medium"
+                                Text="" />
+                            <controls:CheckBox
+                                x:Name="CheckBoxFilterPanel"
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Checked="True"
+                                CheckedChanged="OnCheckedChanged"
+                                CheckedText="Filters ON"
+                                UncheckedText="Filters Off" />
+                        </Grid>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="45" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="33*" />
+                                <ColumnDefinition Width="33*" />
+                                <ColumnDefinition Width="33*" />
+                            </Grid.ColumnDefinitions>
+                            <Label
+                                x:Name="lblDefaultQy"
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                FontAttributes="Bold"
+                                FontSize="17" />
+                            <Entry
+                                x:Name="txtDefaultQty"
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Focused="OnDefaultQtyFocused"
+                                FontAttributes="Bold"
+                                FontSize="16"
+                                HorizontalTextAlignment="Center"
+                                Keyboard="Numeric"
+                                Text="1"
+                                TextChanged="DefaultQtyChanged"
+                                Unfocused="OnDefaultQtyUnFocused" />
+                            <Switch
+                                x:Name="switchDefaultQty"
+                                Grid.Row="0"
+                                Grid.Column="2"
+                                IsToggled="True"
+                                Toggled="DefaultQtyToogled" />
+                        </Grid>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="45" />
+                                <RowDefinition Height="45" />
+                                <RowDefinition Height="45" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="70*" />
+                                <ColumnDefinition Width="30*" />
+                            </Grid.ColumnDefinitions>
+                            <SearchBar
+                                x:Name="BarcodeInput"
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Focused="OnBarcodeInputFocused"
+                                SearchButtonPressed="SearchBarcodeByKeyboard"
+                                Unfocused="OnBarcodeInputUnFocused" />
+                            <SearchBar
+                                x:Name="DescriptionInput"
+                                Grid.Row="2"
+                                Grid.Column="0"
+                                Focused="OnDescriptionInputFocused"
+                                SearchButtonPressed="SearchDescriptionByKeyboard"
+                                Unfocused="OnDescriptionInputUnFocused" />
+                            <controls:ImageButton
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                BackgroundColor="#01abdf"
+                                Clicked="btnSearchItem"
+                                HeightRequest="45"
+                                Image="search.png"
+                                TextColor="WhiteSmoke"
+                                WidthRequest="150" />
+                            <controls:ImageButton
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                BackgroundColor="#01abdf"
+                                Clicked="AddListToDocumentHeader"
+                                HeightRequest="45"
+                                Image="cart1.png"
+                                TextColor="WhiteSmoke"
+                                WidthRequest="150" />
+                            <controls:ImageButton
+                                Grid.Row="2"
+                                Grid.Column="1"
+                                BackgroundColor="#01abdf"
+                                Clicked="ShowListToAdd"
+                                HeightRequest="45"
+                                Image="orderListSmall.png"
+                                ImageHeightRequest="35"
+                                ImageWidthRequest="35"
+                                TextColor="WhiteSmoke"
+                                WidthRequest="150" />
+                        </Grid>
+
+                        <!--  SEARCH RESULTS  -->
+                        <Grid
+                            Margin="0"
+                            Padding="0"
+                            HeightRequest="58">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="2" />
+                                <RowDefinition Height="55" />
+                            </Grid.RowDefinitions>
+                            <StackLayout
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Margin="0,0,0,0"
+                                Padding="0"
+                                BackgroundColor="White"
+                                HeightRequest="2"
+                                HorizontalOptions="FillAndExpand"
+                                Spacing="0" />
+                            <StackLayout
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Margin="0,0,0,0"
+                                Padding="0"
+                                BackgroundColor="#474a4f"
+                                HeightRequest="50"
+                                Spacing="0">
+                                <Label
+                                    x:Name="SearchHeader"
+                                    FontAttributes="Bold"
+                                    FontSize="16"
+                                    HeightRequest="50"
+                                    HorizontalOptions="FillAndExpand"
+                                    TextColor="WhiteSmoke"
+                                    VerticalTextAlignment="Center"
+                                    XAlign="Start"
+                                    YAlign="Center" />
+                            </StackLayout>
+                        </Grid>
+
+                        <StackLayout
+                            BackgroundColor="#e95420"
+                            HeightRequest="3"
+                            HorizontalOptions="FillAndExpand" />
+                        <!--  ITEM LISTVIEW HEADER  -->
+                        <Grid
+                            Margin="0"
+                            Padding="0"
+                            BackgroundColor="#474a4f">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="49*" />
+                                <ColumnDefinition Width="15*" />
+                                <ColumnDefinition Width="12*" />
+                                <ColumnDefinition Width="12*" />
+                                <ColumnDefinition Width="12*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="45" />
+                            </Grid.RowDefinitions>
+                            <Label
+                                x:Name="lblDescription"
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Margin="10,2,2,2"
+                                FontAttributes="Bold"
+                                FontSize="17"
+                                HorizontalOptions="FillAndExpand"
+                                Text=""
+                                TextColor="WhiteSmoke"
+                                VerticalOptions="FillAndExpand"
+                                YAlign="Center" />
+                            <Label
+                                x:Name="lblCode"
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                FontAttributes="Bold"
+                                FontSize="17"
+                                HorizontalOptions="FillAndExpand"
+                                Text=""
+                                TextColor="WhiteSmoke"
+                                VerticalOptions="FillAndExpand"
+                                XAlign="Center"
+                                YAlign="Center" />
+                            <Label
+                                x:Name="lblStock"
+                                Grid.Row="0"
+                                Grid.Column="2"
+                                Margin="2,2,2,2"
+                                FontAttributes="Bold"
+                                FontSize="17"
+                                HorizontalOptions="FillAndExpand"
+                                Text=""
+                                TextColor="WhiteSmoke"
+                                VerticalOptions="FillAndExpand"
+                                XAlign="End"
+                                YAlign="Center" />
+                            <Label
+                                x:Name="lblOrderQty"
+                                Grid.Row="0"
+                                Grid.Column="3"
+                                FontAttributes="Bold"
+                                FontSize="17"
+                                HorizontalOptions="FillAndExpand"
+                                Text=""
+                                TextColor="WhiteSmoke"
+                                VerticalOptions="FillAndExpand"
+                                XAlign="End"
+                                YAlign="Center" />
+                            <Label
+                                x:Name="lblOrderImg"
+                                Grid.Row="0"
+                                Grid.Column="4"
+                                FontAttributes="Bold"
+                                FontSize="17"
+                                HorizontalOptions="FillAndExpand"
+                                Text=""
+                                TextColor="WhiteSmoke"
+                                VerticalOptions="FillAndExpand"
+                                XAlign="Center"
+                                YAlign="Center" />
+                        </Grid>
+
+                        <!--  ITEM LISTVIEW HEADER  -->
+                        <controls:ExtendedListView
+                            x:Name="ItemListView"
+                            HorizontalOptions="FillAndExpand"
+                            RowHeight="70"
+                            SeparatorColor="#008dda"
+                            SeparatorVisibility="Default"
+                            VerticalOptions="FillAndExpand">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <ViewCell.ContextActions>
+                                            <MenuItem
+                                                Clicked="OnMore"
+                                                CommandParameter="{Binding Oid}"
+                                                Icon="details.png"
+                                                IsDestructive="false"
+                                                Text="Λεπτ." />
+                                        </ViewCell.ContextActions>
+                                        <Grid
+                                            x:Name="SearchItemGrid"
+                                            x:Uid="SearchItemGrid"
+                                            RowSpacing="0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="30" />
+                                                <RowDefinition Height="30" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="49*" />
+                                                <ColumnDefinition Width="15*" />
+                                                <ColumnDefinition Width="12*" />
+                                                <ColumnDefinition Width="12*" />
+                                                <ColumnDefinition Width="12*" />
+                                            </Grid.ColumnDefinitions>
+
+                                            <Label
+                                                Grid.Row="0"
+                                                Grid.Column="0"
+                                                Margin="10,0,0,0"
+                                                FontAttributes="Bold"
+                                                FontSize="15"
+                                                LineBreakMode="TailTruncation"
+                                                Text="{Binding DisplayDescription}"
+                                                YAlign="Center" />
+                                            <Label
+                                                Grid.Row="1"
+                                                Grid.Column="0"
+                                                Margin="10,0,0,0"
+                                                FontSize="13"
+                                                Text="{Binding VatDescription}"
+                                                YAlign="Start" />
+
+                                            <Label
+                                                Grid.Row="0"
+                                                Grid.Column="1"
+                                                Margin="0,0,0,0"
+                                                FontAttributes="Bold"
+                                                FontSize="14"
+                                                Text="{Binding BarcodeCode}"
+                                                XAlign="Center"
+                                                YAlign="Center" />
+                                            <Label
+                                                Grid.Row="1"
+                                                Grid.Column="1"
+                                                Margin="0,0,0,0"
+                                                FontSize="13"
+                                                Text="{Binding MeasurementDescription}"
+                                                XAlign="Center"
+                                                YAlign="Start" />
+
+                                            <Label
+                                                Grid.Row="0"
+                                                Grid.Column="2"
+                                                Margin="0,0,0,0"
+                                                FontAttributes="Bold"
+                                                FontSize="16"
+                                                Text="{Binding DisplayStock}"
+                                                XAlign="End"
+                                                YAlign="End" />
+                                            <Label
+                                                Grid.Row="0"
+                                                Grid.Column="3"
+                                                Margin="0,0,0,0"
+                                                FontAttributes="Bold"
+                                                FontSize="16"
+                                                Text="{Binding DisplayQty}"
+                                                XAlign="End"
+                                                YAlign="End" />
+
+                                            <controls:ImageButton
+                                                Grid.Row="0"
+                                                Grid.RowSpan="2"
+                                                Grid.Column="4"
+                                                BackgroundColor="Transparent"
+                                                BorderColor="Transparent"
+                                                Clicked="addToBasket"
+                                                CommandParameter="{Binding Oid}"
+                                                HeightRequest="70"
+                                                HorizontalOptions="CenterAndExpand"
+                                                Image="shopping.png"
+                                                ImageHeightRequest="20"
+                                                ImageWidthRequest="20"
+                                                VerticalOptions="CenterAndExpand" />
+
+                                        </Grid>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </controls:ExtendedListView>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+
+
+            <ContentView
+                x:Name="overlay"
+                Padding="10,10,10,10"
+                AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                AbsoluteLayout.LayoutFlags="All"
+                BackgroundColor="#C0808080"
+                IsVisible="False">
+
+                <Grid
+                    Margin="10,20,10,10"
+                    BackgroundColor="#e9f3f5"
+                    HeightRequest="{Binding OverlayHeight}"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    WidthRequest="{Binding OverlayWidth}">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="90" />
+                        <RowDefinition Height="90" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="150*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <!--  ITEM DESCRIPTION  -->
+                    <StackLayout
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand">
+                        <Label
+                            x:Name="lblSelectedItem"
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            HorizontalOptions="CenterAndExpand"
+                            LineBreakMode="TailTruncation"
+                            TextColor="#303335"
+                            TextDecorations="Underline"
+                            VerticalOptions="CenterAndExpand"
+                            VerticalTextAlignment="Center" />
+                    </StackLayout>
+                    <!--  ITEM VALUE  -->
+                    <StackLayout
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand">
+                        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40" />
+                                <RowDefinition Height="40" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="15*" />
+                                <ColumnDefinition Width="40*" />
+                                <ColumnDefinition Width="40*" />
+                                <ColumnDefinition Width="15*" />
+                            </Grid.ColumnDefinitions>
+                            <Label
+                                x:Name="lblUnitPriceWithoutVat"
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                FontAttributes="Bold"
+                                FontSize="17"
+                                HorizontalOptions="CenterAndExpand"
+                                HorizontalTextAlignment="Center"
+                                TextColor="#303335"
+                                TextDecorations="Underline"
+                                VerticalOptions="CenterAndExpand"
+                                VerticalTextAlignment="Center" />
+                            <Label
+                                x:Name="lblUnitPriceWithVat"
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                FontAttributes="Bold"
+                                FontSize="17"
+                                HorizontalOptions="CenterAndExpand"
+                                HorizontalTextAlignment="Center"
+                                TextColor="#303335"
+                                TextDecorations="Underline"
+                                VerticalOptions="CenterAndExpand"
+                                VerticalTextAlignment="Center" />
+
+                            <Label
+                                x:Name="lblTotalPriceWithoutVat"
+                                Grid.Row="0"
+                                Grid.Column="2"
+                                FontAttributes="Bold"
+                                FontSize="17"
+                                HorizontalOptions="CenterAndExpand"
+                                HorizontalTextAlignment="Center"
+                                TextColor="#303335"
+                                TextDecorations="Underline"
+                                VerticalOptions="CenterAndExpand"
+                                VerticalTextAlignment="Center" />
+                            <Label
+                                x:Name="lblTotalPriceWithVat"
+                                Grid.Row="1"
+                                Grid.Column="2"
+                                FontAttributes="Bold"
+                                FontSize="17"
+                                HorizontalOptions="CenterAndExpand"
+                                HorizontalTextAlignment="Center"
+                                TextColor="#303335"
+                                TextDecorations="Underline"
+                                VerticalOptions="CenterAndExpand"
+                                VerticalTextAlignment="Center" />
+
+                        </Grid>
+
+                    </StackLayout>
+                    <!--  ITEM QTY  -->
+                    <StackLayout
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40" />
+                                <RowDefinition Height="40" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="25*" />
+                                <ColumnDefinition Width="30*" />
+                                <ColumnDefinition Width="12*" />
+                                <ColumnDefinition Width="30*" />
+                                <ColumnDefinition Width="15*" />
+                            </Grid.ColumnDefinitions>
+                            <controls:ExtendedLabel
+                                x:Name="lblQty"
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                FontAttributes="Bold"
+                                FontSize="16"
+                                HorizontalOptions="CenterAndExpand"
+                                IsUnderline="True"
+                                TextColor="#303335"
+                                VerticalOptions="CenterAndExpand" />
+                            <controls:ExtendedLabel
+                                x:Name="lblPackingQty"
+                                Grid.Row="0"
+                                Grid.Column="3"
+                                FontAttributes="Bold"
+                                FontSize="16"
+                                HorizontalOptions="StartAndExpand"
+                                IsUnderline="True"
+                                TextColor="#303335"
+                                VerticalOptions="CenterAndExpand" />
+                            <Grid
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="FillAndExpand">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="40*" />
+                                    <ColumnDefinition Width="60*" />
+                                </Grid.ColumnDefinitions>
+
+                                <ExtendedControls:SoftkeyboardDisabledEntry
+                                    x:Name="Qty"
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    Focused="QtyFocused"
+                                    HorizontalTextAlignment="Center"
+                                    Text="1"
+                                    TextChanged="QtyChanged"
+                                    Unfocused="QtyUnFocused" />
+                                <Label
+                                    x:Name="lblUnit"
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    FontAttributes="Bold"
+                                    FontSize="16"
+                                    Text="temaxia"
+                                    TextColor="#7d92a2" />
+                            </Grid>
+                            <Grid
+                                Grid.Row="1"
+                                Grid.Column="3"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="FillAndExpand">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="40*" />
+                                    <ColumnDefinition Width="60*" />
+                                </Grid.ColumnDefinitions>
+
+                                <ExtendedControls:SoftkeyboardDisabledEntry
+                                    x:Name="PackingQty"
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    Focused="PackingQtyFocused"
+                                    HorizontalTextAlignment="Center"
+                                    Text="15"
+                                    TextChanged="PackingQtyChanged"
+                                    Unfocused="PackingQtyUnFocused" />
+                                <Label
+                                    x:Name="lblPackingUnit"
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    FontAttributes="Bold"
+                                    FontSize="16"
+                                    Text="kibotia"
+                                    TextColor="#7d92a2" />
+                            </Grid>
+                        </Grid>
+                    </StackLayout>
+                    <!--  DELETE ADD CLOSE BUTTONS  -->
+                    <Grid
+                        Grid.Row="3"
+                        Grid.Column="0"
+                        Margin="0,0,0,0"
+                        Padding="0,0,0,0"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="60" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="33*" />
+                            <ColumnDefinition Width="33*" />
+                            <ColumnDefinition Width="33*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Button
+                            x:Name="btnDeleteFromList"
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Margin="5,5,5,5"
+                            Padding="3,3,3,3"
+                            BackgroundColor="#008dda"
+                            BorderColor="#063c6d"
+                            BorderWidth="2"
+                            Clicked="DeleteFromList"
+                            CornerRadius="5"
+                            FontSize="19"
+                            HeightRequest="50"
+                            HorizontalOptions="CenterAndExpand"
+                            TextColor="WhiteSmoke"
+                            VerticalOptions="CenterAndExpand"
+                            WidthRequest="200" />
+                        <Button
+                            x:Name="btnAddBasket"
+                            Grid.Row="0"
+                            Grid.Column="2"
+                            Margin="5,5,5,5"
+                            Padding="3,3,3,3"
+                            BackgroundColor="#008dda"
+                            BorderColor="#063c6d"
+                            BorderWidth="2"
+                            Clicked="AddToTemporaryDetails"
+                            CornerRadius="5"
+                            FontSize="19"
+                            HeightRequest="50"
+                            HorizontalOptions="CenterAndExpand"
+                            TextColor="WhiteSmoke"
+                            VerticalOptions="CenterAndExpand"
+                            WidthRequest="200" />
+                        <Button
+                            x:Name="btnClose"
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Margin="5,5,5,5"
+                            Padding="3,3,3,3"
+                            BackgroundColor="#008dda"
+                            BorderColor="#063c6d"
+                            BorderWidth="2"
+                            Clicked="CloseDialog"
+                            CornerRadius="5"
+                            FontSize="19"
+                            HeightRequest="50"
+                            HorizontalOptions="CenterAndExpand"
+                            TextColor="WhiteSmoke"
+                            VerticalOptions="CenterAndExpand"
+                            WidthRequest="200" />
+                    </Grid>
+
+                    <Grid
+                        x:Name="controlGrid"
+                        Grid.Row="4"
+                        Grid.Column="0"
+                        Margin="10,10,10,10"
+                        Padding="0"
+                        ColumnSpacing="1"
+                        HorizontalOptions="FillAndExpand"
+                        RowSpacing="1"
+                        VerticalOptions="FillAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Button
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Clicked="OnNumber7Clicked"
+                            Style="{StaticResource plainButton}"
+                            Text="7" />
+                        <Button
+                            Grid.Row="0"
+                            Grid.Column="2"
+                            Clicked="OnNumber8Clicked"
+                            Style="{StaticResource plainButton}"
+                            Text="8" />
+                        <Button
+                            Grid.Row="0"
+                            Grid.Column="3"
+                            Clicked="OnNumber9Clicked"
+                            Style="{StaticResource plainButton}"
+                            Text="9" />
+
+                        <Button
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Clicked="OnNumber4Clicked"
+                            Style="{StaticResource plainButton}"
+                            Text="4" />
+                        <Button
+                            Grid.Row="1"
+                            Grid.Column="2"
+                            Clicked="OnNumber5Clicked"
+                            Style="{StaticResource plainButton}"
+                            Text="5" />
+                        <Button
+                            Grid.Row="1"
+                            Grid.Column="3"
+                            Clicked="OnNumber6Clicked"
+                            Style="{StaticResource plainButton}"
+                            Text="6" />
+
+                        <Button
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            Clicked="OnNumber1Clicked"
+                            Style="{StaticResource plainButton}"
+                            Text="1" />
+                        <Button
+                            Grid.Row="2"
+                            Grid.Column="2"
+                            Clicked="OnNumber2Clicked"
+                            Style="{StaticResource plainButton}"
+                            Text="2" />
+                        <Button
+                            Grid.Row="2"
+                            Grid.Column="3"
+                            Clicked="OnNumber3Clicked"
+                            Style="{StaticResource plainButton}"
+                            Text="3" />
+
+
+                        <Button
+                            Grid.Row="3"
+                            Grid.Column="3"
+                            Clicked="OnCommaClicked"
+                            Style="{StaticResource plainButton}"
+                            Text="," />
+
+                        <Button
+                            Grid.Row="3"
+                            Grid.Column="1"
+                            Grid.ColumnSpan="2"
+                            Clicked="OnNumber0Clicked"
+                            Style="{StaticResource plainButton}"
+                            Text="0" />
+
+                        <Button
+                            x:Name="removeQty"
+                            Grid.Row="0"
+                            Grid.RowSpan="2"
+                            Grid.Column="0"
+                            Clicked="RemoveQty"
+                            Style="{StaticResource orangeButton}"
+                            Text="-" />
+                        <Button
+                            x:Name="addQty"
+                            Grid.Row="0"
+                            Grid.RowSpan="2"
+                            Grid.Column="4"
+                            Clicked="AddQty"
+                            Style="{StaticResource orangeButton}"
+                            Text="+" />
+
+                        <Button
+                            Grid.Row="2"
+                            Grid.RowSpan="2"
+                            Grid.Column="4"
+                            Clicked="OnDelClicked"
+                            Style="{StaticResource delButton}"
+                            Text="Del" />
+                        <Button
+                            Grid.Row="2"
+                            Grid.RowSpan="2"
+                            Grid.Column="0"
+                            Style="{StaticResource darkerButton}"
+                            Text="" />
+
+                    </Grid>
+                </Grid>
+            </ContentView>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

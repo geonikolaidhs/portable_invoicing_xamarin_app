@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ITS.WRM.SFA.Droid.Pages.DocumentChildViews.DocumentSelectedCustomerPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <ScrollView>
+                <StackLayout
+                    AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                    AbsoluteLayout.LayoutFlags="All"
+                    BackgroundColor="WhiteSmoke">
+
+                    <StackLayout
+                        AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                        AbsoluteLayout.LayoutFlags="All"
+                        BackgroundColor="WhiteSmoke">
+                        <Label
+                            x:Name="lblHeader"
+                            FontAttributes="Bold"
+                            FontSize="26"
+                            HeightRequest="70"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center" />
+                        <StackLayout>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="40" />
+                                    <RowDefinition Height="40" />
+                                    <RowDefinition Height="40" />
+                                    <RowDefinition Height="40" />
+                                    <RowDefinition Height="40" />
+                                    <RowDefinition Height="40" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="200" />
+                                    <ColumnDefinition Width="400" />
+                                </Grid.ColumnDefinitions>
+                                <BoxView
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    BackgroundColor="#bfbcbc"
+                                    HeightRequest="1"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="End" />
+                                <Label
+                                    x:Name="lblCustomerName"
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    FontAttributes="Bold"
+                                    FontSize="17"
+                                    TextColor="#474a4f"
+                                    XAlign="End" />
+                                <Label
+                                    x:Name="CustomerName"
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    FontSize="19"
+                                    XAlign="Start" />
+
+                                <BoxView
+                                    Grid.Row="1"
+                                    Grid.Column="1"
+                                    BackgroundColor="#bfbcbc"
+                                    HeightRequest="1"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="End" />
+                                <Label
+                                    x:Name="lblCustomerProffession"
+                                    Grid.Row="1"
+                                    Grid.Column="0"
+                                    FontAttributes="Bold"
+                                    FontSize="17"
+                                    TextColor="#474a4f"
+                                    XAlign="End" />
+                                <Label
+                                    x:Name="CustomerProffession"
+                                    Grid.Row="1"
+                                    Grid.Column="1"
+                                    FontSize="19"
+                                    XAlign="Start" />
+
+                                <BoxView
+                                    Grid.Row="2"
+                                    Grid.Column="1"
+                                    BackgroundColor="#bfbcbc"
+                                    HeightRequest="1"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="End" />
+                                <Label
+                                    x:Name="lblCustomerCode"
+                                    Grid.Row="2"
+                                    Grid.Column="0"
+                                    FontAttributes="Bold"
+                                    FontSize="17"
+                                    TextColor="#474a4f"
+                                    XAlign="End" />
+                                <Label
+                                    x:Name="CustomerCode"
+                                    Grid.Row="2"
+                                    Grid.Column="1"
+                                    FontSize="19"
+                                    XAlign="Start" />
+
+                                <BoxView
+                                    Grid.Row="3"
+                                    Grid.Column="1"
+                                    BackgroundColor="#bfbcbc"
+                                    HeightRequest="1"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="End" />
+                                <Label
+                                    x:Name="lblCustomerTaxCode"
+                                    Grid.Row="3"
+                                    Grid.Column="0"
+                                    FontAttributes="Bold"
+                                    FontSize="17"
+                                    TextColor="#474a4f"
+                                    XAlign="End" />
+                                <Label
+                                    x:Name="CustomerTaxCode"
+                                    Grid.Row="3"
+                                    Grid.Column="1"
+                                    FontSize="19"
+                                    XAlign="Start" />
+
+                                <BoxView
+                                    Grid.Row="4"
+                                    Grid.Column="1"
+                                    BackgroundColor="#bfbcbc"
+                                    HeightRequest="1"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="End" />
+                                <Label
+                                    x:Name="lblCustomerPhone"
+                                    Grid.Row="4"
+                                    Grid.Column="0"
+                                    FontAttributes="Bold"
+                                    FontSize="17"
+                                    TextColor="#474a4f"
+                                    XAlign="End" />
+                                <Label
+                                    x:Name="CustomerPhone"
+                                    Grid.Row="4"
+                                    Grid.Column="1"
+                                    FontSize="20"
+                                    XAlign="Start" />
+
+                                <Label
+                                    x:Name="lblCustomerAddress"
+                                    Grid.Row="5"
+                                    Grid.Column="0"
+                                    FontAttributes="Bold"
+                                    FontSize="17"
+                                    HeightRequest="50"
+                                    TextColor="#474a4f"
+                                    XAlign="End" />
+                                <Picker
+                                    x:Name="pckCustomerAddress"
+                                    Grid.Row="5"
+                                    Grid.Column="1"
+                                    FontSize="19"
+                                    HorizontalOptions="Start"
+                                    TextColor="#000000"
+                                    VerticalOptions="Center" />
+                            </Grid>
+                        </StackLayout>
+
+                        <StackLayout>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="50" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="70*" />
+                                    <ColumnDefinition Width="30*" />
+                                </Grid.ColumnDefinitions>
+                                <SearchBar
+                                    x:Name="filter"
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    Focused="SearchBarFocused"
+                                    SearchButtonPressed="SearchCustomerByKeyboard"
+                                    Unfocused="SearchBarUnFocused" />
+                                <controls:ImageButton
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    BackgroundColor="#01abdf"
+                                    Clicked="CustomerSearch"
+                                    HeightRequest="50"
+                                    HorizontalOptions="FillAndExpand"
+                                    Image="search.png"
+                                    TextColor="#ffffff"
+                                    WidthRequest="200" />
+                            </Grid>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Padding="16" BackgroundColor="#474a4f">
+                        <Label x:Name="SearchHeader" TextColor="#ffffff" />
+                        <Label
+                            x:Name="CountResults"
+                            HorizontalOptions="EndAndExpand"
+                            HorizontalTextAlignment="Center"
+                            TextColor="#ffffff"
+                            VerticalOptions="EndAndExpand"
+                            VerticalTextAlignment="Center" />
+                    </StackLayout>
+
+
+                    <ListView
+                        x:Name="CustomerList"
+                        RowHeight="120"
+                        SelectionMode="Single"
+                        SeparatorColor="#008dda"
+                        SeparatorVisibility="Default">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell x:Name="mycell">
+                                    <ViewCell.ContextActions>
+                                        <MenuItem
+                                            x:Name="ChangeCustomer"
+                                            Clicked="OnChangeCustomer"
+                                            CommandParameter="{Binding Oid}"
+                                            Icon="sync1.png"
+                                            Text="Change Customer" />
+                                    </ViewCell.ContextActions>
+
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="40*" />
+                                            <RowDefinition Height="40*" />
+                                            <RowDefinition Height="20*" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="60*" />
+                                            <ColumnDefinition Width="1*" />
+                                            <ColumnDefinition Width="20*" />
+                                            <ColumnDefinition Width="20*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Label
+                                            Grid.Row="0"
+                                            Grid.Column="0"
+                                            FontAttributes="Bold"
+                                            FontSize="20"
+                                            Text="{Binding CompanyName}"
+                                            VerticalTextAlignment="Center" />
+                                        <Label
+                                            Grid.Row="0"
+                                            Grid.Column="2"
+                                            FontSize="16"
+                                            Text="{Binding Code}" />
+                                        <Label
+                                            Grid.Row="0"
+                                            Grid.Column="3"
+                                            FontSize="16"
+                                            Text="{Binding TaxCode}" />
+                                        <Label
+                                            Grid.Row="1"
+                                            Grid.Column="0"
+                                            FontSize="18"
+                                            Text="{Binding Address}" />
+                                        <Label
+                                            Grid.Row="1"
+                                            Grid.Column="2"
+                                            FontSize="18"
+                                            Text="" />
+                                        <Label
+                                            Grid.Row="2"
+                                            Grid.Column="0"
+                                            FontSize="16"
+                                            Text="{Binding Profession}"
+                                            VerticalTextAlignment="Center" />
+                                        <Label
+                                            Grid.Row="1"
+                                            Grid.Column="3"
+                                            FontAttributes="Bold"
+                                            FontSize="16"
+                                            Text="{Binding Number}" />
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </ScrollView>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+
+</ContentPage>

@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ITS.WRM.SFA.Droid.Pages.TabProductMainDetails"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Content>
+
+        <StackLayout
+            BackgroundColor="White"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand">
+            <StackLayout
+                x:Name="lblDetailCustomer"
+                BackgroundColor="#474a4f"
+                HeightRequest="100"
+                HorizontalOptions="FillAndExpand"
+                Spacing="10"
+                VerticalOptions="Start">
+                <Label
+                    x:Name="lblDescription"
+                    FontAttributes="Bold"
+                    FontSize="28"
+                    HorizontalOptions="Center"
+                    TextColor="#FFFFFF"
+                    VerticalOptions="Center" />
+            </StackLayout>
+            <StackLayout
+                BackgroundColor="White"
+                HorizontalOptions="FillAndExpand"
+                Spacing="0"
+                VerticalOptions="FillAndExpand">
+                <ScrollView>
+                    <StackLayout
+                        BackgroundColor="White"
+                        HorizontalOptions="FillAndExpand"
+                        Spacing="0"
+                        VerticalOptions="FillAndExpand">
+                        <TableView
+                            HorizontalOptions="FillAndExpand"
+                            RowHeight="50"
+                            VerticalOptions="FillAndExpand">
+                            <TableRoot>
+                                <TableSection>
+                                    <ViewCell>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label
+                                                x:Name="lblCode"
+                                                FontAttributes="Bold"
+                                                FontSize="17"
+                                                TextColor="#000000"
+                                                WidthRequest="220"
+                                                XAlign="End"
+                                                YAlign="Center" />
+                                            <Label
+                                                x:Name="codeValue"
+                                                FontSize="17"
+                                                HorizontalOptions="FillAndExpand"
+                                                TextColor="#000000"
+                                                XAlign="Start"
+                                                YAlign="Center" />
+                                        </StackLayout>
+                                    </ViewCell>
+                                    <ViewCell>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label
+                                                x:Name="lblItemName"
+                                                FontAttributes="Bold"
+                                                FontSize="17"
+                                                TextColor="#000000"
+                                                WidthRequest="220"
+                                                XAlign="End"
+                                                YAlign="Center" />
+                                            <Label
+                                                x:Name="ItemNameValue"
+                                                FontSize="17"
+                                                HorizontalOptions="FillAndExpand"
+                                                TextColor="#000000"
+                                                XAlign="Start"
+                                                YAlign="Center" />
+                                        </StackLayout>
+                                    </ViewCell>
+                                    <ViewCell>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label
+                                                x:Name="lblDefaultBarcode"
+                                                FontAttributes="Bold"
+                                                FontSize="17"
+                                                TextColor="#000000"
+                                                WidthRequest="220"
+                                                XAlign="End"
+                                                YAlign="Center" />
+                                            <Label
+                                                x:Name="BarcodeValue"
+                                                FontSize="17"
+                                                HorizontalOptions="FillAndExpand"
+                                                TextColor="#000000"
+                                                XAlign="Start"
+                                                YAlign="Center" />
+                                        </StackLayout>
+                                    </ViewCell>
+                                    <ViewCell>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label
+                                                x:Name="lblVatCategory"
+                                                FontAttributes="Bold"
+                                                FontSize="17"
+                                                TextColor="#000000"
+                                                WidthRequest="220"
+                                                XAlign="End"
+                                                YAlign="Center" />
+                                            <Label
+                                                x:Name="VatCategoryValue"
+                                                FontSize="17"
+                                                HorizontalOptions="FillAndExpand"
+                                                TextColor="#000000"
+                                                XAlign="Start"
+                                                YAlign="Center" />
+                                        </StackLayout>
+                                    </ViewCell>
+                                    <ViewCell>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label
+                                                x:Name="lblStock"
+                                                FontAttributes="Bold"
+                                                FontSize="17"
+                                                TextColor="#000000"
+                                                WidthRequest="220"
+                                                XAlign="End"
+                                                YAlign="Center" />
+                                            <Label
+                                                x:Name="Stock"
+                                                FontSize="17"
+                                                HorizontalOptions="FillAndExpand"
+                                                TextColor="#000000"
+                                                XAlign="Start"
+                                                YAlign="Center" />
+                                        </StackLayout>
+                                    </ViewCell>
+                                    <ViewCell>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label
+                                                x:Name="lblPackingQty"
+                                                FontAttributes="Bold"
+                                                FontSize="17"
+                                                TextColor="#000000"
+                                                WidthRequest="220"
+                                                XAlign="End"
+                                                YAlign="Center" />
+                                            <Label
+                                                x:Name="PackingQtyValue"
+                                                FontSize="17"
+                                                HorizontalOptions="FillAndExpand"
+                                                TextColor="#000000"
+                                                XAlign="Start"
+                                                YAlign="Center" />
+                                        </StackLayout>
+                                    </ViewCell>
+                                    <ViewCell>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label
+                                                x:Name="lblOrderQty"
+                                                FontAttributes="Bold"
+                                                FontSize="17"
+                                                TextColor="#000000"
+                                                WidthRequest="220"
+                                                XAlign="End"
+                                                YAlign="Center" />
+                                            <Label
+                                                x:Name="OrderQtyValue"
+                                                FontSize="17"
+                                                HorizontalOptions="FillAndExpand"
+                                                TextColor="#000000"
+                                                XAlign="Start"
+                                                YAlign="Center" />
+                                        </StackLayout>
+                                    </ViewCell>
+                                    <ViewCell>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label
+                                                x:Name="lblInsertedDate"
+                                                FontAttributes="Bold"
+                                                FontSize="17"
+                                                TextColor="#000000"
+                                                WidthRequest="220"
+                                                XAlign="End"
+                                                YAlign="Center" />
+                                            <Label
+                                                x:Name="InsertDateValue"
+                                                FontSize="17"
+                                                HorizontalOptions="FillAndExpand"
+                                                TextColor="#000000"
+                                                XAlign="Start"
+                                                YAlign="Center" />
+                                        </StackLayout>
+                                    </ViewCell>
+                                    <ViewCell>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label
+                                                x:Name="lblPoints"
+                                                FontAttributes="Bold"
+                                                FontSize="17"
+                                                TextColor="#000000"
+                                                WidthRequest="220"
+                                                XAlign="End"
+                                                YAlign="Center" />
+                                            <Label
+                                                x:Name="PointsValue"
+                                                FontSize="17"
+                                                HorizontalOptions="FillAndExpand"
+                                                TextColor="#000000"
+                                                XAlign="Start"
+                                                YAlign="Center" />
+                                        </StackLayout>
+                                    </ViewCell>
+                                    <ViewCell>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label
+                                                x:Name="lblMeasurementUnit"
+                                                FontAttributes="Bold"
+                                                FontSize="17"
+                                                TextColor="#000000"
+                                                WidthRequest="220"
+                                                XAlign="End"
+                                                YAlign="Center" />
+                                            <Label
+                                                x:Name="MeasurementValue"
+                                                FontSize="17"
+                                                HorizontalOptions="FillAndExpand"
+                                                TextColor="#000000"
+                                                XAlign="Start"
+                                                YAlign="Center" />
+                                        </StackLayout>
+                                    </ViewCell>
+
+                                    <ViewCell>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label
+                                                x:Name="lblDefaultSupplier"
+                                                FontAttributes="Bold"
+                                                FontSize="17"
+                                                TextColor="#000000"
+                                                WidthRequest="220"
+                                                XAlign="End"
+                                                YAlign="Center" />
+                                            <Label
+                                                x:Name="DefaultSuplierValue"
+                                                FontSize="17"
+                                                HorizontalOptions="FillAndExpand"
+                                                TextColor="#000000"
+                                                XAlign="Start"
+                                                YAlign="Center" />
+                                        </StackLayout>
+                                    </ViewCell>
+                                </TableSection>
+                            </TableRoot>
+                        </TableView>
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
